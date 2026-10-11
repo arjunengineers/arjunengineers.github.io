@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Asheville Urban Park Access Optimization | Arjun Patel</title>
+    <meta name="description" content="Five facility-location models exploring how efficiency and equity objectives change proposed park investments for a population of 88,860.">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#F0EEE6">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Arjun Patel">
+    <meta property="og:title" content="Asheville Urban Park Access Optimization | Arjun Patel">
+    <meta property="og:description" content="Five facility-location models exploring how efficiency and equity objectives change proposed park investments for a population of 88,860.">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../assets/css/tokens.css">
+    <link rel="stylesheet" href="../../assets/css/site.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/site.js" defer></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Asheville Urban Park Access Optimization",
+      "description": "Five facility-location models exploring how efficiency and equity objectives change proposed park investments for a population of 88,860.",
+      "articleSection": "Operations research and decision support",
+      "author": {
+        "@type": "Person",
+        "name": "Arjun Patel"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="site-logo" href="../../">
+          <svg class="site-logo__mark" viewBox="0 0 22 22" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="9"/><circle cx="11" cy="11" r="4.5"/><circle class="site-logo__dot" cx="2" cy="11" r="2"/></svg>
+          Arjun Patel
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <ul role="list">
+            <li><a href="../../work/" class="is-active">Work</a></li>
+            <li><a href="../../about/">About</a></li>
+            <li><a href="../../experience/">Experience</a></li>
+            <li><a href="../../education/">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false" hidden><span class="theme-toggle__icon" aria-hidden="true"></span>Dark mode</button></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <article class="wrap">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol role="list">
+            <li><a href="../">Work</a></li>
+            <li><span aria-current="page">Asheville Urban Park Access Optimization</span></li>
+          </ol>
+        </nav>
+
+        <header class="case-head">
+          <div>
+            <p class="label case-meta"><span>Operations research and decision support</span> <span class="label__num">3 min read</span></p>
+            <h1>Asheville Urban Park Access Optimization</h1>
+            <p class="case-deck">Making the efficiency–equity tradeoff visible.</p>
+            <p class="case-summary">Five facility-location models exploring how efficiency and equity objectives change proposed park investments for a population of 88,860.</p>
+          </div>
+          <dl class="spec">
+            <div class="spec__row"><dt>Context</dt><dd>Clemson University, Engineering Optimization and Its Applications, Fall 2025</dd></div>
+            <div class="spec__row"><dt>My contribution</dt><dd>Optimization modeling and comparative analysis</dd></div>
+            <div class="spec__row"><dt>Tools and methods</dt><dd>Python, Gurobi, integer programming, facility location, scenario analysis</dd></div>
+          </dl>
+        </header>
+
+        <div class="case-layout">
+          <nav class="toc" aria-labelledby="toc-title">
+            <p class="label toc__title" id="toc-title">On this page</p>
+            <ol role="list">
+              <li><a href="#the-problem">The problem</a></li>
+              <li><a href="#my-approach">My approach</a></li>
+              <li><a href="#results-that-matter">Results that matter</a></li>
+              <li><a href="#what-i-learned">What I learned</a></li>
+              <li><a href="#scope-note">Scope note</a></li>
+            </ol>
+          </nav>
+
+          <div class="case-body">
+            <section aria-labelledby="the-problem">
+              <h2 id="the-problem"><span class="h-num" aria-hidden="true">01</span>The problem</h2>
+              <p>Choosing where to add parks involves competing goals. Minimizing average travel distance can favor densely populated areas, while an equity-focused model can prioritize residents who are farthest from existing parks. I explored how those choices change recommended investments.</p>
+            </section>
+            <section aria-labelledby="my-approach">
+              <h2 id="my-approach"><span class="h-num" aria-hidden="true">02</span>My approach</h2>
+              <p>I developed and compared five model objectives: population-weighted average distance, distance for the worst-served population, a weighted efficiency–equity objective, half-mile population coverage, and maximum distance to a park.</p>
+              <p>The study used 77 residential demand locations, 52 existing parks, 138 candidate sites, and a modeled population of 88,860. I compared scenarios with five, ten, and fifteen new parks. The model runs used reported time limits and optimality-gap tolerances, so the outputs should be read as solver results under those settings.</p>
+              <h3>Study inputs</h3>
+              <dl class="spec">
+                <div class="spec__row"><dt>Demand locations</dt><dd>77 residential demand locations</dd></div>
+                <div class="spec__row"><dt>Existing parks</dt><dd>52</dd></div>
+                <div class="spec__row"><dt>Candidate sites</dt><dd>138</dd></div>
+                <div class="spec__row"><dt>Modeled population</dt><dd>88,860</dd></div>
+                <div class="spec__row"><dt>Scenarios</dt><dd>Five, ten, and fifteen new parks</dd></div>
+              </dl>
+            </section>
+            <section aria-labelledby="results-that-matter">
+              <h2 id="results-that-matter"><span class="h-num" aria-hidden="true">03</span>Results that matter</h2>
+              <figure class="chart">
+                <div class="chart__frame">
+                  <div class="chart__panels">
+                    <div class="chart__panel">
+                      <p class="chart__title">Model 1 · Average distance</p>
+                      <p class="chart__sub">Population-weighted distance (miles)</p>
+                      <svg class="plot" viewBox="0 0 300 230" role="img" aria-labelledby="m1-t m1-d" focusable="false">
+                        <title id="m1-t">Model 1: population-weighted average distance to a park, by number of new parks</title>
+                        <desc id="m1-d">0.7563 miles with 5 new parks, 0.6470 miles with 10, and 0.5719 miles with 15.</desc>
+                        <line class="plot__grid" x1="40" x2="288" y1="24" y2="24"/>
+                        <text class="plot__tick" x="34" y="28" text-anchor="end">1.0</text>
+                        <line class="plot__grid" x1="40" x2="288" y1="106" y2="106"/>
+                        <text class="plot__tick" x="34" y="110" text-anchor="end">0.5</text>
+                        <line class="plot__grid" x1="40" x2="288" y1="188" y2="188"/>
+                        <text class="plot__tick" x="34" y="192" text-anchor="end">0</text>
+                        <text class="plot__tick" x="82" y="207" text-anchor="middle">5</text>
+                        <text class="plot__tick" x="164" y="207" text-anchor="middle">10</text>
+                        <text class="plot__tick" x="246" y="207" text-anchor="middle">15</text>
+                        <text class="plot__axis-title" x="164" y="226" text-anchor="middle">New parks in the modeled scenario</text>
+                        <polyline class="plot__line" points="82,63.97 164,81.89 246,94.21"/>
+                        <circle class="plot__dot" cx="82" cy="63.97" r="5"><title>5 new parks: 0.7563 miles</title></circle>
+                        <text class="plot__value" x="82" y="50.97" text-anchor="middle">0.7563</text>
+                        <circle class="plot__dot" cx="164" cy="81.89" r="5"><title>10 new parks: 0.6470 miles</title></circle>
+                        <text class="plot__value" x="164" y="68.89" text-anchor="middle">0.6470</text>
+                        <circle class="plot__dot" cx="246" cy="94.21" r="5"><title>15 new parks: 0.5719 miles</title></circle>
+                        <text class="plot__value" x="246" y="81.21" text-anchor="middle">0.5719</text>
+                      </svg>
+                    </div>
+                    <div class="chart__panel">
+                      <p class="chart__title">Model 4 · Half-mile coverage</p>
+                      <p class="chart__sub">Population within 0.5 miles (%)</p>
+                      <svg class="plot" viewBox="0 0 300 230" role="img" aria-labelledby="m4-t m4-d" focusable="false">
+                        <title id="m4-t">Model 4: share of the modeled population within half a mile of a park, by number of new parks</title>
+                        <desc id="m4-d">45.57% with 5 new parks, 52.73% with 10, and 57.18% with 15.</desc>
+                        <line class="plot__grid" x1="40" x2="288" y1="24" y2="24"/>
+                        <text class="plot__tick" x="34" y="28" text-anchor="end">100</text>
+                        <line class="plot__grid" x1="40" x2="288" y1="106" y2="106"/>
+                        <text class="plot__tick" x="34" y="110" text-anchor="end">50</text>
+                        <line class="plot__grid" x1="40" x2="288" y1="188" y2="188"/>
+                        <text class="plot__tick" x="34" y="192" text-anchor="end">0</text>
+                        <text class="plot__tick" x="82" y="207" text-anchor="middle">5</text>
+                        <text class="plot__tick" x="164" y="207" text-anchor="middle">10</text>
+                        <text class="plot__tick" x="246" y="207" text-anchor="middle">15</text>
+                        <text class="plot__axis-title" x="164" y="226" text-anchor="middle">New parks in the modeled scenario</text>
+                        <path class="bar" d="M70,188 V117.27 Q70,113.27 74,113.27 H90 Q94,113.27 94,117.27 V188 Z"><title>5 new parks: 45.57% of the modeled population within 0.5 miles</title></path>
+                        <text class="plot__value" x="82" y="105.27" text-anchor="middle">45.57%</text>
+                        <path class="bar bar--accent" d="M152,188 V105.52 Q152,101.52 156,101.52 H172 Q176,101.52 176,105.52 V188 Z"><title>10 new parks: 52.73% of the modeled population within 0.5 miles</title></path>
+                        <text class="plot__value" x="164" y="93.52" text-anchor="middle">52.73%</text>
+                        <path class="bar" d="M234,188 V98.22 Q234,94.22 238,94.22 H254 Q258,94.22 258,98.22 V188 Z"><title>15 new parks: 57.18% of the modeled population within 0.5 miles</title></path>
+                        <text class="plot__value" x="246" y="86.22" text-anchor="middle">57.18%</text>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <figcaption>Two different model objectives. Recreated from the solver-output table; these are modeled scenarios, not observed changes in Asheville.</figcaption>
+                <details>
+                  <summary>View the data as a table</summary>
+                  <div class="details__body">
+                    <div class="table-wrap" role="region" aria-label="Scenario data" tabindex="0">
+                      <table class="table--compact">
+                        <caption class="label">Modeled scenarios by number of new parks</caption>
+                        <thead><tr><th scope="col">New parks</th><th scope="col">Model 1 · average distance (miles)</th><th scope="col">Model 4 · population within 0.5 miles</th></tr></thead>
+                        <tbody>
+                          <tr><th scope="row">5</th><td class="num">0.7563</td><td class="num">45.57%</td></tr>
+                          <tr><th scope="row">10</th><td class="num">0.6470</td><td class="num">52.73%</td></tr>
+                          <tr><th scope="row">15</th><td class="num">0.5719</td><td class="num">57.18%</td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </details>
+              </figure>
+              <ul>
+                <li><strong>Coverage objective:</strong> With ten new parks, Model 4 reported 52.73% population coverage within 0.5 miles.</li>
+                <li><strong>Average-distance objective:</strong> Model 1 reported a decrease from 0.7563 miles with five new parks to 0.6470 miles with ten, approximately a 14.5% reduction between those two modeled scenarios.</li>
+                <li><strong>Decision insight:</strong> Different objectives produced different recommended locations. The useful output was a set of transparent tradeoffs for planning, rather than one universally best answer.</li>
+              </ul>
+              <details>
+                <summary>Supporting evidence: original solver output</summary>
+                <div class="details__body">
+                  <figure class="figure">
+                    <div class="figure__frame">
+                      <img src="../../assets/img/parks-solver-results.webp" width="1392" height="574" alt="Terminal output titled Park Location Optimization Results: 77 locations, 52 existing parks, 138 candidates, population 88,860. It lists objective, average distance, maximum distance, coverage, and solve time for five models at 5, 10, and 15 new parks. Model 1 average distance: 0.7563, 0.6470, 0.5719. Model 4 coverage: 45.57, 52.73, 57.18 percent." loading="lazy" decoding="async">
+                    </div>
+                    <figcaption>Original solver-output table from the project report. The scenario chart above was recreated from this table. <a href="../../assets/img/parks-solver-results.png">View analysis figure<span class="visually-hidden">: original solver-output table (full-size PNG)</span></a></figcaption>
+                  </figure>
+                </div>
+              </details>
+            </section>
+            <section aria-labelledby="what-i-learned">
+              <h2 id="what-i-learned"><span class="h-num" aria-hidden="true">04</span>What I learned</h2>
+              <p>An optimization objective encodes a choice about whose outcomes matter and how success is measured. Comparing objectives helps decision-makers see those choices before committing resources.</p>
+            </section>
+            <section class="callout" aria-labelledby="scope-note">
+              <svg class="callout__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="8.25"/><path d="M10 9.25v4.5"/><circle cx="10" cy="6.4" r="0.5" fill="currentColor"/></svg>
+              <h2 id="scope-note">Scope note</h2>
+              <p>This was an academic decision-support study. It did not construct parks, demonstrate realized travel reductions, or incorporate every feasibility factor such as land acquisition, park quality, safety, or community preferences. The coverage result and distance reduction come from different models and must remain separately labeled.</p>
+            </section>
+          </div>
+        </div>
+
+        <nav class="pager" aria-label="Project navigation">
+          <a class="pager__back" href="../"><span><span aria-hidden="true">← </span>Back to all work</span></a>
+          <a class="pager__next" href="../bell407-rotor-analysis/">
+            <span class="label">Next project</span>
+            <span class="pager__title">Bell-407 Helicopter Rotor and Blade System <span class="arrow" aria-hidden="true">→</span></span>
+          </a>
+        </nav>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="band band--ink">
+      <section class="wrap contact" id="contact" aria-labelledby="contact-title">
+        <div>
+          <p class="label">Contact</p>
+          <h2 id="contact-title">Let’s discuss a systems problem worth solving.</h2>
+          <p class="contact__lead">If your work connects people, operations, or engineering analysis, I’d welcome a conversation about the problem and how I could contribute.</p>
+        </div>
+        <div class="contact__actions">
+          <p class="contact__address">arjunb.patel@outlook.com</p>
+          <ul class="contact__links" role="list">
+            <li><a class="button button--primary" href="mailto:arjunb.patel@outlook.com?subject=Hello%20from%20your%20portfolio">Email Arjun</a></li>
+            <li><a class="button button--secondary" href="https://www.linkedin.com/in/linkwitharjun" rel="noopener noreferrer">Connect on LinkedIn<span class="external-icon" aria-hidden="true">↗</span><span class="visually-hidden"> (opens external site)</span></a></li>
+            <li><button type="button" class="button button--secondary" data-copy="arjunb.patel@outlook.com" hidden>Copy email address</button></li>
+          </ul>
+          <p class="contact__status" role="status" data-copy-status></p>
+          <p class="contact__hint">Recruiters: please include the role and timeline.</p>
+        </div>
+      </section>
+      </div>
+      <div class="wrap site-footer__inner">
+        <p class="site-footer__id">Arjun Patel · Industrial Engineering Portfolio</p>
+        <nav aria-label="Footer">
+          <ul role="list">
+            <li><a href="../../work/">Work</a></li>
+            <li><a href="../../about/">About</a></li>
+            <li><a href="../../experience/">Experience</a></li>
+            <li><a href="../../education/">Education</a></li>
+            <li><a href="../../privacy/">Privacy</a></li>
+          </ul>
+        </nav>
+        <p class="site-footer__note">No cookies, no analytics, no tracking. © 2026 Arjun Patel.</p>
+      </div>
+    </footer>
+  </body>
+</html>

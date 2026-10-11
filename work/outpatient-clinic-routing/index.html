@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Outpatient Clinic Last-Mile Routing | Arjun Patel</title>
+    <meta name="description" content="A comparison of traveling-salesperson and capacity-constrained routing models for deliveries to eight outpatient clinics.">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#F0EEE6">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Arjun Patel">
+    <meta property="og:title" content="Outpatient Clinic Last-Mile Routing | Arjun Patel">
+    <meta property="og:description" content="A comparison of traveling-salesperson and capacity-constrained routing models for deliveries to eight outpatient clinics.">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../assets/css/tokens.css">
+    <link rel="stylesheet" href="../../assets/css/site.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/site.js" defer></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Outpatient Clinic Last-Mile Routing",
+      "description": "A comparison of traveling-salesperson and capacity-constrained routing models for deliveries to eight outpatient clinics.",
+      "articleSection": "Logistics and integer programming",
+      "author": {
+        "@type": "Person",
+        "name": "Arjun Patel"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="site-logo" href="../../">
+          <svg class="site-logo__mark" viewBox="0 0 22 22" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="9"/><circle cx="11" cy="11" r="4.5"/><circle class="site-logo__dot" cx="2" cy="11" r="2"/></svg>
+          Arjun Patel
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <ul role="list">
+            <li><a href="../../work/" class="is-active">Work</a></li>
+            <li><a href="../../about/">About</a></li>
+            <li><a href="../../experience/">Experience</a></li>
+            <li><a href="../../education/">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false" hidden><span class="theme-toggle__icon" aria-hidden="true"></span>Dark mode</button></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <article class="wrap">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol role="list">
+            <li><a href="../">Work</a></li>
+            <li><span aria-current="page">Outpatient Clinic Last-Mile Routing</span></li>
+          </ol>
+        </nav>
+
+        <header class="case-head">
+          <div>
+            <p class="label case-meta"><span>Logistics and integer programming</span> <span class="label__num">2 min read</span></p>
+            <h1>Outpatient Clinic Last-Mile Routing</h1>
+            <p class="case-deck">Understanding the distance cost of delivery constraints.</p>
+            <p class="case-summary">A comparison of traveling-salesperson and capacity-constrained routing models for deliveries to eight outpatient clinics.</p>
+          </div>
+          <dl class="spec">
+            <div class="spec__row"><dt>Context</dt><dd>Academic optimization project</dd></div>
+            <div class="spec__row"><dt>My contribution</dt><dd>Routing-model development and comparison</dd></div>
+            <div class="spec__row"><dt>Tools and methods</dt><dd>Gurobi, DFJ traveling-salesperson formulation, MTZ capacitated vehicle-routing formulation</dd></div>
+          </dl>
+        </header>
+
+        <div class="case-layout">
+          <nav class="toc" aria-labelledby="toc-title">
+            <p class="label toc__title" id="toc-title">On this page</p>
+            <ol role="list">
+              <li><a href="#the-problem">The problem</a></li>
+              <li><a href="#my-approach">My approach</a></li>
+              <li><a href="#reported-model-results">Reported model results</a></li>
+              <li><a href="#decision-value">Decision value</a></li>
+              <li><a href="#scope-note">Scope note</a></li>
+            </ol>
+          </nav>
+
+          <div class="case-body">
+            <section aria-labelledby="the-problem">
+              <h2 id="the-problem"><span class="h-num" aria-hidden="true">01</span>The problem</h2>
+              <p>A short route is not automatically an operationally feasible delivery plan. Serving eight outpatient clinics required considering vehicle capacity alongside travel distance.</p>
+            </section>
+            <section aria-labelledby="my-approach">
+              <h2 id="my-approach"><span class="h-num" aria-hidden="true">02</span>My approach</h2>
+              <p>I developed and solved a DFJ traveling-salesperson model and an MTZ capacitated vehicle-routing model in Gurobi. The TSP supplied a distance benchmark, while the CVRP introduced the delivery-capacity constraints needed to examine a multi-vehicle plan.</p>
+            </section>
+            <section aria-labelledby="reported-model-results">
+              <h2 id="reported-model-results"><span class="h-num" aria-hidden="true">03</span>Reported model results</h2>
+              <ul>
+                <li>Eight outpatient clinics.</li>
+                <li>A three-van routing plan totaling 45.32 km under 35-box-unit vehicle-capacity constraints.</li>
+                <li>A 34.75 km TSP benchmark for comparison.</li>
+              </ul>
+              <figure class="chart">
+                <div class="chart__frame">
+                  <p class="chart__title">Different constraints explain different route lengths</p>
+                  <p class="chart__sub">Reported total route distance (km)</p>
+                  <ul class="barlist" role="list">
+                    <li class="barlist__row">
+                      <span class="barlist__label">TSP distance benchmark<span class="visually-hidden">: 34.75 kilometers</span></span>
+                      <span class="barlist__track">
+                        <svg class="barlist__svg" width="100%" height="20" aria-hidden="true" focusable="false">
+                          <title>TSP distance benchmark: 34.75 km</title>
+                          <rect class="bar" x="0" y="0" width="69.50%" height="20" rx="4"/>
+                          <rect class="bar" x="0" y="0" width="4" height="20"/>
+                          <text class="bar-value" x="69.50%" dx="8" y="10">34.75 km</text>
+                        </svg>
+                      </span>
+                    </li>
+                    <li class="barlist__row">
+                      <span class="barlist__label">Capacity-constrained three-van plan<span class="visually-hidden">: 45.32 kilometers</span></span>
+                      <span class="barlist__track">
+                        <svg class="barlist__svg" width="100%" height="20" aria-hidden="true" focusable="false">
+                          <title>Capacity-constrained three-van plan: 45.32 km</title>
+                          <rect class="bar bar--accent" x="0" y="0" width="90.64%" height="20" rx="4"/>
+                          <rect class="bar bar--accent" x="0" y="0" width="4" height="20"/>
+                          <text class="bar-value" x="90.64%" dx="8" y="10">45.32 km</text>
+                        </svg>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <figcaption>Values from my project summary. The formulations have different constraints; the comparison does not show a realized distance or cost saving.</figcaption>
+                <details>
+                  <summary>View the data as a table</summary>
+                  <div class="details__body">
+                    <div class="table-wrap" role="region" aria-label="Route distance data" tabindex="0">
+                      <table class="table--compact">
+                        <caption class="label">Reported total route distance</caption>
+                        <thead><tr><th scope="col">Formulation</th><th scope="col">Kilometers</th></tr></thead>
+                        <tbody>
+                          <tr><th scope="row">TSP distance benchmark</th><td class="num">34.75</td></tr>
+                          <tr><th scope="row">Capacity-constrained three-van plan</th><td class="num">45.32</td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </details>
+              </figure>
+            </section>
+            <section aria-labelledby="decision-value">
+              <h2 id="decision-value"><span class="h-num" aria-hidden="true">04</span>Decision value</h2>
+              <p>The comparison supported a discussion of fleet sizing and the tradeoff between distance efficiency and capacity feasibility. It helped distinguish a useful benchmark from an implementable routing structure.</p>
+            </section>
+            <section class="callout" aria-labelledby="scope-note">
+              <svg class="callout__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="8.25"/><path d="M10 9.25v4.5"/><circle cx="10" cy="6.4" r="0.5" fill="currentColor"/></svg>
+              <h2 id="scope-note">Scope note</h2>
+              <p>These are model results, not records of an operating delivery fleet. The route sequence, demand table, cost assumptions, and solver logs are not included in this portfolio.</p>
+            </section>
+          </div>
+        </div>
+
+        <nav class="pager" aria-label="Project navigation">
+          <a class="pager__back" href="../"><span><span aria-hidden="true">← </span>Back to all work</span></a>
+          <a class="pager__next" href="../automotive-dmaic-review/">
+            <span class="label">Next project</span>
+            <span class="pager__title">DMAIC Case Study <span class="arrow" aria-hidden="true">→</span></span>
+          </a>
+        </nav>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="band band--ink">
+      <section class="wrap contact" id="contact" aria-labelledby="contact-title">
+        <div>
+          <p class="label">Contact</p>
+          <h2 id="contact-title">Let’s discuss a systems problem worth solving.</h2>
+          <p class="contact__lead">If your work connects people, operations, or engineering analysis, I’d welcome a conversation about the problem and how I could contribute.</p>
+        </div>
+        <div class="contact__actions">
+          <p class="contact__address">arjunb.patel@outlook.com</p>
+          <ul class="contact__links" role="list">
+            <li><a class="button button--primary" href="mailto:arjunb.patel@outlook.com?subject=Hello%20from%20your%20portfolio">Email Arjun</a></li>
+            <li><a class="button button--secondary" href="https://www.linkedin.com/in/linkwitharjun" rel="noopener noreferrer">Connect on LinkedIn<span class="external-icon" aria-hidden="true">↗</span><span class="visually-hidden"> (opens external site)</span></a></li>
+            <li><button type="button" class="button button--secondary" data-copy="arjunb.patel@outlook.com" hidden>Copy email address</button></li>
+          </ul>
+          <p class="contact__status" role="status" data-copy-status></p>
+          <p class="contact__hint">Recruiters: please include the role and timeline.</p>
+        </div>
+      </section>
+      </div>
+      <div class="wrap site-footer__inner">
+        <p class="site-footer__id">Arjun Patel · Industrial Engineering Portfolio</p>
+        <nav aria-label="Footer">
+          <ul role="list">
+            <li><a href="../../work/">Work</a></li>
+            <li><a href="../../about/">About</a></li>
+            <li><a href="../../experience/">Experience</a></li>
+            <li><a href="../../education/">Education</a></li>
+            <li><a href="../../privacy/">Privacy</a></li>
+          </ul>
+        </nav>
+        <p class="site-footer__note">No cookies, no analytics, no tracking. © 2026 Arjun Patel.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+/*
+  Design tokens. Warm, light "paper" theme by default; a warm dark theme is opt-in through the
+  header toggle (data-theme="dark" on <html>). Every text colour passes WCAG AA (4.5:1) on
+  --color-bg, --color-surface and --color-surface-2; control borders and chart marks pass 3:1.
+*/
+:root {
+  color-scheme: light;
+
+  /* Colour — light (default) */
+  --color-bg: #FAF9F5;              /* ivory page */
+  --color-surface: #FFFFFF;         /* cards, plates, tables */
+  --color-surface-2: #F0EEE6;       /* oat bands and panels */
+  --color-text: #141413;
+  --color-text-muted: #5E5D59;
+  --color-text-subtle: #6B6A64;
+  --color-accent: #A8482A;          /* clay: links, name, highlights */
+  --color-accent-strong: #863820;
+  --color-signal: #55662B;          /* olive: evidence tags, status dot */
+  --color-border: #E3E0D5;          /* decorative only */
+  --color-border-strong: #87867F;   /* identifies controls: >= 3:1 */
+  --color-focus: #1A56C4;
+  --color-button-bg: #141413;
+  --color-button-text: #FAF9F5;
+  --color-button-hover: #3D3D3A;
+  --color-ink: #141413;             /* dark band behind the contact block */
+
+  /* Tinted panels (fixed in both themes; always carry dark text) */
+  --tint-sage: #CFDCCB;
+  --tint-lavender: #D6D4E6;
+  --tint-blush: #EDD5CC;
+  --tint-text: #141413;
+  --tint-text-muted: #3D3D3A;
+
+  /* Charts — marks are >= 3:1 on --color-surface; text never wears these */
+  --chart-mark: #8F8D85;
+  --chart-accent: #C6613F;
+  --chart-grid: var(--color-border);
+
+  /* Plates behind source figures: fixed and opaque in both themes */
+  --plate-light: #FFFFFF;
+  --plate-cad: #E8E9ED;
+
+  /* Typography */
+  --font-sans: "Inter Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: ui-serif, "New York", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --step--1: 0.833rem;
+  --step-0: clamp(1rem, 0.97rem + 0.15vw, 1.0625rem);
+  --step-1: 1.25rem;
+  --step-2: 1.563rem;
+  --step-3: 1.953rem;
+  --step-4: clamp(2.441rem, 2rem + 2vw, 3.052rem);
+  --step-5: clamp(2.25rem, 1.5rem + 3.6vw, 4.25rem);   /* home headline only */
+  --leading-body: 1.6;
+  --leading-heading: 1.15;
+  --measure: 68ch;
+
+  /* Spacing (4px base) */
+  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+  --space-6: 1.5rem;  --space-8: 2rem;   --space-12: 3rem;   --space-16: 4rem;
+  --space-24: 6rem;
+
+  /* Shape, elevation, motion, layout */
+  --radius-sm: 8px; --radius-md: 12px; --radius-lg: 20px; --radius-full: 999px;
+  --shadow-1: 0 1px 2px rgb(20 20 19 / 0.05);
+  --shadow-2: 0 12px 28px -12px rgb(20 20 19 / 0.22);
+  --dur-fast: 120ms; --dur-base: 200ms; --dur-slow: 480ms;
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
+  --content-max: 1200px;
+  --gutter: clamp(16px, 4vw, 32px);
+  --target-min: 44px;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: #1F1E1D;
+  --color-surface: #2A2927;
+  --color-surface-2: #33322F;
+  --color-text: #FAF9F5;
+  --color-text-muted: #C2C0B6;
+  --color-text-subtle: #A8A69D;
+  --color-accent: #EDA58E;
+  --color-accent-strong: #F6C7B7;
+  --color-signal: #BFCF86;
+  --color-border: #3B3A37;
+  --color-border-strong: #8A8880;
+  --color-focus: #FFD166;
+  --color-button-bg: #FAF9F5;
+  --color-button-text: #141413;
+  --color-button-hover: #FFFFFF;
+  --chart-mark: #8A8880;
+  --chart-accent: #E08A6C;
+  --shadow-1: none;
+  --shadow-2: 0 12px 28px -12px rgb(0 0 0 / 0.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-fast: 0.01ms; --dur-base: 0.01ms; --dur-slow: 0.01ms; }
+}
