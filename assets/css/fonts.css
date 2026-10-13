@@ -1,0 +1,35 @@
+/* Self-hosted variable fonts (SIL Open Font License 1.1 — see assets/fonts/OFL-*.txt).
+   Latin subset, 337 KB in total. The ranges below are the ranges kept in each file:
+   asking for a value outside them is clamped by the browser.
+   Fraunces          opsz 9–144 · wght 300–800 · SOFT 0–100 (italic: SOFT fixed at 100)
+   Roboto Flex       opsz 8–144 · wght 400–800 · wdth 100–115 · GRAD −150…80
+   JetBrains Mono    wght 400–600 */
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url("../fonts/fraunces-latin-var.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Fraunces";
+  font-style: italic;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url("../fonts/fraunces-italic-latin-var.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Roboto Flex";
+  font-style: normal;
+  font-weight: 400 800;
+  font-stretch: 100% 115%;
+  font-display: swap;
+  src: url("../fonts/roboto-flex-latin-var.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("../fonts/jetbrains-mono-latin-var.woff2") format("woff2");
+}

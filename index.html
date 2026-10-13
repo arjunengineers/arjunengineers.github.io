@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types 'none'">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Arjun Patel | Industrial Engineering Portfolio</title>
     <meta name="description" content="Explore Arjun Patel’s work in human factors, optimization, manufacturing quality, and mechanical analysis, from Clemson University and beyond.">
     <meta name="color-scheme" content="light dark">
-    <meta name="theme-color" content="#F0EEE6">
+    <meta name="theme-color" content="#F7F2E8" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#101820" media="(prefers-color-scheme: dark)">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Arjun Patel">
     <meta property="og:title" content="Arjun Patel | Industrial Engineering Portfolio">
@@ -16,7 +17,10 @@
     <meta name="twitter:card" content="summary">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="assets/css/tokens.css">
+    <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="preload" href="assets/fonts/fraunces-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/roboto-flex-latin-var.woff2" as="font" type="font/woff2" crossorigin>
     <script src="assets/js/theme.js"></script>
     <script src="assets/js/site.js" defer></script>
     <script type="application/ld+json">
@@ -52,31 +56,47 @@
     <header class="site-header">
       <div class="wrap site-header__inner">
         <a class="site-logo" href="./" aria-current="page">
-          <svg class="site-logo__mark" viewBox="0 0 22 22" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="9"/><circle cx="11" cy="11" r="4.5"/><circle class="site-logo__dot" cx="2" cy="11" r="2"/></svg>
+          <svg class="site-logo__mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10.5"/><circle cx="12" cy="12" r="6"/><circle class="site-logo__dot" cx="12" cy="12" r="2.5"/></svg>
           Arjun Patel
         </a>
-        <nav class="site-nav" aria-label="Primary">
-          <ul role="list">
-            <li><a href="work/">Work</a></li>
-            <li><a href="about/">About</a></li>
-            <li><a href="experience/">Experience</a></li>
-            <li><a href="education/">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false" hidden><span class="theme-toggle__icon" aria-hidden="true"></span>Dark mode</button></li>
-          </ul>
-        </nav>
+        <button type="button" class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="site-menu" hidden><span class="menu-toggle__icon" aria-hidden="true"></span>Menu</button>
+        <div class="site-menu" id="site-menu">
+          <nav class="site-nav" aria-label="Primary">
+            <ul role="list">
+              <li><a href="work/">Work</a></li>
+              <li><a href="about/">About</a></li>
+              <li><a href="experience/">Experience</a></li>
+              <li><a href="education/">Education</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+          <fieldset class="theme-switch" data-theme-switch hidden>
+            <legend class="visually-hidden">Color theme</legend>
+            <label class="theme-switch__option">
+              <input type="radio" name="theme" value="system" autocomplete="off" checked>
+              <span class="theme-switch__face"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg><span class="theme-switch__text">System</span></span>
+            </label>
+            <label class="theme-switch__option">
+              <input type="radio" name="theme" value="light" autocomplete="off">
+              <span class="theme-switch__face"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5V5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg><span class="theme-switch__text">Light</span></span>
+            </label>
+            <label class="theme-switch__option">
+              <input type="radio" name="theme" value="dark" autocomplete="off">
+              <span class="theme-switch__face"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg><span class="theme-switch__text">Dark</span></span>
+            </label>
+          </fieldset>
+        </div>
       </div>
     </header>
 
     <main id="main" tabindex="-1">
       <section class="hero" aria-labelledby="hero-title">
-        <svg class="hero__rings" viewBox="0 0 704 704" aria-hidden="true" focusable="false"><circle cx="352" cy="352" r="110"/><circle cx="352" cy="352" r="190"/><circle cx="352" cy="352" r="270"/><circle cx="352" cy="352" r="351"/><circle class="hero__rings-dot" cx="162" cy="352" r="5"/></svg>
         <div class="wrap hero__inner">
           <div class="hero__main">
-            <p class="label hero__eyebrow">Industrial engineering · Human factors · Optimization</p>
+            <p class="label hero__eyebrow"><span>Industrial engineering ·</span> <span>Human factors ·</span> <span>Optimization</span></p>
             <h1 class="hero__title" id="hero-title">
               <span class="hero__name">Arjun Patel</span><span class="visually-hidden">: </span>
-              <span class="hero__headline">Engineering systems around people, performance, and evidence.</span>
+              <span class="hero__headline">Engineering systems around <em>people</em>, performance, and evidence.</span>
             </h1>
             <p class="hero__status"><span class="status-dot" aria-hidden="true"></span><span>M.S. Industrial Engineering, Clemson University · Expected May 2027</span></p>
             <div class="hero__actions">
@@ -85,40 +105,77 @@
             </div>
           </div>
           <div class="hero__aside">
-            <p class="hero__intro">I’m Arjun Patel, an Industrial Engineering master’s student at Clemson University with a background in Mechanical Engineering. I work across human-centered design, optimization, quality improvement, and mechanical simulation to make complex systems easier to understand and improve.</p>
+            <svg class="rings rings--draw" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+              <circle class="rings__ring" cx="200" cy="200" r="50" pathLength="1"/>
+              <circle class="rings__ring" cx="200" cy="200" r="98" pathLength="1"/>
+              <circle class="rings__ring" cx="200" cy="200" r="146" pathLength="1"/>
+              <circle class="rings__ring" cx="200" cy="200" r="194" pathLength="1"/>
+              <circle class="rings__person" cx="200" cy="200" r="7"/>
+              <circle class="rings__dot rings__dot--hf" cx="153" cy="182.9" r="6"/>
+              <circle class="rings__dot rings__dot--op" cx="151" cy="284.9" r="6"/>
+              <circle class="rings__dot rings__dot--md" cx="150.1" cy="62.8" r="6"/>
+            </svg>
+            <p class="hero__intro">An Industrial Engineering master’s student at Clemson University with a background in Mechanical Engineering. I work across human-centered design, optimization, quality improvement, and mechanical simulation to make complex systems easier to understand and improve.</p>
             <dl class="spec">
               <div class="spec__row"><dt>Background</dt><dd>Bachelor’s in Mechanical Engineering, Charusat University</dd></div>
               <div class="spec__row"><dt>Community</dt><dd>HFES student chapter · UXTG</dd></div>
             </dl>
           </div>
         </div>
+        <div class="wrap hero__proof">
+          <ul class="proof" role="list">
+            <li>
+              <a class="proof__item" href="work/hfes-uxtg-portal/">
+                <span class="metric">14.18<span class="metric__unit"> s</span></span><span class="visually-hidden">: </span>
+                <span class="proof__caption">Mean event-registration task time in prototype testing</span><span class="visually-hidden">. Source: </span>
+                <span class="proof__source mono">HFES UXTG Information Portal <span class="arrow" aria-hidden="true">→</span></span>
+              </a>
+            </li>
+            <li>
+              <a class="proof__item" href="work/asheville-park-access/">
+                <span class="metric">52.73<span class="metric__unit">%</span></span><span class="visually-hidden">: </span>
+                <span class="proof__caption">Modeled half-mile coverage, ten-new-park scenario</span><span class="visually-hidden">. Source: </span>
+                <span class="proof__source mono">Asheville Urban Park Access <span class="arrow" aria-hidden="true">→</span></span>
+              </a>
+            </li>
+            <li>
+              <a class="proof__item" href="work/">
+                <span class="metric">6</span><span class="visually-hidden">: </span>
+                <span class="proof__caption">Case studies across four disciplines</span><span class="visually-hidden">. Source: </span>
+                <span class="proof__source mono">Selected work <span class="arrow" aria-hidden="true">→</span></span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <section class="section" aria-labelledby="work-title">
         <div class="wrap">
           <div class="section__head">
-            <h2 class="label section__label" id="work-title"><span class="label__num" aria-hidden="true">01 — </span>Selected work</h2>
+            <h2 class="label section__label" id="work-title">Selected work</h2>
             <p class="section__lead">From an accessible information portal to park-location models and rotor simulations, these projects show how I frame problems, evaluate tradeoffs, and connect technical analysis to practical decisions.</p>
           </div>
-          <ol class="featured" role="list">
+          <article class="card card--lead work-lead" data-discipline="human-factors">
+            <div class="plate plate--light shape-lead vt-hfes">
+              <img src="assets/img/hfes-join-after.webp" width="785" height="631" alt="Revised About UXTG screen with a highlighted Join UXTG membership card above the mission statement." loading="lazy" decoding="async">
+            </div>
+            <div class="card__body">
+              <p class="label tag"><span class="tag__dot" aria-hidden="true"></span>Human factors and accessibility</p>
+              <h3 class="card__title"><a href="work/hfes-uxtg-portal/">HFES UXTG Information Portal</a></h3>
+              <p class="card__copy">Accessibility and quality assurance for an event-first information portal, informed by stakeholder needs and a four-participant usability study.</p>
+              <div class="metric-block">
+                <p class="label">Evidence</p>
+                <p class="metric">14.18<span class="metric__unit"> s</span></p>
+                <p class="metric-block__caption">Mean event-registration task time in prototype testing</p>
+              </div>
+              <p class="card__action" aria-hidden="true">Read case study <span class="arrow" aria-hidden="true">→</span></p>
+            </div>
+          </article>
+          <ul class="work-pair" role="list">
             <li>
-              <article class="card card--feature">
-                <div class="plate plate--light">
-                  <img src="assets/img/hfes-join-after.webp" width="785" height="631" alt="Revised About UXTG screen with a highlighted Join UXTG membership card above the mission statement." loading="lazy" decoding="async">
-                </div>
-                <div class="card__body">
-                  <p class="label"><span class="label__num" aria-hidden="true">01 — </span>Human factors and accessibility</p>
-                  <h3 class="card__title"><a href="work/hfes-uxtg-portal/">HFES UXTG Information Portal</a></h3>
-                  <p class="card__copy">Accessibility and quality assurance for an event-first information portal, informed by stakeholder needs and a four-participant usability study.</p>
-                  <p class="evidence"><span class="evidence__tag">Evidence</span> <span>14.18-second mean event-registration task time in prototype testing</span></p>
-                  <p class="card__action" aria-hidden="true">Read case study <span class="arrow" aria-hidden="true">→</span></p>
-                </div>
-              </article>
-            </li>
-            <li>
-              <article class="card card--feature">
+              <article class="card" data-discipline="optimization">
                 <div class="plate plate--chart" aria-hidden="true">
-                  <p class="plate__tag">Model 4 · Half-mile coverage</p>
+                  <p class="plate__tag mono">Model 4 · Half-mile coverage</p>
                   <svg class="plot" viewBox="0 0 300 230" focusable="false">
                     <line class="plot__grid" x1="40" x2="288" y1="24" y2="24"/>
                     <text class="plot__tick" x="34" y="28" text-anchor="end">100</text>
@@ -131,61 +188,72 @@
                     <text class="plot__tick" x="246" y="207" text-anchor="middle">15</text>
                     <text class="plot__axis-title" x="164" y="226" text-anchor="middle">New parks in the modeled scenario</text>
                     <path class="bar" d="M70,188 V117.27 Q70,113.27 74,113.27 H90 Q94,113.27 94,117.27 V188 Z"><title>5 new parks: 45.57% of the modeled population within 0.5 miles</title></path>
-                    <text class="plot__value" x="82" y="105.27" text-anchor="middle">45.57%</text>
+                    <text class="plot__value plot__value--w511" x="82" y="105.27" text-anchor="middle">45.57%</text>
                     <path class="bar bar--accent" d="M152,188 V105.52 Q152,101.52 156,101.52 H172 Q176,101.52 176,105.52 V188 Z"><title>10 new parks: 52.73% of the modeled population within 0.5 miles</title></path>
-                    <text class="plot__value" x="164" y="93.52" text-anchor="middle">52.73%</text>
+                    <text class="plot__value plot__value--w655" x="164" y="93.52" text-anchor="middle">52.73%</text>
                     <path class="bar" d="M234,188 V98.22 Q234,94.22 238,94.22 H254 Q258,94.22 258,98.22 V188 Z"><title>15 new parks: 57.18% of the modeled population within 0.5 miles</title></path>
-                    <text class="plot__value" x="246" y="86.22" text-anchor="middle">57.18%</text>
+                    <text class="plot__value plot__value--w744" x="246" y="86.22" text-anchor="middle">57.18%</text>
                   </svg>
                 </div>
                 <div class="card__body">
-                  <p class="label"><span class="label__num" aria-hidden="true">02 — </span>Operations research and decision support</p>
+                  <p class="label tag"><span class="tag__dot" aria-hidden="true"></span>Operations research and decision support</p>
                   <h3 class="card__title"><a href="work/asheville-park-access/">Asheville Urban Park Access Optimization</a></h3>
                   <p class="card__copy">Five facility-location models exploring how efficiency and equity objectives change proposed park investments for a population of 88,860.</p>
-                  <p class="evidence"><span class="evidence__tag">Evidence</span> <span>52.73% modeled half-mile coverage in the ten-new-park coverage scenario</span></p>
+                  <div class="metric-block">
+                    <p class="label">Evidence</p>
+                    <p class="metric">52.73<span class="metric__unit">%</span></p>
+                    <p class="metric-block__caption">Modeled half-mile coverage in the ten-new-park coverage scenario</p>
+                  </div>
                   <p class="card__action" aria-hidden="true">Explore the models <span class="arrow" aria-hidden="true">→</span></p>
                 </div>
               </article>
             </li>
             <li>
-              <article class="card card--feature">
-                <div class="plate plate--cad">
+              <article class="card" data-discipline="mechanical-design">
+                <div class="plate plate--cad vt-bell">
                   <img src="assets/img/bell407-rotor-assembly.webp" width="556" height="412" alt="CAD model of the Bell-407 main rotor assembly: four blades on a central hub above the swashplate and rotor mast." loading="lazy" decoding="async">
                 </div>
                 <div class="card__body">
-                  <p class="label"><span class="label__num" aria-hidden="true">03 — </span>Mechanical design and simulation</p>
+                  <p class="label tag"><span class="tag__dot" aria-hidden="true"></span>Mechanical design and simulation</p>
                   <h3 class="card__title"><a href="work/bell407-rotor-analysis/">Bell-407 Helicopter Rotor and Blade System</a></h3>
                   <p class="card__copy">A comparative CFD study of two blade profiles, supported by CAD assembly work and static structural analysis of rotor components.</p>
-                  <p class="evidence"><span class="evidence__tag">Evidence</span> <span>NACA-0012 and SC-1095 compared in an academic simulation study</span></p>
+                  <div class="metric-block">
+                    <p class="label">Evidence</p>
+                    <p class="metric metric--text">NACA-0012 vs SC-1095</p>
+                    <p class="metric-block__caption">Compared in an academic simulation study</p>
+                  </div>
                   <p class="card__action" aria-hidden="true">View the analysis <span class="arrow" aria-hidden="true">→</span></p>
                 </div>
               </article>
             </li>
-          </ol>
+          </ul>
           <p class="section__more"><a class="arrow-link" href="work/">All work <span class="arrow" aria-hidden="true">→</span></a></p>
         </div>
       </section>
 
-      <section class="section band--oat" aria-labelledby="capabilities-title">
+      <section class="section section--band" aria-labelledby="how-title">
         <div class="wrap">
           <div class="section__head">
-            <h2 class="label section__label" id="capabilities-title"><span class="label__num" aria-hidden="true">02 — </span>Capabilities</h2>
+            <h2 class="label section__label" id="how-title">How I work</h2>
           </div>
-          <ul class="capabilities" role="list">
-            <li class="capability">
-              <p class="label" aria-hidden="true">01</p>
+          <ul class="panels" role="list">
+            <li class="panel" data-discipline="human-factors">
+              <svg class="panel__glyph" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><circle class="glyph-stroke" cx="20" cy="20" r="15"/><circle class="glyph-fill" cx="20" cy="20" r="5"/></svg>
               <h3>Human-centered systems</h3>
               <p>Understand user needs, evaluate accessibility, and test whether people can complete important tasks.</p>
+              <p class="panel__links"><a class="arrow-link" href="work/?tag=human-factors">Related work<span class="visually-hidden"> in human factors</span> <span class="arrow" aria-hidden="true">→</span></a></p>
             </li>
-            <li class="capability">
-              <p class="label" aria-hidden="true">02</p>
+            <li class="panel" data-discipline="optimization">
+              <svg class="panel__glyph" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path class="glyph-stroke" d="M9 30 20 9l11 21z"/><circle class="glyph-fill" cx="9" cy="30" r="4.5"/><circle class="glyph-fill" cx="20" cy="9" r="4.5"/><circle class="glyph-fill" cx="31" cy="30" r="4.5"/></svg>
               <h3>Optimization and operations</h3>
               <p>Translate constraints into models that support decisions about access, routing, production, and resource allocation.</p>
+              <p class="panel__links"><a class="arrow-link" href="work/?tag=optimization">Related work<span class="visually-hidden"> in optimization</span> <span class="arrow" aria-hidden="true">→</span></a></p>
             </li>
-            <li class="capability">
-              <p class="label" aria-hidden="true">03</p>
+            <li class="panel" data-discipline="mechanical-design">
+              <svg class="panel__glyph" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><rect class="glyph-stroke" x="6" y="6" width="28" height="28" rx="2"/><path class="glyph-stroke" d="M20 12v16M12 20h16"/></svg>
               <h3>Mechanical analysis and quality</h3>
               <p>Use simulation, inspection, and process analysis to investigate performance and improve engineering workflows.</p>
+              <p class="panel__links"><span class="panel__links-label">Related work</span> <a class="arrow-link" href="work/?tag=mechanical-design">Mechanical design <span class="arrow" aria-hidden="true">→</span></a> <a class="arrow-link" href="work/?tag=quality-improvement">Quality improvement <span class="arrow" aria-hidden="true">→</span></a></p>
             </li>
           </ul>
         </div>
@@ -193,7 +261,7 @@
 
       <section class="section" aria-labelledby="about-title">
         <div class="wrap split">
-          <h2 class="label" id="about-title"><span class="label__num" aria-hidden="true">03 — </span>About</h2>
+          <h2 class="label" id="about-title">About</h2>
           <div class="split__body">
             <h3>A mechanical foundation and a systems perspective</h3>
             <p>My path into industrial engineering began with mechanical systems: understanding how components interact, how manufacturing decisions affect quality, and how analysis can support better design. Through production and quality assurance internships, I worked with process coordination, inspection, and manufacturing improvement.</p>
@@ -202,26 +270,34 @@
         </div>
       </section>
 
-      <section class="section band--oat" aria-labelledby="path-title">
+      <section class="section section--band" aria-labelledby="path-title">
         <div class="wrap split">
-          <h2 class="label" id="path-title"><span class="label__num" aria-hidden="true">04 — </span>Experience and education</h2>
+          <h2 class="label" id="path-title">Experience and education</h2>
           <div class="split__body">
+            <ul class="legend" role="list" aria-label="Key">
+              <li><span class="marker marker--role" aria-hidden="true"></span>Role</li>
+              <li><span class="marker marker--education" aria-hidden="true"></span>Education</li>
+            </ul>
             <ol class="timeline" role="list">
               <li>
-                <span class="timeline__when">August 2025–May 2027 expected</span>
-                <span><span class="timeline__what">M.S. Industrial Engineering</span><br><span class="timeline__where">Clemson University · Clemson, United States</span></span>
+                <span class="marker marker--education" aria-hidden="true"></span>
+                <span class="timeline__when mono">August 2025–May 2027 expected</span>
+                <span><span class="visually-hidden">Education: </span><span class="timeline__what">M.S. Industrial Engineering</span><br><span class="timeline__where">Clemson University · Clemson, United States</span></span>
               </li>
               <li>
-                <span class="timeline__when">April 2024–June 2024</span>
-                <span><span class="timeline__what">Quality Assurance Intern</span><br><span class="timeline__where">BC Instruments India Pvt. Ltd. · Anand, India</span></span>
+                <span class="marker marker--role" aria-hidden="true"></span>
+                <span class="timeline__when mono">April 2024–June 2024</span>
+                <span><span class="visually-hidden">Role: </span><span class="timeline__what">Quality Assurance Intern</span><br><span class="timeline__where">BC Instruments India Pvt. Ltd. · Anand, India</span></span>
               </li>
               <li>
-                <span class="timeline__when">April 2023–June 2023</span>
-                <span><span class="timeline__what">Production Engineer Intern</span><br><span class="timeline__where">Tripcon Engineering Pvt. Ltd. · Anand, India</span></span>
+                <span class="marker marker--role" aria-hidden="true"></span>
+                <span class="timeline__when mono">April 2023–June 2023</span>
+                <span><span class="visually-hidden">Role: </span><span class="timeline__what">Production Engineer Intern</span><br><span class="timeline__where">Tripcon Engineering Pvt. Ltd. · Anand, India</span></span>
               </li>
               <li>
-                <span class="timeline__when">2021–2025</span>
-                <span><span class="timeline__what">Bachelor’s in Mechanical Engineering</span><br><span class="timeline__where">Charusat University · India</span></span>
+                <span class="marker marker--education" aria-hidden="true"></span>
+                <span class="timeline__when mono">2021–2025</span>
+                <span><span class="visually-hidden">Education: </span><span class="timeline__what">Bachelor’s in Mechanical Engineering</span><br><span class="timeline__where">Charusat University · India</span></span>
               </li>
             </ol>
             <p class="next-links">
@@ -235,23 +311,23 @@
 
     <footer class="site-footer">
       <div class="band band--ink">
-      <section class="wrap contact" id="contact" aria-labelledby="contact-title">
-        <div>
-          <p class="label">Contact</p>
-          <h2 id="contact-title">Let’s discuss a systems problem worth solving.</h2>
-          <p class="contact__lead">If your work connects people, operations, or engineering analysis, I’d welcome a conversation about the problem and how I could contribute.</p>
-        </div>
-        <div class="contact__actions">
-          <p class="contact__address">arjunb.patel@outlook.com</p>
-          <ul class="contact__links" role="list">
-            <li><a class="button button--primary" href="mailto:arjunb.patel@outlook.com?subject=Hello%20from%20your%20portfolio">Email Arjun</a></li>
-            <li><a class="button button--secondary" href="https://www.linkedin.com/in/linkwitharjun" rel="noopener noreferrer">Connect on LinkedIn<span class="external-icon" aria-hidden="true">↗</span><span class="visually-hidden"> (opens external site)</span></a></li>
-            <li><button type="button" class="button button--secondary" data-copy="arjunb.patel@outlook.com" hidden>Copy email address</button></li>
-          </ul>
-          <p class="contact__status" role="status" data-copy-status></p>
-          <p class="contact__hint">Recruiters: please include the role and timeline.</p>
-        </div>
-      </section>
+        <section class="wrap contact" id="contact" aria-labelledby="contact-title">
+          <div>
+            <p class="label">Contact</p>
+            <h2 id="contact-title">Let’s discuss a systems problem worth solving.</h2>
+            <p class="contact__lead">If your work connects people, operations, or engineering analysis, I’d welcome a conversation about the problem and how I could contribute.</p>
+          </div>
+          <div class="contact__actions">
+            <p class="contact__address">arjunb.patel@outlook.com</p>
+            <ul class="contact__links" role="list">
+              <li><a class="button button--primary" href="mailto:arjunb.patel@outlook.com?subject=Hello%20from%20your%20portfolio">Email Arjun</a></li>
+              <li><a class="button button--secondary" href="https://www.linkedin.com/in/linkwitharjun" rel="noopener noreferrer">Connect on LinkedIn<span class="external-icon" aria-hidden="true">↗</span><span class="visually-hidden"> (opens external site)</span></a></li>
+              <li><button type="button" class="button button--secondary" data-copy="arjunb.patel@outlook.com" hidden>Copy email address</button></li>
+            </ul>
+            <p class="contact__status" role="status" data-copy-status></p>
+            <p class="contact__hint">Recruiters: please include the role and timeline.</p>
+          </div>
+        </section>
       </div>
       <div class="wrap site-footer__inner">
         <p class="site-footer__id">Arjun Patel · Industrial Engineering Portfolio</p>
@@ -265,6 +341,7 @@
           </ul>
         </nav>
         <p class="site-footer__note">No cookies, no analytics, no tracking. © 2026 Arjun Patel.</p>
+        <p class="site-footer__credit">Type: Fraunces, Roboto Flex, JetBrains Mono (SIL OFL).</p>
       </div>
     </footer>
   </body>

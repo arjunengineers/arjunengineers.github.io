@@ -1,99 +1,129 @@
-/*
-  Design tokens. Warm, light "paper" theme by default; a warm dark theme is opt-in through the
-  header toggle (data-theme="dark" on <html>). Every text colour passes WCAG AA (4.5:1) on
-  --color-bg, --color-surface and --color-surface-2; control borders and chart marks pass 3:1.
-*/
+/* Design tokens — "warm field, cool signal". All text pairs verified WCAG 2.2 AA.
+   Do not change a colour without re-checking contrast (README, "Design tokens"). */
+@property --grad { syntax: "<number>"; inherits: true; initial-value: 0; }
+
 :root {
   color-scheme: light;
 
-  /* Colour — light (default) */
-  --color-bg: #FAF9F5;              /* ivory page */
-  --color-surface: #FFFFFF;         /* cards, plates, tables */
-  --color-surface-2: #F0EEE6;       /* oat bands and panels */
-  --color-text: #141413;
-  --color-text-muted: #5E5D59;
-  --color-text-subtle: #6B6A64;
-  --color-accent: #A8482A;          /* clay: links, name, highlights */
-  --color-accent-strong: #863820;
-  --color-signal: #55662B;          /* olive: evidence tags, status dot */
-  --color-border: #E3E0D5;          /* decorative only */
-  --color-border-strong: #87867F;   /* identifies controls: >= 3:1 */
+  /* Core — light */
+  --color-bg: #F7F2E8;              /* sandstone paper */
+  --color-surface: #FFFDF8;         /* cards, plates, tables */
+  --color-surface-2: #EDE5D6;       /* bands, panels, TOC */
+  --color-text: #18212E;            /* sea-ink */
+  --color-text-muted: #4B5363;
+  --color-text-subtle: #555C6B;
+  --color-link: #13607E;            /* sea */
+  --color-link-hover: #14465D;
+  --color-accent: #A6492A;          /* terracotta: name, emphasized word, active nav underline */
+  --color-accent-strong: #86391F;
+  --color-butter: #F5E3B3;          /* highlight fill behind dark text only */
+  --color-border: #E2D9C8;          /* decorative hairlines */
+  --color-border-strong: #857F76;   /* control borders, >= 3:1 */
   --color-focus: #1A56C4;
-  --color-button-bg: #141413;
-  --color-button-text: #FAF9F5;
-  --color-button-hover: #3D3D3A;
-  --color-ink: #141413;             /* dark band behind the contact block */
-
-  /* Tinted panels (fixed in both themes; always carry dark text) */
-  --tint-sage: #CFDCCB;
-  --tint-lavender: #D6D4E6;
-  --tint-blush: #EDD5CC;
-  --tint-text: #141413;
-  --tint-text-muted: #3D3D3A;
-
-  /* Charts — marks are >= 3:1 on --color-surface; text never wears these */
-  --chart-mark: #8F8D85;
-  --chart-accent: #C6613F;
+  --color-ink-band: #132230;        /* contact band */
+  --color-button-bg: #18212E;
+  --color-button-text: #F7F2E8;
+  --color-button-hover: #14465D;
+  --color-signal: #346440;          /* status dot (moss) */
+  --chart-mark: #807B75;            /* neutral chart marks: on surface/bg only */
+  --chart-accent: #BA5B39;
   --chart-grid: var(--color-border);
-
-  /* Plates behind source figures: fixed and opaque in both themes */
-  --plate-light: #FFFFFF;
+  --plate-light: #FFFFFF;           /* fixed plates behind source figures */
   --plate-cad: #E8E9ED;
+  --wash-cool: rgb(213 236 248 / 0.85);   /* atmosphere: sea tint, fades to the page */
+  --wash-warm: rgb(245 227 179 / 0.55);   /* atmosphere: butter tint */
 
-  /* Typography */
-  --font-sans: "Inter Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-serif: ui-serif, "New York", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  --font-mono: "JetBrains Mono Variable", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
-  --step--1: 0.833rem;
-  --step-0: clamp(1rem, 0.97rem + 0.15vw, 1.0625rem);
-  --step-1: 1.25rem;
-  --step-2: 1.563rem;
-  --step-3: 1.953rem;
-  --step-4: clamp(2.441rem, 2rem + 2vw, 3.052rem);
-  --step-5: clamp(2.25rem, 1.5rem + 3.6vw, 4.25rem);   /* home headline only */
+  /* Disciplines — accent / tint / mark (equal lightness, so they read as one family) */
+  --hf-accent: #13607E; --hf-tint: #D5ECF8; --hf-mark: #3484A7;   /* sea   · human-factors */
+  --op-accent: #346440; --op-tint: #DBEEDE; --op-mark: #52895E;   /* moss  · optimization */
+  --md-accent: #535185; --md-tint: #E5E6FC; --md-mark: #7572B0;   /* iris  · mechanical-design */
+  --qi-accent: #794D0B; --qi-tint: #F5E5D3; --qi-mark: #A16E2B;   /* ochre · quality-improvement */
+  --accent-local: var(--color-accent);
+  --tint-local: var(--color-surface-2);
+  --mark-local: var(--chart-accent);
+
+  /* Type */
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-text: "Roboto Flex", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --step--1: clamp(0.833rem, 0.81rem + 0.1vw, 0.889rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-1: clamp(1.2rem, 1.12rem + 0.4vw, 1.5rem);
+  --step-2: clamp(1.44rem, 1.3rem + 0.7vw, 2rem);
+  --step-3: clamp(1.728rem, 1.5rem + 1.15vw, 2.666rem);
+  --step-4: clamp(2.074rem, 1.7rem + 1.9vw, 3.554rem);
+  --step-5: clamp(2.488rem, 1.9rem + 3vw, 4.736rem);
+  --step-6: clamp(2.75rem, 1.8rem + 4.8vw, 6rem);    /* home hero headline only */
   --leading-body: 1.6;
-  --leading-heading: 1.15;
   --measure: 68ch;
+  --grad-base: 0;                   /* Roboto Flex grade; dark themes lower it */
 
-  /* Spacing (4px base) */
+  /* Space, shape, elevation, motion, layout */
   --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
   --space-6: 1.5rem;  --space-8: 2rem;   --space-12: 3rem;   --space-16: 4rem;
-  --space-24: 6rem;
-
-  /* Shape, elevation, motion, layout */
-  --radius-sm: 8px; --radius-md: 12px; --radius-lg: 20px; --radius-full: 999px;
-  --shadow-1: 0 1px 2px rgb(20 20 19 / 0.05);
-  --shadow-2: 0 12px 28px -12px rgb(20 20 19 / 0.22);
-  --dur-fast: 120ms; --dur-base: 200ms; --dur-slow: 480ms;
-  --ease-out: cubic-bezier(0.2, 0, 0, 1);
-  --content-max: 1200px;
-  --gutter: clamp(16px, 4vw, 32px);
+  --space-24: 6rem;   --space-32: 8rem;
+  --radius-xs: 4px; --radius-sm: 8px; --radius-md: 14px; --radius-lg: 22px; --radius-xl: 36px; --radius-full: 999px;
+  --shadow-1: 0 1px 2px rgb(24 33 46 / 0.06);
+  --shadow-2: 0 16px 32px -16px rgb(24 33 46 / 0.24);
+  --dur-fast: 150ms; --dur-base: 250ms; --dur-slow: 450ms; --dur-signature: 900ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
+  --ease-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
+  --content-max: 1240px;
+  --gutter: clamp(16px, 4vw, 40px);
   --target-min: 44px;
 }
 
+/* Dark tokens ("night sea") — applied when the OS is dark (unless the visitor chose Light) or when
+   the visitor chose Dark. The two blocks must stay identical. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --color-bg: #101820; --color-surface: #1C2936; --color-surface-2: #172330;
+    --color-text: #F2ECE1; --color-text-muted: #BCC3CC; --color-text-subtle: #A3ABB6;
+    --color-link: #86C5DC; --color-link-hover: #B3DCEA;
+    --color-accent: #F0A584; --color-accent-strong: #F7C6AF; --color-butter: #F2D48A;
+    --color-border: #2B3947; --color-border-strong: #7F8A96; --color-focus: #FFD166;
+    --color-ink-band: #0B121A;
+    --color-button-bg: #F2ECE1; --color-button-text: #101820; --color-button-hover: #FFFFFF;
+    --color-signal: #9FCBA7;
+    --chart-mark: #8F98A3; --chart-accent: #E08A6C;
+    --wash-cool: rgb(20 50 63 / 0.9); --wash-warm: rgb(242 212 138 / 0.05);
+    --hf-accent: #8DC7E4; --hf-tint: #14323F; --hf-mark: #8DC7E4;
+    --op-accent: #9FCBA7; --op-tint: #1F3423; --op-mark: #9FCBA7;
+    --md-accent: #B8B8EB; --md-tint: #2B2B42; --md-mark: #B8B8EB;
+    --qi-accent: #E0B584; --qi-tint: #3D2911; --qi-mark: #E0B584;
+    --shadow-1: none; --shadow-2: 0 16px 32px -16px rgb(0 0 0 / 0.6);
+    --grad-base: -25;
+  }
+}
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --color-bg: #1F1E1D;
-  --color-surface: #2A2927;
-  --color-surface-2: #33322F;
-  --color-text: #FAF9F5;
-  --color-text-muted: #C2C0B6;
-  --color-text-subtle: #A8A69D;
-  --color-accent: #EDA58E;
-  --color-accent-strong: #F6C7B7;
-  --color-signal: #BFCF86;
-  --color-border: #3B3A37;
-  --color-border-strong: #8A8880;
-  --color-focus: #FFD166;
-  --color-button-bg: #FAF9F5;
-  --color-button-text: #141413;
-  --color-button-hover: #FFFFFF;
-  --chart-mark: #8A8880;
-  --chart-accent: #E08A6C;
-  --shadow-1: none;
-  --shadow-2: 0 12px 28px -12px rgb(0 0 0 / 0.6);
+  --color-bg: #101820; --color-surface: #1C2936; --color-surface-2: #172330;
+  --color-text: #F2ECE1; --color-text-muted: #BCC3CC; --color-text-subtle: #A3ABB6;
+  --color-link: #86C5DC; --color-link-hover: #B3DCEA;
+  --color-accent: #F0A584; --color-accent-strong: #F7C6AF; --color-butter: #F2D48A;
+  --color-border: #2B3947; --color-border-strong: #7F8A96; --color-focus: #FFD166;
+  --color-ink-band: #0B121A;
+  --color-button-bg: #F2ECE1; --color-button-text: #101820; --color-button-hover: #FFFFFF;
+  --color-signal: #9FCBA7;
+  --chart-mark: #8F98A3; --chart-accent: #E08A6C;
+  --wash-cool: rgb(20 50 63 / 0.9); --wash-warm: rgb(242 212 138 / 0.05);
+  --hf-accent: #8DC7E4; --hf-tint: #14323F; --hf-mark: #8DC7E4;
+  --op-accent: #9FCBA7; --op-tint: #1F3423; --op-mark: #9FCBA7;
+  --md-accent: #B8B8EB; --md-tint: #2B2B42; --md-mark: #B8B8EB;
+  --qi-accent: #E0B584; --qi-tint: #3D2911; --qi-mark: #E0B584;
+  --shadow-1: none; --shadow-2: 0 16px 32px -16px rgb(0 0 0 / 0.6);
+  --grad-base: -25;
 }
 
+/* Per-discipline personalization. Case studies set data-discipline on <body>; cards, chips and
+   panels set it on themselves. */
+[data-discipline="human-factors"]       { --accent-local: var(--hf-accent); --tint-local: var(--hf-tint); --mark-local: var(--hf-mark); }
+[data-discipline="optimization"]        { --accent-local: var(--op-accent); --tint-local: var(--op-tint); --mark-local: var(--op-mark); }
+[data-discipline="mechanical-design"]   { --accent-local: var(--md-accent); --tint-local: var(--md-tint); --mark-local: var(--md-mark); }
+[data-discipline="quality-improvement"] { --accent-local: var(--qi-accent); --tint-local: var(--qi-tint); --mark-local: var(--qi-mark); }
+
 @media (prefers-reduced-motion: reduce) {
-  :root { --dur-fast: 0.01ms; --dur-base: 0.01ms; --dur-slow: 0.01ms; }
+  :root { --dur-fast: 0.01ms; --dur-base: 0.01ms; --dur-slow: 0.01ms; --dur-signature: 0.01ms; }
 }

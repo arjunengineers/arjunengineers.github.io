@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types 'none'">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Bell-407 Helicopter Rotor and Blade System | Arjun Patel</title>
     <meta name="description" content="A comparative CFD study of two blade profiles, supported by CAD assembly work and static structural analysis of rotor components.">
     <meta name="color-scheme" content="light dark">
-    <meta name="theme-color" content="#F0EEE6">
+    <meta name="theme-color" content="#F7F2E8" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#101820" media="(prefers-color-scheme: dark)">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Arjun Patel">
     <meta property="og:title" content="Bell-407 Helicopter Rotor and Blade System | Arjun Patel">
@@ -16,7 +17,10 @@
     <meta name="twitter:card" content="summary">
     <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../../assets/css/tokens.css">
+    <link rel="stylesheet" href="../../assets/css/fonts.css">
     <link rel="stylesheet" href="../../assets/css/site.css">
+    <link rel="preload" href="../../assets/fonts/fraunces-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../assets/fonts/roboto-flex-latin-var.woff2" as="font" type="font/woff2" crossorigin>
     <script src="../../assets/js/theme.js"></script>
     <script src="../../assets/js/site.js" defer></script>
     <script type="application/ld+json">
@@ -33,25 +37,42 @@
     }
     </script>
   </head>
-  <body>
+  <body data-discipline="mechanical-design">
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
       <div class="wrap site-header__inner">
         <a class="site-logo" href="../../">
-          <svg class="site-logo__mark" viewBox="0 0 22 22" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="9"/><circle cx="11" cy="11" r="4.5"/><circle class="site-logo__dot" cx="2" cy="11" r="2"/></svg>
+          <svg class="site-logo__mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10.5"/><circle cx="12" cy="12" r="6"/><circle class="site-logo__dot" cx="12" cy="12" r="2.5"/></svg>
           Arjun Patel
         </a>
-        <nav class="site-nav" aria-label="Primary">
-          <ul role="list">
-            <li><a href="../../work/" class="is-active">Work</a></li>
-            <li><a href="../../about/">About</a></li>
-            <li><a href="../../experience/">Experience</a></li>
-            <li><a href="../../education/">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false" hidden><span class="theme-toggle__icon" aria-hidden="true"></span>Dark mode</button></li>
-          </ul>
-        </nav>
+        <button type="button" class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="site-menu" hidden><span class="menu-toggle__icon" aria-hidden="true"></span>Menu</button>
+        <div class="site-menu" id="site-menu">
+          <nav class="site-nav" aria-label="Primary">
+            <ul role="list">
+              <li><a href="../../work/" class="is-active">Work</a></li>
+              <li><a href="../../about/">About</a></li>
+              <li><a href="../../experience/">Experience</a></li>
+              <li><a href="../../education/">Education</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+          <fieldset class="theme-switch" data-theme-switch hidden>
+            <legend class="visually-hidden">Color theme</legend>
+            <label class="theme-switch__option">
+              <input type="radio" name="theme" value="system" autocomplete="off" checked>
+              <span class="theme-switch__face"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg><span class="theme-switch__text">System</span></span>
+            </label>
+            <label class="theme-switch__option">
+              <input type="radio" name="theme" value="light" autocomplete="off">
+              <span class="theme-switch__face"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5V5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg><span class="theme-switch__text">Light</span></span>
+            </label>
+            <label class="theme-switch__option">
+              <input type="radio" name="theme" value="dark" autocomplete="off">
+              <span class="theme-switch__face"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg><span class="theme-switch__text">Dark</span></span>
+            </label>
+          </fieldset>
+        </div>
       </div>
     </header>
 
@@ -66,7 +87,7 @@
 
         <header class="case-head">
           <div>
-            <p class="label case-meta"><span>Mechanical design and simulation</span> <span class="label__num">2 min read</span></p>
+            <p class="label case-meta"><span class="tag"><span class="tag__dot" aria-hidden="true"></span>Mechanical design and simulation</span> <span class="label__num">2 min read</span></p>
             <h1>Bell-407 Helicopter Rotor and Blade System</h1>
             <p class="case-deck">Connecting blade aerodynamics with rotor-component analysis.</p>
             <p class="case-summary">A comparative CFD study of two blade profiles, supported by CAD assembly work and static structural analysis of rotor components.</p>
@@ -93,7 +114,7 @@
 
           <div class="case-body">
             <figure class="figure figure--modest lead-figure">
-              <div class="figure__frame">
+              <div class="figure__frame vt-bell">
                 <img src="../../assets/img/bell407-rotor-assembly.webp" width="556" height="412" alt="CAD model of the Bell-407 main rotor assembly: four blades attached through blade holders to a central hub, with the swashplate, pitch links, and rotor mast below." loading="eager" fetchpriority="high">
               </div>
               <figcaption>Rotor and blade assembly from the academic study. Source: project report, Figure 4.3.1.</figcaption>
@@ -164,9 +185,10 @@
 
         <nav class="pager" aria-label="Project navigation">
           <a class="pager__back" href="../"><span><span aria-hidden="true">← </span>Back to all work</span></a>
-          <a class="pager__next" href="../outpatient-clinic-routing/">
+          <a class="pager__next" href="../outpatient-clinic-routing/" data-discipline="optimization">
             <span class="label">Next project</span>
             <span class="pager__title">Outpatient Clinic Last-Mile Routing <span class="arrow" aria-hidden="true">→</span></span>
+            <span class="label tag"><span class="tag__dot" aria-hidden="true"></span>Logistics and integer programming</span>
           </a>
         </nav>
       </article>
@@ -174,23 +196,23 @@
 
     <footer class="site-footer">
       <div class="band band--ink">
-      <section class="wrap contact" id="contact" aria-labelledby="contact-title">
-        <div>
-          <p class="label">Contact</p>
-          <h2 id="contact-title">Let’s discuss a systems problem worth solving.</h2>
-          <p class="contact__lead">If your work connects people, operations, or engineering analysis, I’d welcome a conversation about the problem and how I could contribute.</p>
-        </div>
-        <div class="contact__actions">
-          <p class="contact__address">arjunb.patel@outlook.com</p>
-          <ul class="contact__links" role="list">
-            <li><a class="button button--primary" href="mailto:arjunb.patel@outlook.com?subject=Hello%20from%20your%20portfolio">Email Arjun</a></li>
-            <li><a class="button button--secondary" href="https://www.linkedin.com/in/linkwitharjun" rel="noopener noreferrer">Connect on LinkedIn<span class="external-icon" aria-hidden="true">↗</span><span class="visually-hidden"> (opens external site)</span></a></li>
-            <li><button type="button" class="button button--secondary" data-copy="arjunb.patel@outlook.com" hidden>Copy email address</button></li>
-          </ul>
-          <p class="contact__status" role="status" data-copy-status></p>
-          <p class="contact__hint">Recruiters: please include the role and timeline.</p>
-        </div>
-      </section>
+        <section class="wrap contact" id="contact" aria-labelledby="contact-title">
+          <div>
+            <p class="label">Contact</p>
+            <h2 id="contact-title">Let’s discuss a systems problem worth solving.</h2>
+            <p class="contact__lead">If your work connects people, operations, or engineering analysis, I’d welcome a conversation about the problem and how I could contribute.</p>
+          </div>
+          <div class="contact__actions">
+            <p class="contact__address">arjunb.patel@outlook.com</p>
+            <ul class="contact__links" role="list">
+              <li><a class="button button--primary" href="mailto:arjunb.patel@outlook.com?subject=Hello%20from%20your%20portfolio">Email Arjun</a></li>
+              <li><a class="button button--secondary" href="https://www.linkedin.com/in/linkwitharjun" rel="noopener noreferrer">Connect on LinkedIn<span class="external-icon" aria-hidden="true">↗</span><span class="visually-hidden"> (opens external site)</span></a></li>
+              <li><button type="button" class="button button--secondary" data-copy="arjunb.patel@outlook.com" hidden>Copy email address</button></li>
+            </ul>
+            <p class="contact__status" role="status" data-copy-status></p>
+            <p class="contact__hint">Recruiters: please include the role and timeline.</p>
+          </div>
+        </section>
       </div>
       <div class="wrap site-footer__inner">
         <p class="site-footer__id">Arjun Patel · Industrial Engineering Portfolio</p>
@@ -204,6 +226,7 @@
           </ul>
         </nav>
         <p class="site-footer__note">No cookies, no analytics, no tracking. © 2026 Arjun Patel.</p>
+        <p class="site-footer__credit">Type: Fraunces, Roboto Flex, JetBrains Mono (SIL OFL).</p>
       </div>
     </footer>
   </body>
