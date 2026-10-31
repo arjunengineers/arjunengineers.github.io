@@ -211,29 +211,7 @@
     if (tocSpy) { each(document.querySelectorAll('.case-body > section[aria-labelledby]'), function (el) { tocSpy.observe(el); }); }
   }
 
-  /* 7. Projects page: a figure follows the pointer over rows that have one. Mouse only;
-        the same figures are on the project pages, so nothing depends on this. */
-  var rows = document.querySelectorAll('[data-preview]');
-  if (rows.length && motion && window.matchMedia && window.matchMedia('(hover: hover) and (min-width: 1024px)').matches) {
-    var preview = document.createElement('img');
-    preview.className = 'preview';
-    preview.alt = '';
-    document.body.appendChild(preview);
-    each(rows, function (row) {
-      row.addEventListener('pointerenter', function () {
-        preview.setAttribute('src', row.dataset.preview);
-        preview.classList.add('is-on');
-      });
-      row.addEventListener('pointerleave', function () { preview.classList.remove('is-on'); });
-      row.addEventListener('pointermove', function (event) {
-        var x = Math.min(event.clientX + 28, window.innerWidth - preview.offsetWidth - 16);
-        var y = Math.min(event.clientY - 60, window.innerHeight - preview.offsetHeight - 16);
-        preview.style.transform = 'translate(' + Math.round(x) + 'px,' + Math.round(Math.max(16, y)) + 'px)';
-      });
-    });
-  }
-
-  /* 8. Copy email address: the button appears only when this script runs; the copy is local. */
+  /* 7. Copy email address: the button appears only when this script runs; the copy is local. */
   each(document.querySelectorAll('button[data-copy]'), function (button) {
     var copyStatus = document.querySelector('[data-copy-status]');
     var say = function (text) {
@@ -252,7 +230,7 @@
     });
   });
 
-  /* 9. Figure that fails to load: say so in the page, next to the alt text. */
+  /* 8. Figure that fails to load: say so in the page, next to the alt text. */
   var figureFallback = function (img) {
     var frame = img.closest('.figure__frame');
     if (!frame || frame.querySelector('.figure__fallback')) { return; }

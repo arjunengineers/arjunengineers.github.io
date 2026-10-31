@@ -38,7 +38,7 @@ assets/css/site.css           Everything else, in cascade layers:
                               reset, base, layout, components, pages, utilities
 assets/js/boot.js             Runs before paint: enables the script-only styles
 assets/js/site.js             Menu, filter, scroll scenes, reveal, chapter rail, contents
-                              highlight, pointer preview, copy-email, local-preview links
+                              highlight, copy-email, local-preview links
 assets/fonts/                 Cormorant, Instrument Sans, JetBrains Mono + their OFL licences
 assets/img/                   Plates, project figures, the social image
 favicon.svg  robots.txt  sitemap.xml  .nojekyll  CREDITS.md
@@ -58,8 +58,8 @@ editing it needs no other step.
 **Add a project:**
 1. Copy an existing `work/<slug>/` folder, rename it, and edit its `index.html`.
 2. Add a row to the index in `work/index.html`: copy an `<li class="index__item">`, and set
-   `data-tags` to one of the filter chips' `data-tag` values. To show a figure when the pointer
-   is over the row, add `data-preview` with the image path.
+   `data-tags` to one of the filter chips' `data-tag` values. To show a figure in the row, copy
+   the `<div class="index__fig">` block from an existing row.
 3. Add the same row to `index.html` if it should be featured. Do not add images there: the
    homepage is deliberately text-led.
 4. Update the previous project's "Next project" link, and add the new page to `sitemap.xml`.

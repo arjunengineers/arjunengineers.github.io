@@ -133,7 +133,9 @@
   .index__item { position: relative; display: grid; gap: var(--space-3) var(--space-8); padding-block: clamp(1.75rem, 3.5vw, 3rem); border-top: 1px solid var(--rule); transition: opacity var(--dur-base) var(--ease); }
   .index__item::before { content: ""; position: absolute; top: -1px; left: 0; right: 0; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 700ms var(--ease-out); }
   .index__num { color: var(--gold); font-family: var(--font-mono); font-size: 0.8125rem; letter-spacing: 0.06em; }
-  .index__title { font-size: var(--display-sm); font-weight: 400; line-height: 1.04; transition: transform var(--dur-base) var(--ease-out); }
+  .index__title { font-size: var(--display-sm); font-weight: 400; line-height: 1.04; }
+  /* The slide is on this inner span: a transform on the heading would shrink the link overlay to the title */
+  .index__title span { display: inline-block; transition: transform var(--dur-base) var(--ease-out); }
   .index__title a { color: var(--ivory); text-decoration: none; }
   .index__title a::after { content: ""; position: absolute; inset: 0; z-index: 1; }
   .index__title a:focus-visible { outline: none; }
@@ -148,13 +150,13 @@
   .index__go { align-self: start; justify-self: end; display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border: 1px solid var(--rule-strong); color: var(--ivory); transition: background-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease); }
   @media (hover: hover) {
     .index__item:hover::before { transform: scaleX(1); }
-    .index__item:hover .index__title { transform: translateX(0.75rem); }
+    .index__item:hover .index__title span { transform: translateX(0.75rem); }
     .index__item:hover .index__title a { color: var(--gold-bright); }
     .index__item:hover .index__go { border-color: var(--gold); background: var(--gold); color: var(--on-gold); }
     .index:hover .index__item:not(:hover) { opacity: 0.68; }
   }
-  .preview { position: fixed; top: 0; left: 0; z-index: 25; width: clamp(16rem, 24vw, 22rem); border: 1px solid var(--rule-strong); pointer-events: none; opacity: 0; transition: opacity var(--dur-base) var(--ease); }
-  .preview.is-on { opacity: 1; }
+  .index__fig { width: min(100%, 20rem); margin-top: var(--space-4); }
+  .index__fig img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: top; }
 
   /* ---- Filter ---- */
   .filter { display: grid; gap: var(--space-3); margin-bottom: var(--space-12); }
@@ -224,10 +226,10 @@
 
   /* ---- Figures ---- */
   .figure { margin-block: var(--space-8); }
-  .figure__frame { overflow: hidden; border: 1px solid var(--rule); background: var(--ink-2); }
-  .figure__frame--light { background: var(--plate-light); }
-  .figure__frame img { margin-inline: auto; }
-  .figure--modest { max-width: 556px; }
+  /* One frame for every project image: a dark mat inside a rule, sized to the image */
+  .figure__frame, .index__fig { width: fit-content; max-width: 100%; padding: var(--space-3); border: 1px solid var(--rule-strong); background: var(--ink-2); }
+  .index__fig { width: min(100%, 20rem); }
+  .figure__frame img, .index__fig img { border: 1px solid var(--rule); }
   .figure figcaption, .figure__note { max-width: var(--measure); margin-top: var(--space-3); color: var(--stone); font-size: 0.875rem; line-height: 1.5; }
   .figure__fallback { padding: var(--space-6); color: var(--parchment); }
   .lead-figure { margin-block: 0 clamp(3rem, 7vw, 5rem); }
