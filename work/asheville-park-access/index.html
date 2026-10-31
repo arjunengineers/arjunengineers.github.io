@@ -7,21 +7,26 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Asheville Urban Park Access Optimization | Arjun Patel</title>
     <meta name="description" content="Five facility-location models exploring how efficiency and equity objectives change proposed park investments for a population of 88,860.">
-    <meta name="color-scheme" content="light dark">
-    <meta name="theme-color" content="#F7F2E8" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#101820" media="(prefers-color-scheme: dark)">
+    <link rel="canonical" href="https://arjunengineers.github.io/work/asheville-park-access/">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#0C0A08">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Arjun Patel">
     <meta property="og:title" content="Asheville Urban Park Access Optimization | Arjun Patel">
     <meta property="og:description" content="Five facility-location models exploring how efficiency and equity objectives change proposed park investments for a population of 88,860.">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:url" content="https://arjunengineers.github.io/work/asheville-park-access/">
+    <meta property="og:image" content="https://arjunengineers.github.io/assets/img/og-arjun-patel.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Arjun Patel, beside Rembrandt’s painting of Aristotle.">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../../assets/css/tokens.css">
     <link rel="stylesheet" href="../../assets/css/fonts.css">
     <link rel="stylesheet" href="../../assets/css/site.css">
-    <link rel="preload" href="../../assets/fonts/fraunces-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="../../assets/fonts/roboto-flex-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-    <script src="../../assets/js/theme.js"></script>
+    <link rel="preload" href="../../assets/fonts/cormorant-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../assets/fonts/instrument-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+    <script src="../../assets/js/boot.js"></script>
     <script src="../../assets/js/site.js" defer></script>
     <script type="application/ld+json">
     {
@@ -37,87 +42,70 @@
     }
     </script>
   </head>
-  <body data-discipline="optimization">
+  <body>
     <a class="skip-link" href="#main">Skip to content</a>
+    <div class="frame" aria-hidden="true"></div>
 
     <header class="site-header">
       <div class="wrap site-header__inner">
-        <a class="site-logo" href="../../">
-          <svg class="site-logo__mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10.5"/><circle cx="12" cy="12" r="6"/><circle class="site-logo__dot" cx="12" cy="12" r="2.5"/></svg>
-          Arjun Patel
-        </a>
-        <button type="button" class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="site-menu" hidden><span class="menu-toggle__icon" aria-hidden="true"></span>Menu</button>
+        <a class="wordmark" href="../../"><span class="star" aria-hidden="true"></span>Arjun Patel</a>
+        <button type="button" class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="site-menu" hidden><span class="menu-toggle__icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Menu</button>
         <div class="site-menu" id="site-menu">
           <nav class="site-nav" aria-label="Primary">
             <ul role="list">
-              <li><a href="../../work/" class="is-active">Work</a></li>
-              <li><a href="../../about/">About</a></li>
+              <li><a href="../../">Home</a></li>
+              <li><a href="../../work/" class="is-active">Projects</a></li>
               <li><a href="../../experience/">Experience</a></li>
-              <li><a href="../../education/">Education</a></li>
-              <li><a href="#contact">Contact</a></li>
             </ul>
           </nav>
-          <fieldset class="theme-switch" data-theme-switch hidden>
-            <legend class="visually-hidden">Color theme</legend>
-            <label class="theme-switch__option">
-              <input type="radio" name="theme" value="system" autocomplete="off" checked>
-              <span class="theme-switch__face"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg><span class="theme-switch__text">System</span></span>
-            </label>
-            <label class="theme-switch__option">
-              <input type="radio" name="theme" value="light" autocomplete="off">
-              <span class="theme-switch__face"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5V5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg><span class="theme-switch__text">Light</span></span>
-            </label>
-            <label class="theme-switch__option">
-              <input type="radio" name="theme" value="dark" autocomplete="off">
-              <span class="theme-switch__face"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg><span class="theme-switch__text">Dark</span></span>
-            </label>
-          </fieldset>
+          <a class="pill" href="#contact">Contact <span class="pill__arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
     </header>
 
     <main id="main" tabindex="-1">
-      <article class="wrap">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <ol role="list">
-            <li><a href="../">Work</a></li>
-            <li><span aria-current="page">Asheville Urban Park Access Optimization</span></li>
-          </ol>
-        </nav>
-
-        <header class="case-head">
-          <div>
-            <p class="label case-meta"><span class="tag"><span class="tag__dot" aria-hidden="true"></span>Operations research and decision support</span> <span class="label__num">3 min read</span></p>
-            <h1>Asheville Urban Park Access Optimization</h1>
-            <p class="case-deck">Making the efficiency–equity tradeoff visible.</p>
-            <p class="case-summary">Five facility-location models exploring how efficiency and equity objectives change proposed park investments for a population of 88,860.</p>
+      <article>
+        <header class="wrap case-head">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol role="list">
+              <li><a href="../">Projects</a></li>
+              <li><span aria-current="page">Asheville Urban Park Access Optimization</span></li>
+            </ol>
+          </nav>
+          <p class="label case-meta"><span class="label__num" aria-hidden="true">II</span><span>Operations research and decision support</span> <span>3 min read</span></p>
+          <h1>Asheville Urban Park Access Optimization</h1>
+          <div class="case-head__grid">
+            <div>
+              <p class="case-deck">Making the efficiency–equity tradeoff visible.</p>
+              <p class="case-summary">Five facility-location models exploring how efficiency and equity objectives change proposed park investments for a population of 88,860.</p>
+            </div>
+            <dl class="spec">
+                        <div class="spec__row"><dt>Context</dt><dd>Clemson University, Engineering Optimization and Its Applications, Fall 2025</dd></div>
+                        <div class="spec__row"><dt>My contribution</dt><dd>Optimization modeling and comparative analysis</dd></div>
+                        <div class="spec__row"><dt>Tools and methods</dt><dd>Python, Gurobi, integer programming, facility location, scenario analysis</dd></div>
+                      </dl>
           </div>
-          <dl class="spec">
-            <div class="spec__row"><dt>Context</dt><dd>Clemson University, Engineering Optimization and Its Applications, Fall 2025</dd></div>
-            <div class="spec__row"><dt>My contribution</dt><dd>Optimization modeling and comparative analysis</dd></div>
-            <div class="spec__row"><dt>Tools and methods</dt><dd>Python, Gurobi, integer programming, facility location, scenario analysis</dd></div>
-          </dl>
         </header>
 
-        <div class="case-layout">
+        <div class="wrap case-layout">
           <nav class="toc" aria-labelledby="toc-title">
             <p class="label toc__title" id="toc-title">On this page</p>
             <ol role="list">
               <li><a href="#the-problem">The problem</a></li>
-              <li><a href="#my-approach">My approach</a></li>
-              <li><a href="#results-that-matter">Results that matter</a></li>
-              <li><a href="#what-i-learned">What I learned</a></li>
-              <li><a href="#scope-note">Scope note</a></li>
+                            <li><a href="#my-approach">My approach</a></li>
+                            <li><a href="#results-that-matter">Results that matter</a></li>
+                            <li><a href="#what-i-learned">What I learned</a></li>
+                            <li><a href="#scope-note">Scope note</a></li>
             </ol>
           </nav>
 
           <div class="case-body">
             <section aria-labelledby="the-problem">
-              <h2 id="the-problem"><span class="h-num" aria-hidden="true">01</span>The problem</h2>
+              <h2 id="the-problem"><span class="h-num" aria-hidden="true">I</span>The problem</h2>
               <p>Choosing where to add parks involves competing goals. Minimizing average travel distance can favor densely populated areas, while an equity-focused model can prioritize residents who are farthest from existing parks. I explored how those choices change recommended investments.</p>
             </section>
             <section aria-labelledby="my-approach">
-              <h2 id="my-approach"><span class="h-num" aria-hidden="true">02</span>My approach</h2>
+              <h2 id="my-approach"><span class="h-num" aria-hidden="true">II</span>My approach</h2>
               <p>I developed and compared five model objectives: population-weighted average distance, distance for the worst-served population, a weighted efficiency–equity objective, half-mile population coverage, and maximum distance to a park.</p>
               <p>The study used 77 residential demand locations, 52 existing parks, 138 candidate sites, and a modeled population of 88,860. I compared scenarios with five, ten, and fifteen new parks. The model runs used reported time limits and optimality-gap tolerances, so the outputs should be read as solver results under those settings.</p>
               <h3>Study inputs</h3>
@@ -130,7 +118,7 @@
               </dl>
             </section>
             <section aria-labelledby="results-that-matter">
-              <h2 id="results-that-matter"><span class="h-num" aria-hidden="true">03</span>Results that matter</h2>
+              <h2 id="results-that-matter"><span class="h-num" aria-hidden="true">III</span>Results that matter</h2>
               <figure class="chart">
                 <div class="chart__frame">
                   <div class="chart__panels">
@@ -176,11 +164,11 @@
                         <text class="plot__tick" x="246" y="207" text-anchor="middle">15</text>
                         <text class="plot__axis-title" x="164" y="226" text-anchor="middle">New parks in the modeled scenario</text>
                         <path class="bar" d="M70,188 V117.27 Q70,113.27 74,113.27 H90 Q94,113.27 94,117.27 V188 Z"><title>5 new parks: 45.57% of the modeled population within 0.5 miles</title></path>
-                        <text class="plot__value plot__value--w511" x="82" y="105.27" text-anchor="middle">45.57%</text>
+                        <text class="plot__value plot__value--w484" x="82" y="105.27" text-anchor="middle">45.57%</text>
                         <path class="bar bar--accent" d="M152,188 V105.52 Q152,101.52 156,101.52 H172 Q176,101.52 176,105.52 V188 Z"><title>10 new parks: 52.73% of the modeled population within 0.5 miles</title></path>
-                        <text class="plot__value plot__value--w655" x="164" y="93.52" text-anchor="middle">52.73%</text>
+                        <text class="plot__value plot__value--w591" x="164" y="93.52" text-anchor="middle">52.73%</text>
                         <path class="bar" d="M234,188 V98.22 Q234,94.22 238,94.22 H254 Q258,94.22 258,98.22 V188 Z"><title>15 new parks: 57.18% of the modeled population within 0.5 miles</title></path>
-                        <text class="plot__value plot__value--w744" x="246" y="86.22" text-anchor="middle">57.18%</text>
+                        <text class="plot__value plot__value--w658" x="246" y="86.22" text-anchor="middle">57.18%</text>
                       </svg>
                       <p class="chart__note">Label weight scales with coverage.</p>
                     </div>
@@ -222,7 +210,7 @@
               </details>
             </section>
             <section aria-labelledby="what-i-learned">
-              <h2 id="what-i-learned"><span class="h-num" aria-hidden="true">04</span>What I learned</h2>
+              <h2 id="what-i-learned"><span class="h-num" aria-hidden="true">IV</span>What I learned</h2>
               <p>An optimization objective encodes a choice about whose outcomes matter and how success is measured. Comparing objectives helps decision-makers see those choices before committing resources.</p>
             </section>
             <section class="callout" aria-labelledby="scope-note">
@@ -233,50 +221,50 @@
           </div>
         </div>
 
-        <nav class="pager" aria-label="Project navigation">
-          <a class="pager__back" href="../"><span><span aria-hidden="true">← </span>Back to all work</span></a>
-          <a class="pager__next" href="../bell407-rotor-analysis/" data-discipline="mechanical-design">
-            <span class="label">Next project</span>
+        <nav class="wrap pager" aria-label="Project navigation">
+          <a class="text-link pager__back" href="../"><span aria-hidden="true">←</span> Back to all projects</a>
+          <a class="pager__next" href="../bell407-rotor-analysis/">
+            <span class="label">Next project · Mechanical design and simulation</span>
             <span class="pager__title">Bell-407 Helicopter Rotor and Blade System <span class="arrow" aria-hidden="true">→</span></span>
-            <span class="label tag"><span class="tag__dot" aria-hidden="true"></span>Mechanical design and simulation</span>
           </a>
         </nav>
       </article>
     </main>
 
     <footer class="site-footer">
-      <div class="band band--ink">
-        <section class="wrap contact" id="contact" aria-labelledby="contact-title">
-          <div>
+      <section class="contact" id="contact" aria-labelledby="contact-title" data-chapter="contact" data-scrub="pass">
+        <div class="wrap">
+          <div class="contact__frame">
+            <span class="star" aria-hidden="true"></span><span class="star" aria-hidden="true"></span><span class="star" aria-hidden="true"></span><span class="star" aria-hidden="true"></span>
+            <img class="contact__coin" src="../../assets/img/coin-caesar.webp" width="416" height="416" alt="Gold aureus of Julius Caesar, struck in 46 BCE." loading="lazy" decoding="async">
             <p class="label">Contact</p>
             <h2 id="contact-title">Let’s discuss a systems problem worth solving.</h2>
             <p class="contact__lead">If your work connects people, operations, or engineering analysis, I’d welcome a conversation about the problem and how I could contribute.</p>
-          </div>
-          <div class="contact__actions">
             <p class="contact__address">arjunb.patel@outlook.com</p>
             <ul class="contact__links" role="list">
-              <li><a class="button button--primary" href="mailto:arjunb.patel@outlook.com?subject=Hello%20from%20your%20portfolio">Email Arjun</a></li>
-              <li><a class="button button--secondary" href="https://www.linkedin.com/in/linkwitharjun" rel="noopener noreferrer">Connect on LinkedIn<span class="external-icon" aria-hidden="true">↗</span><span class="visually-hidden"> (opens external site)</span></a></li>
-              <li><button type="button" class="button button--secondary" data-copy="arjunb.patel@outlook.com" hidden>Copy email address</button></li>
+              <li><a class="pill pill--solid" href="mailto:arjunb.patel@outlook.com?subject=Hello%20from%20your%20portfolio">Email Arjun <span class="pill__arrow" aria-hidden="true">→</span></a></li>
+              <li><a class="pill" href="https://www.linkedin.com/in/linkwitharjun" rel="noopener noreferrer">Connect on LinkedIn <span class="pill__arrow" aria-hidden="true">↗</span><span class="visually-hidden"> (opens external site)</span></a></li>
+              <li><button type="button" class="pill pill--plain" data-copy="arjunb.patel@outlook.com" hidden>Copy email address</button></li>
             </ul>
             <p class="contact__status" role="status" data-copy-status></p>
             <p class="contact__hint">Recruiters: please include the role and timeline.</p>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
       <div class="wrap site-footer__inner">
-        <p class="site-footer__id">Arjun Patel · Industrial Engineering Portfolio</p>
+        <div>
+          <p class="site-footer__id">Arjun Patel · Industrial Engineering Portfolio</p>
+          <p>No cookies, no analytics, no tracking. © 2026 Arjun Patel.</p>
+        </div>
         <nav aria-label="Footer">
           <ul role="list">
-            <li><a href="../../work/">Work</a></li>
-            <li><a href="../../about/">About</a></li>
+            <li><a href="../../work/">Projects</a></li>
             <li><a href="../../experience/">Experience</a></li>
-            <li><a href="../../education/">Education</a></li>
+            <li><a href="../../about/">About</a></li>
             <li><a href="../../privacy/">Privacy</a></li>
           </ul>
         </nav>
-        <p class="site-footer__note">No cookies, no analytics, no tracking. © 2026 Arjun Patel.</p>
-        <p class="site-footer__credit">Type: Fraunces, Roboto Flex, JetBrains Mono (SIL OFL).</p>
+        <p class="site-footer__credit">Type: Cormorant, Instrument Sans, JetBrains Mono (SIL OFL). Plates: public-domain works from <a href="https://www.metmuseum.org/about-the-met/policies-and-documents/open-access" rel="noopener noreferrer">The Metropolitan Museum of Art Open Access<span class="visually-hidden"> (opens external site)</span></a>.</p>
       </div>
     </footer>
   </body>

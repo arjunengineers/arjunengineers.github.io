@@ -1,14 +1,16 @@
 /*
   Progressive enhancement only — every page is complete without this file.
-  Nothing here sends or collects anything: there are no network calls. The filter keeps its state
-  in the URL; the theme choice stays in this browser. DOM writes use textContent, never innerHTML.
+  Nothing here sends or collects anything: no network calls, no storage. The filter keeps its
+  state in the URL. DOM writes use textContent, never innerHTML.
+  Scrolling is never locked or hijacked: scenes only read the native scroll position.
 */
 (function () {
   'use strict';
 
   var root = document.documentElement;
   var each = function (list, fn) { Array.prototype.forEach.call(list, fn); };
-  var reducedMotion = Boolean(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var motion = root.classList.contains('motion');
+  var clamp = function (v) { return Math.min(1, Math.max(0, v)); };
 
   /* 1. Local preview: opened straight from disk (file://), a link to "work/" would show a
         folder listing, so point folder links at their index.html. Does nothing once hosted. */
@@ -24,14 +26,18 @@
     });
   }
 
-  /* 2. Small-screen menu: a disclosure button for the navigation list and theme switch.
-        Esc closes it and returns focus to the button. Without this script the list stays visible. */
+  /* 2. Small-screen menu: a full panel opened by the Menu button. Esc closes it and returns
+        focus to the button; while open, the page behind it is inert. */
   var menuButton = document.querySelector('[data-menu-toggle]');
   var menu = document.getElementById('site-menu');
   if (menuButton && menu) {
+    var behind = document.querySelectorAll('main, footer, .rail');
     var setMenu = function (open) {
       menu.classList.toggle('is-open', open);
+      root.classList.toggle('menu-open', open);
       menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.lastChild.textContent = open ? 'Close' : 'Menu';
+      each(behind, function (el) { el.inert = open; });
     };
     menuButton.hidden = false;
     menuButton.addEventListener('click', function () {
@@ -46,35 +52,15 @@
     menu.addEventListener('click', function (event) {
       if (event.target && event.target.closest && event.target.closest('a')) { setMenu(false); }
     });
+    if (window.matchMedia) {
+      var desktop = window.matchMedia('(min-width: 860px)');
+      if (desktop.addEventListener) {
+        desktop.addEventListener('change', function () { setMenu(false); });
+      }
+    }
   }
 
-  /* 3. Theme switch: System (follow the device), Light or Dark. theme.js applies the saved
-        choice before paint; this keeps the control, the page and the browser chrome in step. */
-  var themeSwitch = document.querySelector('[data-theme-switch]');
-  if (themeSwitch) {
-    var THEME_COLORS = { light: '#F7F2E8', dark: '#101820' };
-    var themeMetas = document.querySelectorAll('meta[name="theme-color"]');
-    var applyTheme = function (choice) {
-      var fixed = choice === 'light' || choice === 'dark';        // allow-list
-      if (fixed) { root.setAttribute('data-theme', choice); } else { root.removeAttribute('data-theme'); }
-      each(themeMetas, function (meta) {
-        var forDark = (meta.getAttribute('media') || '').indexOf('dark') !== -1;
-        meta.setAttribute('content', fixed ? THEME_COLORS[choice] : (forDark ? THEME_COLORS.dark : THEME_COLORS.light));
-      });
-      try {
-        if (fixed) { localStorage.setItem('theme', choice); } else { localStorage.removeItem('theme'); }
-      } catch (err) { /* not saved; the page still switches */ }
-    };
-    var currentTheme = root.getAttribute('data-theme');
-    if (currentTheme !== 'light' && currentTheme !== 'dark') { currentTheme = 'system'; }
-    each(themeSwitch.querySelectorAll('input[name="theme"]'), function (radio) {
-      radio.checked = radio.value === currentTheme;
-      radio.addEventListener('change', function () { if (radio.checked) { applyTheme(radio.value); } });
-    });
-    themeSwitch.hidden = false;
-  }
-
-  /* 4. Project filter. The only runtime input is ?tag=, matched against the chips that exist in
+  /* 3. Project filter. The only runtime input is ?tag=, matched against the chips that exist in
         the page; unknown values are ignored. */
   var filter = document.querySelector('[data-filter]');
   if (filter) {
@@ -129,57 +115,125 @@
     apply(initial);
   }
 
-  /* 5. Scroll reveal and the metric "settle". Content already on screen is never hidden;
-        everything else fades in once. Metric numerals start at a lighter grade and settle to
-        normal as they arrive — their value is never animated. Skipped under reduced motion. */
-  if ('IntersectionObserver' in window && !reducedMotion) {
+  /* 4. Scroll scenes. Each [data-scrub] element gets --p from 0 to 1.
+        data-scrub="pin": progress through a pinned runway. data-scrub="pass": from the element
+        entering the screen until it leaves. The statement's words light up the same way. */
+  var scenes = motion ? Array.prototype.slice.call(document.querySelectorAll('[data-scrub]')) : [];
+  var statement = motion ? document.querySelector('[data-words]') : null;
+  var words = [];
+
+  if (statement) {
+    var text = statement.textContent.trim().split(/\s+/);
+    statement.textContent = '';
+    text.forEach(function (word, index) {
+      var span = document.createElement('span');
+      span.className = 'w';
+      span.textContent = word;
+      statement.appendChild(span);
+      if (index < text.length - 1) { statement.appendChild(document.createTextNode(' ')); }
+      words.push(span);
+    });
+    statement.classList.add('is-reading');
+  }
+
+  if (scenes.length || words.length) {
+    var queued = false;
+    var paint = function () {
+      queued = false;
+      var vh = window.innerHeight;
+      scenes.forEach(function (el) {
+        var box = el.getBoundingClientRect();
+        if (box.bottom < -vh || box.top > vh * 2) { return; }
+        var pin = el.dataset.scrub === 'pin';
+        var p = pin ? -box.top / Math.max(1, box.height - vh) : (vh - box.top) / (box.height + vh);
+        el.style.setProperty('--p', clamp(p).toFixed(4));
+      });
+      if (words.length) {
+        var area = statement.getBoundingClientRect();
+        var read = clamp((vh * 0.82 - area.top) / (area.height + vh * 0.32));
+        var lit = Math.ceil(read * words.length);
+        words.forEach(function (word, index) { word.classList.toggle('is-lit', index < lit); });
+      }
+    };
+    var ask = function () {
+      if (!queued) { queued = true; window.requestAnimationFrame(paint); }
+    };
+    window.addEventListener('scroll', ask, { passive: true });
+    window.addEventListener('resize', ask, { passive: true });
+    paint();
+  }
+
+  /* 5. Reveal: content already on screen is never hidden; everything else eases in once. */
+  if (motion && 'IntersectionObserver' in window) {
     var watcher = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) { return; }
         entry.target.classList.add('is-visible');
-        entry.target.classList.remove('is-pending');
         watcher.unobserve(entry.target);
       });
     }, { rootMargin: '0px 0px -8% 0px' });
-    each(document.querySelectorAll('.work-lead, .work-pair > li, .cards > li, .panel, .entry, .page-body > .split, .section > .split > .split__body, .case-body > section, .contact'), function (el) {
-      if (el.getBoundingClientRect().top > window.innerHeight * 0.9) { el.classList.add('reveal'); watcher.observe(el); }
-    });
-    each(document.querySelectorAll('.metric:not(.metric--text)'), function (el) {
-      el.classList.add('is-pending');
-      watcher.observe(el);
+    each(document.querySelectorAll('[data-reveal], .case-body > section, .split, .entry'), function (el) {
+      if (el.getBoundingClientRect().top > window.innerHeight * 0.9) {
+        el.classList.add('reveal');
+        watcher.observe(el);
+      }
     });
   }
 
-  /* 6. Table-of-contents scroll-spy (case studies, wide screens where the list sits beside the
-        text): marks the section being read with aria-current="location". */
-  var toc = document.querySelector('.toc');
-  if (toc && 'IntersectionObserver' in window && window.matchMedia) {
-    var wide = window.matchMedia('(min-width: 1280px)');
-    var tocLinks = {};
-    var spy = null;
-    each(toc.querySelectorAll('a[href^="#"]'), function (link) { tocLinks[link.getAttribute('href').slice(1)] = link; });
+  /* 6. Chapter rail (home) and table of contents (case studies): mark where the reader is. */
+  var spyOn = function (links, attribute, value, rootMargin) {
+    if (!('IntersectionObserver' in window)) { return; }
+    var targets = {};
+    each(links, function (link) { targets[link.getAttribute('href').slice(1)] = link; });
     var mark = function (id) {
-      Object.keys(tocLinks).forEach(function (key) {
-        if (key === id) { tocLinks[key].setAttribute('aria-current', 'location'); } else { tocLinks[key].removeAttribute('aria-current'); }
+      Object.keys(targets).forEach(function (key) {
+        if (key === id) { targets[key].setAttribute(attribute, value); } else { targets[key].removeAttribute(attribute); }
       });
     };
-    var startSpy = function () {
-      if (spy) { spy.disconnect(); spy = null; }
-      mark(null);
-      if (!wide.matches) { return; }
-      spy = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          var id = entry.target.getAttribute('aria-labelledby');
-          if (entry.isIntersecting && tocLinks[id]) { mark(id); }
-        });
-      }, { rootMargin: '-15% 0px -70% 0px' });
-      each(document.querySelectorAll('.case-body > section[aria-labelledby]'), function (section) { spy.observe(section); });
-    };
-    startSpy();
-    if (wide.addEventListener) { wide.addEventListener('change', startSpy); }
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var id = entry.target.dataset.chapter || entry.target.getAttribute('aria-labelledby');
+        if (entry.isIntersecting && targets[id]) { mark(id); }
+      });
+    }, { rootMargin: rootMargin });
+    return spy;
+  };
+
+  var railLinks = document.querySelectorAll('.rail a[href^="#"]');
+  if (railLinks.length) {
+    var railSpy = spyOn(railLinks, 'aria-current', 'true', '-45% 0px -50% 0px');
+    if (railSpy) { each(document.querySelectorAll('[data-chapter]'), function (el) { railSpy.observe(el); }); }
   }
 
-  /* 7. Copy email address: the button appears only when this script runs; the copy is local. */
+  var tocLinks = document.querySelectorAll('.toc a[href^="#"]');
+  if (tocLinks.length && window.matchMedia && window.matchMedia('(min-width: 1280px)').matches) {
+    var tocSpy = spyOn(tocLinks, 'aria-current', 'location', '-15% 0px -70% 0px');
+    if (tocSpy) { each(document.querySelectorAll('.case-body > section[aria-labelledby]'), function (el) { tocSpy.observe(el); }); }
+  }
+
+  /* 7. Projects page: a figure follows the pointer over rows that have one. Mouse only;
+        the same figures are on the project pages, so nothing depends on this. */
+  var rows = document.querySelectorAll('[data-preview]');
+  if (rows.length && motion && window.matchMedia && window.matchMedia('(hover: hover) and (min-width: 1024px)').matches) {
+    var preview = document.createElement('img');
+    preview.className = 'preview';
+    preview.alt = '';
+    document.body.appendChild(preview);
+    each(rows, function (row) {
+      row.addEventListener('pointerenter', function () {
+        preview.setAttribute('src', row.dataset.preview);
+        preview.classList.add('is-on');
+      });
+      row.addEventListener('pointerleave', function () { preview.classList.remove('is-on'); });
+      row.addEventListener('pointermove', function (event) {
+        var x = Math.min(event.clientX + 28, window.innerWidth - preview.offsetWidth - 16);
+        var y = Math.min(event.clientY - 60, window.innerHeight - preview.offsetHeight - 16);
+        preview.style.transform = 'translate(' + Math.round(x) + 'px,' + Math.round(Math.max(16, y)) + 'px)';
+      });
+    });
+  }
+
+  /* 8. Copy email address: the button appears only when this script runs; the copy is local. */
   each(document.querySelectorAll('button[data-copy]'), function (button) {
     var copyStatus = document.querySelector('[data-copy-status]');
     var say = function (text) {
@@ -198,7 +252,7 @@
     });
   });
 
-  /* 8. Figure that fails to load: say so in the page, next to the alt text. */
+  /* 9. Figure that fails to load: say so in the page, next to the alt text. */
   var figureFallback = function (img) {
     var frame = img.closest('.figure__frame');
     if (!frame || frame.querySelector('.figure__fallback')) { return; }

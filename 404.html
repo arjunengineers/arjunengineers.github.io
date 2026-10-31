@@ -8,118 +8,97 @@
     <title>Page Not Found | Arjun Patel</title>
     <meta name="description" content="This page isn’t here. Explore my work or return home.">
     <meta name="robots" content="noindex">
-    <meta name="color-scheme" content="light dark">
-    <meta name="theme-color" content="#F7F2E8" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#101820" media="(prefers-color-scheme: dark)">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#0C0A08">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Arjun Patel">
     <meta property="og:title" content="Page Not Found | Arjun Patel">
     <meta property="og:description" content="This page isn’t here. Explore my work or return home.">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:url" content="https://arjunengineers.github.io/404.html">
+    <meta property="og:image" content="https://arjunengineers.github.io/assets/img/og-arjun-patel.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Arjun Patel, beside Rembrandt’s painting of Aristotle.">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/assets/css/tokens.css">
     <link rel="stylesheet" href="/assets/css/fonts.css">
     <link rel="stylesheet" href="/assets/css/site.css">
-    <link rel="preload" href="/assets/fonts/fraunces-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/assets/fonts/roboto-flex-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-    <script src="/assets/js/theme.js"></script>
+    <link rel="preload" href="/assets/fonts/cormorant-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/instrument-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+    <script src="/assets/js/boot.js"></script>
     <script src="/assets/js/site.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+    <div class="frame" aria-hidden="true"></div>
 
     <header class="site-header">
       <div class="wrap site-header__inner">
-        <a class="site-logo" href="/">
-          <svg class="site-logo__mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10.5"/><circle cx="12" cy="12" r="6"/><circle class="site-logo__dot" cx="12" cy="12" r="2.5"/></svg>
-          Arjun Patel
-        </a>
-        <button type="button" class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="site-menu" hidden><span class="menu-toggle__icon" aria-hidden="true"></span>Menu</button>
+        <a class="wordmark" href="/"><span class="star" aria-hidden="true"></span>Arjun Patel</a>
+        <button type="button" class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="site-menu" hidden><span class="menu-toggle__icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Menu</button>
         <div class="site-menu" id="site-menu">
           <nav class="site-nav" aria-label="Primary">
             <ul role="list">
-              <li><a href="/work/">Work</a></li>
-              <li><a href="/about/">About</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/work/">Projects</a></li>
               <li><a href="/experience/">Experience</a></li>
-              <li><a href="/education/">Education</a></li>
-              <li><a href="#contact">Contact</a></li>
             </ul>
           </nav>
-          <fieldset class="theme-switch" data-theme-switch hidden>
-            <legend class="visually-hidden">Color theme</legend>
-            <label class="theme-switch__option">
-              <input type="radio" name="theme" value="system" autocomplete="off" checked>
-              <span class="theme-switch__face"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg><span class="theme-switch__text">System</span></span>
-            </label>
-            <label class="theme-switch__option">
-              <input type="radio" name="theme" value="light" autocomplete="off">
-              <span class="theme-switch__face"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5V5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg><span class="theme-switch__text">Light</span></span>
-            </label>
-            <label class="theme-switch__option">
-              <input type="radio" name="theme" value="dark" autocomplete="off">
-              <span class="theme-switch__face"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg><span class="theme-switch__text">Dark</span></span>
-            </label>
-          </fieldset>
+          <a class="pill" href="#contact">Contact <span class="pill__arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
     </header>
 
     <main id="main" tabindex="-1">
-      <div class="wrap simple notfound">
-        <svg class="rings rings--draw" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
-          <circle class="rings__ring" cx="200" cy="200" r="50" pathLength="1"/>
-          <circle class="rings__ring" cx="200" cy="200" r="98" pathLength="1"/>
-          <circle class="rings__ring" cx="200" cy="200" r="146" pathLength="1"/>
-          <circle class="rings__ring" cx="200" cy="200" r="194" pathLength="1"/>
-          <circle class="rings__dot rings__dot--hf" cx="153" cy="182.9" r="6"/>
-          <circle class="rings__dot rings__dot--op" cx="151" cy="284.9" r="6"/>
-          <circle class="rings__dot rings__dot--md" cx="150.1" cy="62.8" r="6"/>
-        </svg>
+      <div class="wrap simple">
+        <p class="notfound__numeral" aria-hidden="true">CDIV</p>
         <p class="label">Error 404</p>
         <h1>Page not found</h1>
         <div class="simple__body">
           <p class="simple__lead">This page isn’t here. Explore my work or return home.</p>
           <div class="simple__actions">
-            <a class="button button--primary" href="/work/">Explore my work</a>
-            <a class="arrow-link" href="/">Return home <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="pill pill--solid" href="/work/">View projects <span class="pill__arrow" aria-hidden="true">→</span></a>
+            <a class="text-link" href="/">Return home <span class="arrow" aria-hidden="true">→</span></a>
           </div>
         </div>
       </div>
     </main>
 
     <footer class="site-footer">
-      <div class="band band--ink">
-        <section class="wrap contact" id="contact" aria-labelledby="contact-title">
-          <div>
+      <section class="contact" id="contact" aria-labelledby="contact-title" data-chapter="contact" data-scrub="pass">
+        <div class="wrap">
+          <div class="contact__frame">
+            <span class="star" aria-hidden="true"></span><span class="star" aria-hidden="true"></span><span class="star" aria-hidden="true"></span><span class="star" aria-hidden="true"></span>
+            <img class="contact__coin" src="/assets/img/coin-caesar.webp" width="416" height="416" alt="Gold aureus of Julius Caesar, struck in 46 BCE." loading="lazy" decoding="async">
             <p class="label">Contact</p>
             <h2 id="contact-title">Let’s discuss a systems problem worth solving.</h2>
             <p class="contact__lead">If your work connects people, operations, or engineering analysis, I’d welcome a conversation about the problem and how I could contribute.</p>
-          </div>
-          <div class="contact__actions">
             <p class="contact__address">arjunb.patel@outlook.com</p>
             <ul class="contact__links" role="list">
-              <li><a class="button button--primary" href="mailto:arjunb.patel@outlook.com?subject=Hello%20from%20your%20portfolio">Email Arjun</a></li>
-              <li><a class="button button--secondary" href="https://www.linkedin.com/in/linkwitharjun" rel="noopener noreferrer">Connect on LinkedIn<span class="external-icon" aria-hidden="true">↗</span><span class="visually-hidden"> (opens external site)</span></a></li>
-              <li><button type="button" class="button button--secondary" data-copy="arjunb.patel@outlook.com" hidden>Copy email address</button></li>
+              <li><a class="pill pill--solid" href="mailto:arjunb.patel@outlook.com?subject=Hello%20from%20your%20portfolio">Email Arjun <span class="pill__arrow" aria-hidden="true">→</span></a></li>
+              <li><a class="pill" href="https://www.linkedin.com/in/linkwitharjun" rel="noopener noreferrer">Connect on LinkedIn <span class="pill__arrow" aria-hidden="true">↗</span><span class="visually-hidden"> (opens external site)</span></a></li>
+              <li><button type="button" class="pill pill--plain" data-copy="arjunb.patel@outlook.com" hidden>Copy email address</button></li>
             </ul>
             <p class="contact__status" role="status" data-copy-status></p>
             <p class="contact__hint">Recruiters: please include the role and timeline.</p>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
       <div class="wrap site-footer__inner">
-        <p class="site-footer__id">Arjun Patel · Industrial Engineering Portfolio</p>
+        <div>
+          <p class="site-footer__id">Arjun Patel · Industrial Engineering Portfolio</p>
+          <p>No cookies, no analytics, no tracking. © 2026 Arjun Patel.</p>
+        </div>
         <nav aria-label="Footer">
           <ul role="list">
-            <li><a href="/work/">Work</a></li>
-            <li><a href="/about/">About</a></li>
+            <li><a href="/work/">Projects</a></li>
             <li><a href="/experience/">Experience</a></li>
-            <li><a href="/education/">Education</a></li>
+            <li><a href="/about/">About</a></li>
             <li><a href="/privacy/">Privacy</a></li>
           </ul>
         </nav>
-        <p class="site-footer__note">No cookies, no analytics, no tracking. © 2026 Arjun Patel.</p>
-        <p class="site-footer__credit">Type: Fraunces, Roboto Flex, JetBrains Mono (SIL OFL).</p>
+        <p class="site-footer__credit">Type: Cormorant, Instrument Sans, JetBrains Mono (SIL OFL). Plates: public-domain works from <a href="https://www.metmuseum.org/about-the-met/policies-and-documents/open-access" rel="noopener noreferrer">The Metropolitan Museum of Art Open Access<span class="visually-hidden"> (opens external site)</span></a>.</p>
       </div>
     </footer>
   </body>
