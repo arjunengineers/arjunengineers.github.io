@@ -118,7 +118,8 @@
     };
 
     var paint = function (i, amount) {
-      var key = i + ':' + amount.toFixed(3);
+      amount = Math.round(amount * 60) / 60;       // 60 steps are plenty and spare needless redraws
+      var key = i + ':' + amount;
       if (key === painted) { return; }
       painted = key;
       var src = shoot(i).data, dst = pixels.data, n = noise.length;
@@ -127,6 +128,15 @@
         dst[q] = src[q]; dst[q + 1] = src[q + 1]; dst[q + 2] = src[q + 2]; dst[q + 3] = on ? 255 : 0;
       }
       veilCtx.putImageData(pixels, 0, 0);
+    };
+
+    /* Decode and flatten the next scene while idle, so the work never lands mid-scroll. */
+    var prepare = function (k) {
+      if (!frames[k] || shots[k]) { return; }
+      var imgs = Array.from(frames[k].querySelectorAll('.art img'));
+      Promise.all(imgs.map(function (img) { return img.decode ? img.decode().catch(function () {}) : null; })).then(function () {
+        (window.requestIdleCallback || window.setTimeout)(function () { if (!stopped) { shoot(k); } });
+      });
     };
 
     var enter = function (i) {
@@ -139,6 +149,7 @@
       });
       if (scenes[i].dataset.tone === 'light') { document.body.dataset.chrome = 'light'; } else { delete document.body.dataset.chrome; }
       active = i;
+      prepare(i + 1);
     };
 
     var run = function () {
@@ -184,7 +195,7 @@
       if (stopped) { return; }
       if (!fits()) { stop(); return; }
       vh = window.innerHeight; vw = window.innerWidth;
-      var cell = Math.max(4, Math.round(vw / 260));
+      var cell = Math.max(6, Math.round(vw / 200));
       veil.width = Math.ceil(vw / cell); veil.height = Math.ceil(vh / cell);
       pixels = veilCtx.createImageData(veil.width, veil.height);
       noise = makeNoise(veil.width, veil.height);
