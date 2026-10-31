@@ -8,8 +8,7 @@
     <title>Arjun Patel | Industrial Engineering Portfolio</title>
     <meta name="description" content="Explore Arjun Patel’s work in human factors, optimization, manufacturing quality, and mechanical analysis, from Clemson University and beyond.">
     <link rel="canonical" href="https://arjunengineers.github.io/">
-    <meta name="color-scheme" content="dark">
-    <meta name="theme-color" content="#0C0A08">
+    <meta name="theme-color" content="#1E4C9A">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Arjun Patel">
     <meta property="og:title" content="Arjun Patel | Industrial Engineering Portfolio">
@@ -18,16 +17,13 @@
     <meta property="og:image" content="https://arjunengineers.github.io/assets/img/og-arjun-patel.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Arjun Patel, beside Rembrandt’s painting of Aristotle.">
+    <meta property="og:image:alt" content="Arjun Patel: engineering systems around people, performance, and evidence.">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="assets/css/tokens.css">
-    <link rel="stylesheet" href="assets/css/fonts.css">
-    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="stylesheet" href="assets/site.css">
     <link rel="preload" href="assets/fonts/cormorant-latin-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/instrument-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-    <script src="assets/js/boot.js"></script>
-    <script src="assets/js/site.js" defer></script>
+    <script src="assets/site.js" defer></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -55,245 +51,264 @@
     }
     </script>
   </head>
-  <body>
+  <body class="home">
     <a class="skip-link" href="#main">Skip to content</a>
-    <div class="frame" aria-hidden="true"></div>
 
     <header class="site-header">
       <div class="wrap site-header__inner">
-        <a class="wordmark" href="./" aria-current="page"><span class="star" aria-hidden="true"></span>Arjun Patel</a>
-        <button type="button" class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="site-menu" hidden><span class="menu-toggle__icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Menu</button>
-        <div class="site-menu" id="site-menu">
-          <nav class="site-nav" aria-label="Primary">
-            <ul role="list">
-              <li><a href="./" aria-current="page">Home</a></li>
-              <li><a href="work/">Projects</a></li>
-              <li><a href="experience/">Experience</a></li>
-            </ul>
-          </nav>
-          <a class="pill" href="#contact">Contact <span class="pill__arrow" aria-hidden="true">→</span></a>
-        </div>
+        <a class="wordmark" href="./" aria-current="page">Arjun Patel</a>
+        <nav class="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="work/">Work</a></li>
+            <li><a href="#story">Story</a></li>
+            <li><a href="about/">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
-<nav class="rail" aria-label="Chapters">
-  <ol role="list">
-    <li><a href="#prologue"><span aria-hidden="true">I</span><span class="rail__name">Prologue</span></a></li>
-    <li><a href="#works"><span aria-hidden="true">II</span><span class="rail__name">Selected work</span></a></li>
-    <li><a href="#method"><span aria-hidden="true">III</span><span class="rail__name">Method</span></a></li>
-    <li><a href="#record"><span aria-hidden="true">IV</span><span class="rail__name">Record</span></a></li>
-    <li><a href="#contact"><span aria-hidden="true">V</span><span class="rail__name">Contact</span></a></li>
-  </ol>
-</nav>
+
+    <nav class="rail" aria-label="Story chapters">
+      <ol>
+        <li><a href="#story"><span>1687</span><span class="visually-hidden"> Newton’s apple</span></a></li>
+        <li><a href="#balloon"><span>1783</span><span class="visually-hidden"> Hot-air balloon</span></a></li>
+        <li><a href="#wright"><span>1903</span><span class="visually-hidden"> Wright brothers’ airplane</span></a></li>
+        <li><a href="#apollo"><span>1969</span><span class="visually-hidden"> Apollo 11</span></a></li>
+        <li><a href="#starship"><span>2023</span><span class="visually-hidden"> Starship launch</span></a></li>
+      </ol>
+    </nav>
+    <div class="chrome" aria-hidden="true"></div>
 
     <main id="main" tabindex="-1">
-      <section class="hero" aria-labelledby="hero-title" data-scrub="pin">
-        <div class="hero__stage">
-          <div class="hero__art">
-            <picture>
-              <source media="(max-width: 767px)" srcset="assets/img/hero-aristotle-900.webp" width="900" height="949">
-              <img class="hero__paint" src="assets/img/hero-aristotle-1700.webp" width="1700" height="1793" alt="Rembrandt’s painting of Aristotle in shadow, one hand resting on a bust of Homer." fetchpriority="high">
-            </picture>
-            <img class="hero__engraved" src="assets/img/hero-aristotle-engraved.webp" width="1200" height="1266" alt="" loading="lazy" decoding="async">
-          </div>
-          <div class="hero__shade"></div>
-          <div class="hero__hairline"></div>
-          <span class="star hero__cross" aria-hidden="true"></span>
-          <div class="wrap hero__copy">
-            <p class="label hero__eyebrow"><span>Industrial engineering ·</span> <span>Human factors ·</span> <span>Optimization</span></p>
-            <h1 class="hero__title" id="hero-title">
-              <span class="hero__name"><span class="hero__line"><span>Arjun</span></span> <span class="hero__line"><span>Patel</span></span></span><span class="visually-hidden">: </span>
-              <span class="hero__tagline">Engineering systems around <em>people</em>, performance, and evidence.</span>
-            </h1>
-            <div class="hero__foot">
-              <p class="hero__status mono">M.S. Industrial Engineering, Clemson University · Expected May 2027</p>
-              <a class="pill pill--solid" href="work/">View projects <span class="pill__arrow" aria-hidden="true">→</span></a>
-              <a class="text-link" href="experience/">Experience <span class="arrow" aria-hidden="true">→</span></a>
+      <div data-stage>
+        <section class="scene scene--hero" aria-labelledby="intro-title">
+          <div class="frame">
+            <div class="art">
+              <img class="bg" src="assets/img/scene/sky.webp" alt="" width="1760" height="1100" fetchpriority="high">
+              <img class="cloud cloud--a" src="assets/img/scene/cloud-3.webp" alt="" width="1058" height="389">
+              <img class="cloud cloud--b" src="assets/img/scene/cloud-2.webp" alt="" width="533" height="219">
+              <img class="monument" src="assets/img/scene/hero-group.webp" srcset="assets/img/scene/hero-group-800.webp 800w, assets/img/scene/hero-group.webp 1500w" sizes="(max-width: 767px) 125vw, 96vh" alt="Minerva, from Brumidi’s 1865 fresco, reaching toward a gold apple on a marble plinth." width="1500" height="1500">
             </div>
-            <p class="hero__plate mono">Plate I. Rembrandt, <em>Aristotle with a Bust of Homer</em>, 1653. The Met, public domain.</p>
+            <div class="copy copy--hero">
+              <div>
+                <h1 id="intro-title">Arjun Patel</h1>
+                <p class="hero__line">Engineering systems around people, performance, and evidence.</p>
+                <p class="actions"><a class="pill" href="work/">View projects <span class="pill__arrow" aria-hidden="true">→</span></a><a class="textlink" href="#story">Follow the story</a></p>
+              </div>
+              <div class="hero__foot">
+                <p class="badge">From a falling apple to a rising Starship</p>
+                <p class="hero__note">Five selected moments in engineering, not a ranking, each paired with a project of mine it brings to mind. <a href="#work">Skip the story</a></p>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="section" id="prologue" aria-labelledby="prologue-title" data-chapter="prologue">
-        <div class="wrap grid">
-          <h2 class="label prologue__label" id="prologue-title"><span class="label__num" aria-hidden="true">I</span>Prologue</h2>
-          <p class="prologue__statement" data-words>I began with mechanical systems: how components interact, and how manufacturing decisions shape quality. At Clemson I am widening the frame to the people who use, operate, and depend on them.</p>
-          <div class="prologue__note" data-reveal>
-            <p>An Industrial Engineering master’s student at Clemson University with a background in Mechanical Engineering. I work across human-centered design, optimization, quality improvement, and mechanical simulation to make complex systems easier to understand and improve.</p>
-            <p><a class="text-link" href="about/">About me <span class="arrow" aria-hidden="true">→</span></a></p>
+        <section class="scene scene--apple" id="story" data-tone="light" aria-labelledby="ch1">
+          <div class="frame">
+            <div class="art">
+              <img class="bg" src="assets/img/scene/newton.webp" alt="An apple branch in blossom, from Thomé’s 1885 botanical plate." width="1760" height="1100" loading="lazy">
+              <img class="falling" src="assets/img/scene/apple.webp" alt="" width="315" height="335" loading="lazy">
+            </div>
+            <div class="copy">
+              <h2 id="ch1"><span class="kicker">1 of 5 · Newton’s apple · 1687</span> Understanding why things fall.</h2>
+              <div class="slot">
+                <div class="slot__a glass">
+                  <p>In the familiar story, a falling apple set Isaac Newton thinking about why things fall. His <cite>Principia</cite>, published in 1687, showed that the same gravity keeps the Moon in orbit.</p>
+                  <p class="credit">The apple hitting his head is legend. Botanical plate: Otto Thomé, 1885.</p>
+                </div>
+                <article class="slot__b glass">
+                  <p class="kicker">My work: asking why things go wrong</p>
+                  <h3><a href="work/automotive-dmaic-review/">DMAIC Case Study — Automotive Manufacturing Safety and Lean Flow</a></h3>
+                  <p class="tag">Analysis of published cases</p>
+                  <p>A comparative analysis of two published automotive manufacturing cases, focused on the strength of their measurement, root-cause analysis, and control plans.</p>
+                </article>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="plate" aria-label="Plate II" data-scrub="pin">
-        <div class="plate__stage">
-          <picture>
-            <source media="(max-width: 767px)" srcset="assets/img/plate-roman-port-1000.webp" width="1000" height="726">
-            <img class="plate__img" src="assets/img/plate-roman-port.webp" width="1600" height="1162" alt="A monumental Roman port drawn as a negative: arches, stairways, moored chains and a colosseum wall." loading="lazy" decoding="async">
-          </picture>
-          <div class="plate__shade"></div>
-          <div class="wrap plate__copy">
-            <p class="plate__line">A portal, a park, a rotor, a delivery route. Every system is built <em>around someone.</em></p>
-            <p class="plate__caption mono">Plate II. Giovanni Battista Piranesi, <em>Parte di ampio magnifico Porto all’uso degli antichi Romani</em>, ca. 1749–50, shown in negative. The Met, public domain.</p>
+        <section class="scene scene--balloon" id="balloon" aria-labelledby="ch2">
+          <div class="frame">
+            <div class="art">
+              <img class="bg" src="assets/img/scene/sky.webp" alt="" width="1760" height="1100" loading="lazy">
+              <img class="cloud cloud--c" src="assets/img/scene/cloud-1.webp" alt="" width="803" height="304" loading="lazy">
+              <img class="paris" src="assets/img/scene/paris.webp" alt="" width="1760" height="776" loading="lazy">
+              <img class="balloon" src="assets/img/scene/balloon.webp" alt="The Montgolfier balloon of 1783, from a print of the flight over Paris." width="640" height="838" loading="lazy">
+            </div>
+            <div class="copy">
+              <h2 id="ch2"><span class="kicker">2 of 5 · Hot-air balloon · 1783</span> Humans begin to rise.</h2>
+              <div class="slot">
+                <div class="slot__a glass">
+                  <p>Brothers Joseph-Michel and Jacques-Étienne Montgolfier designed the hot-air balloon. On 21 November 1783, Jean-François Pilâtre de Rozier and the Marquis d’Arlandes flew it over Paris, making the first untethered human flight.</p>
+                  <p class="credit">View from Benjamin Franklin’s terrace at Passy. Print, 1783.</p>
+                </div>
+                <article class="slot__b glass">
+                  <p class="kicker">My work: starting with the people</p>
+                  <h3><a href="work/hfes-uxtg-portal/">HFES UXTG Information Portal</a></h3>
+                  <p class="tag">Prototype testing, four participants</p>
+                  <p>Accessibility and quality assurance for an event-first information portal, informed by stakeholder needs and a four-participant usability study.</p>
+                </article>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="section" id="works" aria-labelledby="works-title" data-chapter="works">
+        <section class="scene scene--wright" id="wright" aria-labelledby="ch3">
+          <div class="frame">
+            <div class="art">
+              <img class="bg" src="assets/img/scene/sky.webp" alt="" width="1760" height="1100" loading="lazy">
+              <img class="cloud cloud--d" src="assets/img/scene/cloud-2.webp" alt="" width="533" height="219" loading="lazy">
+              <img class="flyer" src="assets/img/scene/wright.webp" alt="The Wright Flyer lifting off near Kitty Hawk, with Wilbur Wright standing on the sand." width="1760" height="1017" loading="lazy">
+            </div>
+            <div class="copy">
+              <h2 id="ch3"><span class="kicker">3 of 5 · Wright brothers’ airplane · 1903</span> Taking control of flight.</h2>
+              <div class="slot">
+                <div class="slot__a glass">
+                  <p>Orville and Wilbur Wright tested wing shapes in their own wind tunnel before building the Flyer. On 17 December 1903, with Orville at the controls, it made the first controlled, powered airplane flight.</p>
+                  <p class="credit">Photograph by John T. Daniels. Sky recoloured.</p>
+                </div>
+                <article class="slot__b glass">
+                  <p class="kicker">My work: testing a blade in simulation</p>
+                  <h3><a href="work/bell407-rotor-analysis/">Bell-407 Helicopter Rotor and Blade System</a></h3>
+                  <p class="tag">Academic simulation study</p>
+                  <p>A comparative CFD study of two blade profiles, NACA-0012 and SC-1095, supported by CAD assembly work and static structural analysis of rotor components.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="scene scene--apollo" id="apollo" aria-labelledby="ch4">
+          <div class="frame">
+            <div class="art">
+              <img class="bg" src="assets/img/scene/night.webp" alt="" width="1760" height="1100" loading="lazy">
+              <img class="earth" src="assets/img/scene/earth.webp" alt="" width="180" height="180" loading="lazy">
+              <img class="moon" src="assets/img/scene/moon.webp" alt="Buzz Aldrin’s bootprint in lunar soil, Apollo 11, 1969." width="1760" height="620" loading="lazy">
+            </div>
+            <div class="copy">
+              <h2 id="ch4"><span class="kicker">4 of 5 · Apollo 11 · 1969</span> Setting foot on another world.</h2>
+              <div class="slot">
+                <div class="slot__a glass">
+                  <p>Hundreds of thousands of people worked on Apollo. In July 1969 Neil Armstrong and Buzz Aldrin walked on the Moon while Michael Collins orbited above.</p>
+                  <p class="credit">Aldrin’s bootprint, NASA, reshaped into a horizon. The small Earth is a separate Apollo 11 photograph, added for context.</p>
+                </div>
+                <article class="slot__b glass">
+                  <p class="kicker">My work: getting people and supplies there</p>
+                  <h3><a href="work/asheville-park-access/">Asheville Urban Park Access Optimization</a></h3>
+                  <p class="tag">Academic optimization study</p>
+                  <p>Five facility-location models exploring how efficiency and equity objectives change proposed park investments for a population of 88,860.</p>
+                  <h3><a href="work/outpatient-clinic-routing/">Outpatient Clinic Last-Mile Routing</a></h3>
+                  <p class="tag">Academic optimization project</p>
+                  <p>A comparison of traveling-salesperson and capacity-constrained routing models for deliveries to eight outpatient clinics.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="scene scene--starship" id="starship" aria-labelledby="ch5">
+          <div class="frame">
+            <div class="art">
+              <img class="bg" src="assets/img/scene/night.webp" alt="" width="1760" height="1100" loading="lazy">
+              <img class="bg bg--day" src="assets/img/scene/sky.webp" alt="" width="1760" height="1100" loading="lazy">
+              <img class="rocket" src="assets/img/scene/starship.webp" alt="Starship under powered ascent on its second flight test, 18 November 2023." width="520" height="2150" loading="lazy">
+            </div>
+            <div class="copy">
+              <h2 id="ch5"><span class="kicker">5 of 5 · Starship launch · 2023</span> Building toward the next frontier.</h2>
+              <div class="slot">
+                <div class="slot__a glass">
+                  <p>This is Starship’s second integrated flight test. Both stages were lost before the planned flight was complete, and the vehicle remains experimental. Humans have not yet traveled to Mars, and progress comes from testing, learning, and improving, without guarantees.</p>
+                  <p class="credit">Photo by Osunpokeh, CC BY-SA 4.0, cut from its sky and resized.</p>
+                </div>
+                <article class="slot__b glass">
+                  <p class="kicker">My work: a concept for what comes next</p>
+                  <h3><a href="work/passive-solar-array/">Passively Actuated Deployable Solar Array Using Shape-Memory Alloys</a></h3>
+                  <p class="tag">Concept design, not built hardware</p>
+                  <p>A solar-array deployment concept combining Nitinol shape-memory alloy with origami-inspired folding to explore compact storage and passive actuation.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section class="flow flow--sky" id="work" aria-labelledby="work-title">
         <div class="wrap">
-          <div class="grid works__head">
-            <h2 class="label works__label" id="works-title"><span class="label__num" aria-hidden="true">II</span>Selected work</h2>
-            <p class="works__lead" data-reveal>From an accessible information portal to park-location models and rotor simulations, these projects show how I frame problems, evaluate tradeoffs, and connect technical analysis to practical decisions.</p>
-          </div>
-          <ol class="index" role="list">
-            <li class="index__item" data-reveal>
-              <p class="index__num" aria-hidden="true">I</p>
-              <div class="index__head">
-                <h3 class="index__title"><a href="work/hfes-uxtg-portal/"><span>HFES UXTG Information Portal</span></a></h3>
-                <p class="index__cat label">Human factors and accessibility</p>
-              </div>
-              <div class="index__body">
-                <p class="index__copy">Accessibility and quality assurance for an event-first information portal, informed by stakeholder needs and a four-participant usability study.</p>
-                <p class="index__evidence"><span class="visually-hidden">Evidence: </span><span class="index__metric">14.18 s</span><span class="index__caption">Mean event-registration task time in prototype testing</span></p>
-              </div>
-              <p class="index__go" aria-hidden="true">→</p>
-            </li>
-            <li class="index__item" data-reveal>
-              <p class="index__num" aria-hidden="true">II</p>
-              <div class="index__head">
-                <h3 class="index__title"><a href="work/asheville-park-access/"><span>Asheville Urban Park Access Optimization</span></a></h3>
-                <p class="index__cat label">Operations research and decision support</p>
-              </div>
-              <div class="index__body">
-                <p class="index__copy">Five facility-location models exploring how efficiency and equity objectives change proposed park investments for a population of 88,860.</p>
-                <p class="index__evidence"><span class="visually-hidden">Evidence: </span><span class="index__metric">52.73%</span><span class="index__caption">Modeled half-mile coverage in the ten-new-park coverage scenario</span></p>
-              </div>
-              <p class="index__go" aria-hidden="true">→</p>
-            </li>
-            <li class="index__item" data-reveal>
-              <p class="index__num" aria-hidden="true">III</p>
-              <div class="index__head">
-                <h3 class="index__title"><a href="work/bell407-rotor-analysis/"><span>Bell-407 Helicopter Rotor and Blade System</span></a></h3>
-                <p class="index__cat label">Mechanical design and simulation</p>
-              </div>
-              <div class="index__body">
-                <p class="index__copy">A comparative CFD study of two blade profiles, supported by CAD assembly work and static structural analysis of rotor components.</p>
-                <p class="index__evidence"><span class="visually-hidden">Evidence: </span><span class="index__metric index__metric--text">NACA-0012 vs SC-1095</span><span class="index__caption">Compared in an academic simulation study</span></p>
-              </div>
-              <p class="index__go" aria-hidden="true">→</p>
-            </li>
-            <li class="index__item" data-reveal>
-              <p class="index__num" aria-hidden="true">IV</p>
-              <div class="index__head">
-                <h3 class="index__title"><a href="work/outpatient-clinic-routing/"><span>Outpatient Clinic Last-Mile Routing</span></a></h3>
-                <p class="index__cat label">Logistics and integer programming</p>
-              </div>
-              <div class="index__body">
-                <p class="index__copy">A comparison of traveling-salesperson and capacity-constrained routing models for deliveries to eight outpatient clinics.</p>
-                <p class="index__evidence"><span class="visually-hidden">Evidence: </span><span class="index__metric">45.32 km</span><span class="index__caption">Three-van plan, as reported</span></p>
-              </div>
-              <p class="index__go" aria-hidden="true">→</p>
-            </li>
+          <p class="kicker">Six projects, five chapters</p>
+          <h2 id="work-title">That same curiosity shapes how I approach engineering.</h2>
+          <p class="lead">My own work is smaller in scale and closer to everyday problems: accessibility evaluation, optimization models, simulation, and quality improvement. I played no part in these milestones and have no affiliation with NASA or SpaceX.</p>
+          <ol class="index">
+            <li><a href="work/hfes-uxtg-portal/"><span class="tag">Prototype testing, four participants</span><strong>HFES UXTG Information Portal</strong></a></li>
+            <li><a href="work/asheville-park-access/"><span class="tag">Academic optimization study</span><strong>Asheville Urban Park Access Optimization</strong></a></li>
+            <li><a href="work/bell407-rotor-analysis/"><span class="tag">Academic simulation study</span><strong>Bell-407 Helicopter Rotor and Blade System</strong></a></li>
+            <li><a href="work/outpatient-clinic-routing/"><span class="tag">Academic optimization project</span><strong>Outpatient Clinic Last-Mile Routing</strong></a></li>
+            <li><a href="work/automotive-dmaic-review/"><span class="tag">Analysis of published cases</span><strong>DMAIC Case Study — Automotive Manufacturing Safety and Lean Flow</strong></a></li>
+            <li><a href="work/passive-solar-array/"><span class="tag">Concept design, not built hardware</span><strong>Passively Actuated Deployable Solar Array Using Shape-Memory Alloys</strong></a></li>
           </ol>
-          <p class="works__more"><a class="text-link" href="work/">All six projects <span class="arrow" aria-hidden="true">→</span></a></p>
+          <p class="actions"><a class="pill" href="work/">View all projects <span class="pill__arrow" aria-hidden="true">→</span></a></p>
         </div>
       </section>
 
-      <section class="section section--panel" id="method" aria-labelledby="method-title" data-chapter="method">
+      <section class="flow flow--sky" id="approach" aria-labelledby="approach-title">
         <div class="wrap">
-          <div class="grid method__head">
-            <p class="label method__label"><span class="label__num" aria-hidden="true">III</span>Method</p>
-            <h2 class="method__title" id="method-title">Three questions I bring to any system.</h2>
-          </div>
-          <ul class="method__list" role="list">
-            <li class="method__item" data-reveal>
-              <p class="method__q">Who does it serve?</p>
-              <h3>Human-centered systems</h3>
-              <p>Understand user needs, evaluate accessibility, and test whether people can complete important tasks.</p>
-              <p class="method__links"><a class="text-link" href="work/?tag=human-factors">Related work<span class="visually-hidden"> in human factors</span> <span class="arrow" aria-hidden="true">→</span></a></p>
-            </li>
-            <li class="method__item" data-reveal>
-              <p class="method__q">What are the tradeoffs?</p>
-              <h3>Optimization and operations</h3>
-              <p>Translate constraints into models that support decisions about access, routing, production, and resource allocation.</p>
-              <p class="method__links"><a class="text-link" href="work/?tag=optimization">Related work<span class="visually-hidden"> in optimization</span> <span class="arrow" aria-hidden="true">→</span></a></p>
-            </li>
-            <li class="method__item" data-reveal>
-              <p class="method__q">Will it hold up?</p>
-              <h3>Mechanical analysis and quality</h3>
-              <p>Use simulation, inspection, and process analysis to investigate performance and improve engineering workflows.</p>
-              <p class="method__links"><a class="text-link" href="work/?tag=mechanical-design">Mechanical design <span class="arrow" aria-hidden="true">→</span></a> <a class="text-link" href="work/?tag=quality-improvement">Quality improvement <span class="arrow" aria-hidden="true">→</span></a></p>
-            </li>
-          </ul>
+        <h2 id="approach-title">How I approach a problem</h2>
+        <ol class="steps">
+          <li><div><h3>Define the decision</h3><p>Clarify who the system serves and what needs to improve.</p><p class="note">HFES UXTG: the project report documents 12 stakeholder interviews and 21 target specifications.</p></div></li>
+          <li><div><h3>Examine the evidence</h3><p>Understand the available data, observations, and constraints.</p><p class="note">Asheville parks: 77 demand locations, 52 existing parks, and 138 candidate sites.</p></div></li>
+          <li><div><h3>Model or prototype</h3><p>Choose an approach that makes the important tradeoffs visible.</p><p class="note">Clinic routing: a TSP distance benchmark compared with a capacity-constrained model.</p></div></li>
+          <li><div><h3>Evaluate and communicate</h3><p>Test the result, document limitations, and identify the next useful step.</p><p class="note">Every case study ends with a scope note stating what the result does not show.</p></div></li>
+        </ol>
         </div>
       </section>
 
-      <section class="section" id="record" aria-labelledby="record-title" data-chapter="record">
+      <section class="flow flow--page" id="experience" aria-labelledby="experience-title">
         <div class="wrap">
-          <div class="grid">
-            <h2 class="label record__label" id="record-title"><span class="label__num" aria-hidden="true">IV</span>Experience and education</h2>
+          <div class="section__head">
+            <h2 id="experience-title">Experience and education</h2>
           </div>
-          <ol class="record" role="list">
-            <li class="record__row" data-reveal>
-              <span class="record__when mono">August 2025–May 2027 expected</span>
-              <span class="record__what"><a href="experience/#clemson">M.S. Industrial Engineering</a></span>
-              <span class="record__where">Clemson University · Clemson, United States</span>
-            </li>
-            <li class="record__row" data-reveal>
-              <span class="record__when mono">April 2024–June 2024</span>
-              <span class="record__what"><a href="experience/#bc-instruments">Quality Assurance Intern</a></span>
-              <span class="record__where">BC Instruments India Pvt. Ltd. · Anand, India</span>
-            </li>
-            <li class="record__row" data-reveal>
-              <span class="record__when mono">April 2023–June 2023</span>
-              <span class="record__what"><a href="experience/#tripcon">Production Engineer Intern</a></span>
-              <span class="record__where">Tripcon Engineering Pvt. Ltd. · Anand, India</span>
-            </li>
-            <li class="record__row" data-reveal>
-              <span class="record__when mono">2021–2025</span>
-              <span class="record__what"><a href="experience/#charusat">Bachelor’s in Mechanical Engineering</a></span>
-              <span class="record__where">Charusat University · India</span>
-            </li>
+          <ol class="record">
+            <li><span class="record__when">August 2025–May 2027 expected</span><span class="record__what"><a href="experience/#clemson">M.S. Industrial Engineering</a></span><span class="record__where">Clemson University · Clemson, United States</span></li>
+            <li><span class="record__when">April 2024–June 2024</span><span class="record__what"><a href="experience/#bc-instruments">Quality Assurance Intern</a></span><span class="record__where">BC Instruments India Pvt. Ltd. · Anand, India</span></li>
+            <li><span class="record__when">April 2023–June 2023</span><span class="record__what"><a href="experience/#tripcon">Production Engineer Intern</a></span><span class="record__where">Tripcon Engineering Pvt. Ltd. · Anand, India</span></li>
+            <li><span class="record__when">2021–2025</span><span class="record__what"><a href="experience/#charusat">Bachelor’s in Mechanical Engineering</a></span><span class="record__where">Charusat University · India</span></li>
           </ol>
-          <p class="record__more"><a class="text-link" href="experience/">Full experience <span class="arrow" aria-hidden="true">→</span></a></p>
+          <p class="after-list"><a class="more" href="experience/">Full experience and education</a></p>
         </div>
+      </section>
+
+      <section class="flow flow--night" aria-label="Closing quotation">
+        <figure class="wrap quote">
+          <blockquote>
+            <p>“For a successful technology, reality must take precedence over public relations, for nature cannot be fooled.”</p>
+          </blockquote>
+          <figcaption>Richard P. Feynman, <a href="https://www.nasa.gov/history/rogersrep/v2appf.htm" rel="noopener noreferrer">Challenger accident report, Appendix F<span class="visually-hidden"> (opens external site)</span></a>, 1986</figcaption>
+        </figure>
       </section>
     </main>
 
     <footer class="site-footer">
-      <section class="contact" id="contact" aria-labelledby="contact-title" data-chapter="contact" data-scrub="pass">
+      <section class="contact band" id="contact" aria-labelledby="contact-title">
         <div class="wrap">
-          <div class="contact__frame">
-            <span class="star" aria-hidden="true"></span><span class="star" aria-hidden="true"></span><span class="star" aria-hidden="true"></span><span class="star" aria-hidden="true"></span>
-            <img class="contact__coin" src="assets/img/coin-caesar.webp" width="416" height="416" alt="Gold aureus of Julius Caesar, struck in 46 BCE." loading="lazy" decoding="async">
-            <p class="label">Contact</p>
-            <h2 id="contact-title">Let’s discuss a systems problem worth solving.</h2>
-            <p class="contact__lead">If your work connects people, operations, or engineering analysis, I’d welcome a conversation about the problem and how I could contribute.</p>
-            <p class="contact__address">arjunb.patel@outlook.com</p>
-            <ul class="contact__links" role="list">
-              <li><a class="pill pill--solid" href="mailto:arjunb.patel@outlook.com?subject=Hello%20from%20your%20portfolio">Email Arjun <span class="pill__arrow" aria-hidden="true">→</span></a></li>
-              <li><a class="pill" href="https://www.linkedin.com/in/linkwitharjun" rel="noopener noreferrer">Connect on LinkedIn <span class="pill__arrow" aria-hidden="true">↗</span><span class="visually-hidden"> (opens external site)</span></a></li>
-              <li><button type="button" class="pill pill--plain" data-copy="arjunb.patel@outlook.com" hidden>Copy email address</button></li>
-            </ul>
-            <p class="contact__status" role="status" data-copy-status></p>
-            <p class="contact__hint">Recruiters: please include the role and timeline.</p>
-          </div>
+          <h2 id="contact-title">Let’s discuss a systems problem worth solving.</h2>
+          <p class="lead">If your work connects people, operations, or engineering analysis, I’d welcome a conversation about the problem and how I could contribute. Recruiters: please include the role and timeline.</p>
+          <p class="contact__links-address"><a href="mailto:arjunb.patel@outlook.com?subject=Hello%20from%20your%20portfolio">arjunb.patel@outlook.com</a></p>
+          <ul class="contact__links">
+            <li><a class="button button--primary" href="mailto:arjunb.patel@outlook.com?subject=Hello%20from%20your%20portfolio">Email Arjun</a></li>
+            <li><a class="button" href="https://www.linkedin.com/in/linkwitharjun" rel="noopener noreferrer">Connect on LinkedIn<span class="visually-hidden"> (opens external site)</span></a></li>
+            <li><button type="button" class="button" data-copy="arjunb.patel@outlook.com" hidden>Copy email address</button></li>
+          </ul>
+          <p class="contact__status" role="status" data-copy-status></p>
         </div>
       </section>
       <div class="wrap site-footer__inner">
-        <div>
-          <p class="site-footer__id">Arjun Patel · Industrial Engineering Portfolio</p>
-          <p>No cookies, no analytics, no tracking. © 2026 Arjun Patel.</p>
-        </div>
+        <p>© 2026 Arjun Patel. No cookies, no analytics, no tracking.</p>
         <nav aria-label="Footer">
-          <ul role="list">
-            <li><a href="work/">Projects</a></li>
+          <ul>
             <li><a href="experience/">Experience</a></li>
-            <li><a href="about/">About</a></li>
             <li><a href="privacy/">Privacy</a></li>
+            <li><a href="CREDITS.md">Image credits</a></li>
           </ul>
         </nav>
-        <p class="site-footer__credit">Type: Cormorant, Instrument Sans, JetBrains Mono (SIL OFL). Plates: public-domain works from <a href="https://www.metmuseum.org/about-the-met/policies-and-documents/open-access" rel="noopener noreferrer">The Metropolitan Museum of Art Open Access<span class="visually-hidden"> (opens external site)</span></a>.</p>
       </div>
     </footer>
   </body>
