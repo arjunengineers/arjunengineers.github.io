@@ -3,91 +3,80 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types 'none'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; script-src 'none'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Privacy — No Tracking, No Cookies | Arjun Patel</title>
     <meta name="description" content="This site uses no cookies, analytics or forms and collects no data about visitors.">
     <link rel="canonical" href="https://arjunengineers.github.io/privacy/">
-    <meta name="theme-color" content="#1E4C9A">
+    <meta name="theme-color" content="#fbfaf7">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Arjun Patel">
     <meta property="og:title" content="Privacy — No Tracking, No Cookies | Arjun Patel">
     <meta property="og:description" content="This site uses no cookies, analytics or forms and collects no data about visitors.">
     <meta property="og:url" content="https://arjunengineers.github.io/privacy/">
-    <meta property="og:image" content="https://arjunengineers.github.io/assets/img/og-arjun-patel.jpg">
+    <meta property="og:image" content="https://arjunengineers.github.io/assets/img/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Arjun Patel: engineering systems around people, performance, and evidence.">
+    <meta property="og:image:alt" content="A painted alpine valley under a deep blue sky.">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../assets/site.css">
-    <link rel="preload" href="../assets/fonts/cormorant-latin-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../assets/fonts/instrument-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-    <script src="../assets/site.js" defer></script>
+    <link rel="stylesheet" href="../assets/css/site.css">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header">
-      <div class="wrap site-header__inner">
-        <a class="wordmark" href="../">Arjun Patel</a>
-        <nav class="site-nav" aria-label="Primary">
-          <ul>
-            <li><a href="../work/">Work</a></li>
-            <li><a href="../#story">Story</a></li>
-            <li><a href="../about/">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
+    <header class="topbar">
+      <nav class="topbar__inner" aria-label="Primary">
+        <a class="brand" href="../index.html"><img class="brand__mark" src="../assets/img/brand-mark.webp" width="96" height="96" alt=""><span class="brand__name">Arjun Patel</span></a>
+        <span class="brand__tag">M.S. Industrial Engineering · Clemson</span>
+        <ul role="list">
+          <li><a href="../index.html#projects">Work</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#experience">Experience</a></li>
+          <li><a class="nav-cta" href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main id="main" tabindex="-1">
-      <div class="wrap simple">
-        <h1>Privacy</h1>
-        <div class="simple__body">
-          <p class="lead">This website does not use cookies, analytics, tracking, or forms, and it does not collect or store any information about you.</p>
-
+      <section class="panel scene scene--plain nav-dark" aria-labelledby="page-title">
+        <div class="scene__sky">
+          <div class="wrap page-head">
+            <p class="eyebrow">Privacy</p>
+            <h1 id="page-title">No tracking, no cookies.</h1>
+            <p>This website does not use cookies, analytics, tracking, or forms, and it does not collect or store any information about you.</p>
+          </div>
+        </div>
+      </section>
+      <div class="wrap page-body">
+        <div class="prose">
           <h2>What this site does</h2>
           <ul>
-            <li>Every file, including the fonts, comes from this site’s own address. There are no third-party scripts, fonts, or embeds.</li>
-            <li>The project filter on the Work page keeps its state in the page address only. Nothing is stored or sent.</li>
+            <li>Every file, including the fonts and images, comes from this site’s own address. There are no third-party scripts, fonts, or embeds.</li>
+            <li>The site runs no JavaScript and stores nothing in your browser.</li>
           </ul>
-
           <h2>Hosting</h2>
-          <p>This site is hosted on GitHub Pages. GitHub logs visitors’ IP addresses for security purposes, as described in the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener noreferrer">GitHub Privacy Statement<span class="visually-hidden"> (opens external site)</span></a>.</p>
-
+          <p>This site is hosted on GitHub Pages. GitHub logs visitors’ IP addresses for security purposes, as described in the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener noreferrer">GitHub Privacy Statement<svg class="ext" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M4 2h6v6M10 2 3 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visually-hidden"> (external site)</span></a>.</p>
           <h2>Email</h2>
           <p>If you email me, your message is handled as ordinary correspondence and used only to reply.</p>
-
-          <p class="note">Last updated: Oct 2026.</p>
+          <p class="label">Last updated: Nov 2026</p>
         </div>
       </div>
     </main>
 
     <footer class="site-footer">
-      <section class="contact band" id="contact" aria-labelledby="contact-title">
-        <div class="wrap">
-          <h2 id="contact-title">Let’s discuss a systems problem worth solving.</h2>
-          <p class="lead">If your work connects people, operations, or engineering analysis, I’d welcome a conversation about the problem and how I could contribute. Recruiters: please include the role and timeline.</p>
-          <p class="contact__links-address"><a href="mailto:arjunb.patel@outlook.com?subject=Hello%20from%20your%20portfolio">arjunb.patel@outlook.com</a></p>
-          <ul class="contact__links">
-            <li><a class="button button--primary" href="mailto:arjunb.patel@outlook.com?subject=Hello%20from%20your%20portfolio">Email Arjun</a></li>
-            <li><a class="button" href="https://www.linkedin.com/in/linkwitharjun" rel="noopener noreferrer">Connect on LinkedIn<span class="visually-hidden"> (opens external site)</span></a></li>
-            <li><button type="button" class="button" data-copy="arjunb.patel@outlook.com" hidden>Copy email address</button></li>
-          </ul>
-          <p class="contact__status" role="status" data-copy-status></p>
-        </div>
-      </section>
       <div class="wrap site-footer__inner">
-        <p>© 2026 Arjun Patel. No cookies, no analytics, no tracking.</p>
+        <p>© 2026 Arjun Patel · Industrial Engineering Portfolio</p>
         <nav aria-label="Footer">
-          <ul>
-            <li><a href="../experience/">Experience</a></li>
-            <li><a href="../privacy/" aria-current="page">Privacy</a></li>
-            <li><a href="../CREDITS.md">Image credits</a></li>
+          <ul role="list">
+            <li><a href="../index.html#projects">Work</a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#experience">Experience</a></li>
+            <li><a href="index.html">Privacy</a></li>
           </ul>
         </nav>
+        <p>No cookies, no analytics, no tracking.</p>
       </div>
     </footer>
   </body>

@@ -3,312 +3,454 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types 'none'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; script-src 'none'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Arjun Patel | Industrial Engineering Portfolio</title>
-    <meta name="description" content="Explore Arjun Patel’s work in human factors, optimization, manufacturing quality, and mechanical analysis, from Clemson University and beyond.">
+    <meta name="description" content="Arjun Patel is an Industrial Engineering master’s student at Clemson University. Selected projects in human factors, optimization, quality improvement, and mechanical analysis.">
     <link rel="canonical" href="https://arjunengineers.github.io/">
-    <meta name="theme-color" content="#1E4C9A">
+    <meta name="theme-color" content="#fbfaf7">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Arjun Patel">
     <meta property="og:title" content="Arjun Patel | Industrial Engineering Portfolio">
-    <meta property="og:description" content="Engineering systems around people, performance, and evidence. Selected projects in human factors, optimization, and mechanical analysis.">
+    <meta property="og:description" content="Engineering systems around people, performance, and evidence. Selected projects in human factors, optimization, quality improvement, and mechanical analysis.">
     <meta property="og:url" content="https://arjunengineers.github.io/">
-    <meta property="og:image" content="https://arjunengineers.github.io/assets/img/og-arjun-patel.jpg">
+    <meta property="og:image" content="https://arjunengineers.github.io/assets/img/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Arjun Patel: engineering systems around people, performance, and evidence.">
+    <meta property="og:image:alt" content="A painted alpine valley under a deep blue sky.">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="assets/site.css">
-    <link rel="preload" href="assets/fonts/cormorant-latin-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/instrument-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-    <script src="assets/site.js" defer></script>
+    <link rel="stylesheet" href="assets/css/site.css">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Arjun Patel",
+      "url": "https://arjunengineers.github.io/",
       "description": "Industrial Engineering master’s student at Clemson University with a background in Mechanical Engineering.",
-      "affiliation": {
-        "@type": "CollegeOrUniversity",
-        "name": "Clemson University"
-      },
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "Charusat University"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/linkwitharjun"
-      ],
-      "knowsAbout": [
-        "Industrial engineering",
-        "Human factors",
-        "Optimization",
-        "Manufacturing quality",
-        "Mechanical analysis"
-      ]
+      "affiliation": { "@type": "CollegeOrUniversity", "name": "Clemson University" },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Charusat University" },
+      "sameAs": ["https://www.linkedin.com/in/linkwitharjun"],
+      "knowsAbout": ["Industrial engineering", "Human factors", "Optimization", "Manufacturing quality", "Mechanical analysis"]
     }
     </script>
   </head>
-  <body class="home">
+  <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header">
-      <div class="wrap site-header__inner">
-        <a class="wordmark" href="./" aria-current="page">Arjun Patel</a>
-        <nav class="site-nav" aria-label="Primary">
-          <ul>
-            <li><a href="work/">Work</a></li>
-            <li><a href="#story">Story</a></li>
-            <li><a href="about/">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
+    <header class="topbar">
+      <nav class="topbar__inner" aria-label="Primary">
+        <a class="brand" href="index.html" aria-current="page"><img class="brand__mark" src="assets/img/brand-mark.webp" width="96" height="96" alt=""><span class="brand__name">Arjun Patel</span></a>
+        <span class="brand__tag">M.S. Industrial Engineering · Clemson</span>
+        <ul role="list">
+          <li><a href="#projects">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a class="nav-cta" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <nav class="rail" aria-label="Story chapters">
-      <ol>
-        <li><a href="#story"><span>1687</span><span class="visually-hidden"> Newton’s apple</span></a></li>
-        <li><a href="#balloon"><span>1783</span><span class="visually-hidden"> Hot-air balloon</span></a></li>
-        <li><a href="#wright"><span>1903</span><span class="visually-hidden"> Wright brothers’ airplane</span></a></li>
-        <li><a href="#apollo"><span>1969</span><span class="visually-hidden"> Apollo 11</span></a></li>
-        <li><a href="#starship"><span>2023</span><span class="visually-hidden"> Starship launch</span></a></li>
-      </ol>
-    </nav>
-    <div class="chrome" aria-hidden="true"></div>
-
     <main id="main" tabindex="-1">
-      <div data-stage>
-        <section class="scene scene--hero" aria-labelledby="intro-title">
-          <div class="frame">
-            <div class="art">
-              <img class="bg" src="assets/img/scene/sky.webp" alt="" width="1760" height="1100" fetchpriority="high">
-              <img class="cloud cloud--a" src="assets/img/scene/cloud-3.webp" alt="" width="1058" height="389">
-              <img class="cloud cloud--b" src="assets/img/scene/cloud-2.webp" alt="" width="533" height="219">
-              <img class="monument" src="assets/img/scene/hero-group.webp" srcset="assets/img/scene/hero-group-800.webp 800w, assets/img/scene/hero-group.webp 1500w" sizes="(max-width: 767px) 125vw, 96vh" alt="Minerva, from Brumidi’s 1865 fresco, reaching toward a gold apple on a marble plinth." width="1500" height="1500">
-            </div>
-            <div class="copy copy--hero">
-              <div>
-                <h1 id="intro-title">Arjun Patel</h1>
-                <p class="hero__line">Engineering systems around people, performance, and evidence.</p>
-                <p class="actions"><a class="pill" href="work/">View projects <span class="pill__arrow" aria-hidden="true">→</span></a><a class="textlink" href="#story">Follow the story</a></p>
-              </div>
-              <div class="hero__foot">
-                <p class="badge">From a falling apple to a rising Starship</p>
-                <p class="hero__note">Five selected moments in engineering, not a ranking, each paired with a project of mine it brings to mind. <a href="#work">Skip the story</a></p>
+      <section class="panel scene scene--home scene--fit nav-dark" aria-labelledby="hero-title">
+        <div class="scene__sky">
+          <div class="wrap">
+            <div class="hero__content">
+              <p class="hero__badge"><span>Industrial engineering</span><span>Human factors</span><span>Optimization</span></p>
+              <h1 class="hero__title" id="hero-title">
+                <span class="hero__name">Arjun Patel</span><span class="visually-hidden">: </span>
+                <span class="hero__headline">Engineering systems around people, performance, and evidence.</span>
+              </h1>
+              <p class="hero__lede measure">I’m an Industrial Engineering master’s student with a background in Mechanical Engineering. I work across human-centered design, optimization, quality improvement, and mechanical simulation to make complex systems easier to understand and improve.</p>
+              <div class="hero__actions">
+                <a class="btn btn--light" href="#projects">View projects <span class="arrow" aria-hidden="true">→</span></a>
+                <a class="btn btn--glass" href="#contact">Get in touch</a>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+        <picture class="scene__art">
+          <source media="(max-width: 699px)" type="image/webp" srcset="assets/img/scene/alpine-tall-640.webp 640w, assets/img/scene/alpine-tall-941.webp 941w" sizes="100vw" width="941" height="1672">
+          <img src="assets/img/scene/alpine-1536.webp" srcset="assets/img/scene/alpine-768.webp 768w, assets/img/scene/alpine-1152.webp 1152w, assets/img/scene/alpine-1536.webp 1536w" sizes="100vw" width="1536" height="1024" alt="" fetchpriority="high">
+        </picture>
+      </section>
 
-        <section class="scene scene--apple" id="story" data-tone="light" aria-labelledby="ch1">
-          <div class="frame">
-            <div class="art">
-              <img class="bg" src="assets/img/scene/newton.webp" alt="An apple branch in blossom, from Thomé’s 1885 botanical plate." width="1760" height="1100" loading="lazy">
-              <img class="falling" src="assets/img/scene/apple.webp" alt="" width="315" height="335" loading="lazy">
-            </div>
-            <div class="copy">
-              <h2 id="ch1"><span class="kicker">1 of 5 · Newton’s apple · 1687</span> Understanding why things fall.</h2>
-              <div class="slot">
-                <div class="slot__a glass">
-                  <p>In the familiar story, a falling apple set Isaac Newton thinking about why things fall. His <cite>Principia</cite>, published in 1687, showed that the same gravity keeps the Moon in orbit.</p>
-                  <p class="credit">The apple hitting his head is legend. Botanical plate: Otto Thomé, 1885.</p>
-                </div>
-                <article class="slot__b glass">
-                  <p class="kicker">My work: asking why things go wrong</p>
-                  <h3><a href="work/automotive-dmaic-review/">DMAIC Case Study — Automotive Manufacturing Safety and Lean Flow</a></h3>
-                  <p class="tag">Analysis of published cases</p>
-                  <p>A comparative analysis of two published automotive manufacturing cases, focused on the strength of their measurement, root-cause analysis, and control plans.</p>
-                </article>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="scene scene--balloon" id="balloon" aria-labelledby="ch2">
-          <div class="frame">
-            <div class="art">
-              <img class="bg" src="assets/img/scene/sky.webp" alt="" width="1760" height="1100" loading="lazy">
-              <img class="cloud cloud--c" src="assets/img/scene/cloud-1.webp" alt="" width="803" height="304" loading="lazy">
-              <img class="paris" src="assets/img/scene/paris.webp" alt="" width="1760" height="776" loading="lazy">
-              <img class="balloon" src="assets/img/scene/balloon.webp" alt="The Montgolfier balloon of 1783, from a print of the flight over Paris." width="640" height="838" loading="lazy">
-            </div>
-            <div class="copy">
-              <h2 id="ch2"><span class="kicker">2 of 5 · Hot-air balloon · 1783</span> Humans begin to rise.</h2>
-              <div class="slot">
-                <div class="slot__a glass">
-                  <p>Brothers Joseph-Michel and Jacques-Étienne Montgolfier designed the hot-air balloon. On 21 November 1783, Jean-François Pilâtre de Rozier and the Marquis d’Arlandes flew it over Paris, making the first untethered human flight.</p>
-                  <p class="credit">View from Benjamin Franklin’s terrace at Passy. Print, 1783.</p>
-                </div>
-                <article class="slot__b glass">
-                  <p class="kicker">My work: starting with the people</p>
-                  <h3><a href="work/hfes-uxtg-portal/">HFES UXTG Information Portal</a></h3>
-                  <p class="tag">Prototype testing, four participants</p>
-                  <p>Accessibility and quality assurance for an event-first information portal, informed by stakeholder needs and a four-participant usability study.</p>
-                </article>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="scene scene--wright" id="wright" aria-labelledby="ch3">
-          <div class="frame">
-            <div class="art">
-              <img class="bg" src="assets/img/scene/sky.webp" alt="" width="1760" height="1100" loading="lazy">
-              <img class="cloud cloud--d" src="assets/img/scene/cloud-2.webp" alt="" width="533" height="219" loading="lazy">
-              <img class="flyer" src="assets/img/scene/wright.webp" alt="The Wright Flyer lifting off near Kitty Hawk, with Wilbur Wright standing on the sand." width="1760" height="1017" loading="lazy">
-            </div>
-            <div class="copy">
-              <h2 id="ch3"><span class="kicker">3 of 5 · Wright brothers’ airplane · 1903</span> Taking control of flight.</h2>
-              <div class="slot">
-                <div class="slot__a glass">
-                  <p>Orville and Wilbur Wright tested wing shapes in their own wind tunnel before building the Flyer. On 17 December 1903, with Orville at the controls, it made the first controlled, powered airplane flight.</p>
-                  <p class="credit">Photograph by John T. Daniels. Sky recoloured.</p>
-                </div>
-                <article class="slot__b glass">
-                  <p class="kicker">My work: testing a blade in simulation</p>
-                  <h3><a href="work/bell407-rotor-analysis/">Bell-407 Helicopter Rotor and Blade System</a></h3>
-                  <p class="tag">Academic simulation study</p>
-                  <p>A comparative CFD study of two blade profiles, NACA-0012 and SC-1095, supported by CAD assembly work and static structural analysis of rotor components.</p>
-                </article>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="scene scene--apollo" id="apollo" aria-labelledby="ch4">
-          <div class="frame">
-            <div class="art">
-              <img class="bg" src="assets/img/scene/night.webp" alt="" width="1760" height="1100" loading="lazy">
-              <img class="earth" src="assets/img/scene/earth.webp" alt="" width="180" height="180" loading="lazy">
-              <img class="moon" src="assets/img/scene/moon.webp" alt="Buzz Aldrin’s bootprint in lunar soil, Apollo 11, 1969." width="1760" height="620" loading="lazy">
-            </div>
-            <div class="copy">
-              <h2 id="ch4"><span class="kicker">4 of 5 · Apollo 11 · 1969</span> Setting foot on another world.</h2>
-              <div class="slot">
-                <div class="slot__a glass">
-                  <p>Hundreds of thousands of people worked on Apollo. In July 1969 Neil Armstrong and Buzz Aldrin walked on the Moon while Michael Collins orbited above.</p>
-                  <p class="credit">Aldrin’s bootprint, NASA, reshaped into a horizon. The small Earth is a separate Apollo 11 photograph, added for context.</p>
-                </div>
-                <article class="slot__b glass">
-                  <p class="kicker">My work: getting people and supplies there</p>
-                  <h3><a href="work/asheville-park-access/">Asheville Urban Park Access Optimization</a></h3>
-                  <p class="tag">Academic optimization study</p>
-                  <p>Five facility-location models exploring how efficiency and equity objectives change proposed park investments for a population of 88,860.</p>
-                  <h3><a href="work/outpatient-clinic-routing/">Outpatient Clinic Last-Mile Routing</a></h3>
-                  <p class="tag">Academic optimization project</p>
-                  <p>A comparison of traveling-salesperson and capacity-constrained routing models for deliveries to eight outpatient clinics.</p>
-                </article>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="scene scene--starship" id="starship" aria-labelledby="ch5">
-          <div class="frame">
-            <div class="art">
-              <img class="bg" src="assets/img/scene/night.webp" alt="" width="1760" height="1100" loading="lazy">
-              <img class="bg bg--day" src="assets/img/scene/sky.webp" alt="" width="1760" height="1100" loading="lazy">
-              <img class="rocket" src="assets/img/scene/starship.webp" alt="Starship under powered ascent on its second flight test, 18 November 2023." width="520" height="2150" loading="lazy">
-            </div>
-            <div class="copy">
-              <h2 id="ch5"><span class="kicker">5 of 5 · Starship launch · 2023</span> Building toward the next frontier.</h2>
-              <div class="slot">
-                <div class="slot__a glass">
-                  <p>This is Starship’s second integrated flight test. Both stages were lost before the planned flight was complete, and the vehicle remains experimental. Humans have not yet traveled to Mars, and progress comes from testing, learning, and improving, without guarantees.</p>
-                  <p class="credit">Photo by Osunpokeh, CC BY-SA 4.0, cut from its sky and resized.</p>
-                </div>
-                <article class="slot__b glass">
-                  <p class="kicker">My work: a concept for what comes next</p>
-                  <h3><a href="work/passive-solar-array/">Passively Actuated Deployable Solar Array Using Shape-Memory Alloys</a></h3>
-                  <p class="tag">Concept design, not built hardware</p>
-                  <p>A solar-array deployment concept combining Nitinol shape-memory alloy with origami-inspired folding to explore compact storage and passive actuation.</p>
-                </article>
-              </div>
-            </div>
-          </div>
-        </section>
+      <div class="wrap">
+        <dl class="glance" aria-label="At a glance">
+          <div><dt>Graduate study</dt><dd><strong>M.S. Industrial Engineering</strong>Clemson University · expected May 2027</dd></div>
+          <div><dt>Undergraduate</dt><dd><strong>Bachelor’s in Mechanical Engineering</strong>Charusat University · 2021–2025</dd></div>
+          <div><dt>Industry</dt><dd><strong>Two internships</strong>Quality assurance and production · Anand, India</dd></div>
+          <div><dt>Portfolio</dt><dd><strong>Six projects</strong>Human factors, optimization, mechanical design, quality</dd></div>
+        </dl>
       </div>
 
-      <section class="flow flow--sky" id="work" aria-labelledby="work-title">
+      <section class="section" id="projects" aria-labelledby="projects-title">
         <div class="wrap">
-          <p class="kicker">Six projects, five chapters</p>
-          <h2 id="work-title">That same curiosity shapes how I approach engineering.</h2>
-          <p class="lead">My own work is smaller in scale and closer to everyday problems: accessibility evaluation, optimization models, simulation, and quality improvement. I played no part in these milestones and have no affiliation with NASA or SpaceX.</p>
-          <ol class="index">
-            <li><a href="work/hfes-uxtg-portal/"><span class="tag">Prototype testing, four participants</span><strong>HFES UXTG Information Portal</strong></a></li>
-            <li><a href="work/asheville-park-access/"><span class="tag">Academic optimization study</span><strong>Asheville Urban Park Access Optimization</strong></a></li>
-            <li><a href="work/bell407-rotor-analysis/"><span class="tag">Academic simulation study</span><strong>Bell-407 Helicopter Rotor and Blade System</strong></a></li>
-            <li><a href="work/outpatient-clinic-routing/"><span class="tag">Academic optimization project</span><strong>Outpatient Clinic Last-Mile Routing</strong></a></li>
-            <li><a href="work/automotive-dmaic-review/"><span class="tag">Analysis of published cases</span><strong>DMAIC Case Study — Automotive Manufacturing Safety and Lean Flow</strong></a></li>
-            <li><a href="work/passive-solar-array/"><span class="tag">Concept design, not built hardware</span><strong>Passively Actuated Deployable Solar Array Using Shape-Memory Alloys</strong></a></li>
-          </ol>
-          <p class="actions"><a class="pill" href="work/">View all projects <span class="pill__arrow" aria-hidden="true">→</span></a></p>
-        </div>
-      </section>
-
-      <section class="flow flow--sky" id="approach" aria-labelledby="approach-title">
-        <div class="wrap">
-        <h2 id="approach-title">How I approach a problem</h2>
-        <ol class="steps">
-          <li><div><h3>Define the decision</h3><p>Clarify who the system serves and what needs to improve.</p><p class="note">HFES UXTG: the project report documents 12 stakeholder interviews and 21 target specifications.</p></div></li>
-          <li><div><h3>Examine the evidence</h3><p>Understand the available data, observations, and constraints.</p><p class="note">Asheville parks: 77 demand locations, 52 existing parks, and 138 candidate sites.</p></div></li>
-          <li><div><h3>Model or prototype</h3><p>Choose an approach that makes the important tradeoffs visible.</p><p class="note">Clinic routing: a TSP distance benchmark compared with a capacity-constrained model.</p></div></li>
-          <li><div><h3>Evaluate and communicate</h3><p>Test the result, document limitations, and identify the next useful step.</p><p class="note">Every case study ends with a scope note stating what the result does not show.</p></div></li>
-        </ol>
-        </div>
-      </section>
-
-      <section class="flow flow--page" id="experience" aria-labelledby="experience-title">
-        <div class="wrap">
-          <div class="section__head">
-            <h2 id="experience-title">Experience and education</h2>
+          <div class="section-head">
+            <p class="eyebrow"><span class="eyebrow__num">01</span>Selected work</p>
+            <h2 class="title-lg" id="projects-title">Six projects across four disciplines.</h2>
+            <p class="lead">From an accessible information portal to park-location models and rotor simulations. Every project ends with a scope note stating what the result does not show.</p>
           </div>
-          <ol class="record">
-            <li><span class="record__when">August 2025–May 2027 expected</span><span class="record__what"><a href="experience/#clemson">M.S. Industrial Engineering</a></span><span class="record__where">Clemson University · Clemson, United States</span></li>
-            <li><span class="record__when">April 2024–June 2024</span><span class="record__what"><a href="experience/#bc-instruments">Quality Assurance Intern</a></span><span class="record__where">BC Instruments India Pvt. Ltd. · Anand, India</span></li>
-            <li><span class="record__when">April 2023–June 2023</span><span class="record__what"><a href="experience/#tripcon">Production Engineer Intern</a></span><span class="record__where">Tripcon Engineering Pvt. Ltd. · Anand, India</span></li>
-            <li><span class="record__when">2021–2025</span><span class="record__what"><a href="experience/#charusat">Bachelor’s in Mechanical Engineering</a></span><span class="record__where">Charusat University · India</span></li>
-          </ol>
-          <p class="after-list"><a class="more" href="experience/">Full experience and education</a></p>
+
+          <ul class="projects" role="list">
+            <li>
+              <article class="project" aria-labelledby="p-hfes">
+                <div class="project__body">
+                  <p class="project__kicker">Human factors and accessibility</p>
+                  <h3 class="project__title" id="p-hfes"><a href="work/hfes-uxtg-portal/index.html">HFES UXTG Information Portal</a></h3>
+                  <p class="project__text">Making a professional community easier to navigate.</p>
+                  <p class="project__meta"><strong>Accessibility and QA Lead</strong> Prototype testing, four participants</p>
+                </div>
+                <div class="cover">
+                  <img src="assets/img/cover/hfes-uxtg-portal-800.webp" srcset="assets/img/cover/hfes-uxtg-portal-480.webp 480w, assets/img/cover/hfes-uxtg-portal-800.webp 800w" sizes="(min-width: 1120px) 384px, (min-width: 680px) 50vw, 100vw" width="800" height="600" alt="" loading="lazy" decoding="async">
+                  <p class="cover__text"><span class="cover__value">14.18 s</span><span class="cover__caption">Mean event-registration time in prototype testing (n = 4)</span></p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="project" aria-labelledby="p-parks">
+                <div class="project__body">
+                  <p class="project__kicker">Operations research and decision support</p>
+                  <h3 class="project__title" id="p-parks"><a href="work/asheville-park-access/index.html">Asheville Urban Park Access Optimization</a></h3>
+                  <p class="project__text">Making the efficiency–equity tradeoff visible.</p>
+                  <p class="project__meta"><strong>Optimization modeling and comparative analysis</strong> Academic optimization study</p>
+                </div>
+                <div class="cover">
+                  <img src="assets/img/cover/asheville-park-access-800.webp" srcset="assets/img/cover/asheville-park-access-480.webp 480w, assets/img/cover/asheville-park-access-800.webp 800w" sizes="(min-width: 1120px) 384px, (min-width: 680px) 50vw, 100vw" width="800" height="600" alt="" loading="lazy" decoding="async">
+                  <p class="cover__text"><span class="cover__value">52.73%</span><span class="cover__caption">Modeled half-mile coverage in the ten-new-park scenario</span></p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="project" aria-labelledby="p-bell">
+                <div class="project__body">
+                  <p class="project__kicker">Mechanical design and simulation</p>
+                  <h3 class="project__title" id="p-bell"><a href="work/bell407-rotor-analysis/index.html">Bell-407 Helicopter Rotor and Blade System</a></h3>
+                  <p class="project__text">Connecting blade aerodynamics with rotor-component analysis.</p>
+                  <p class="project__meta"><strong>CFD and Structural Analysis Lead</strong> Academic simulation study</p>
+                </div>
+                <div class="cover">
+                  <img src="assets/img/cover/bell407-rotor-analysis-800.webp" srcset="assets/img/cover/bell407-rotor-analysis-480.webp 480w, assets/img/cover/bell407-rotor-analysis-800.webp 800w" sizes="(min-width: 1120px) 384px, (min-width: 680px) 50vw, 100vw" width="800" height="600" alt="" loading="lazy" decoding="async">
+                  <p class="cover__text"><span class="cover__value">CFD + FEA</span><span class="cover__caption">NACA-0012 vs SC-1095 profiles and rotor stress</span></p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="project" aria-labelledby="p-clinic">
+                <div class="project__body">
+                  <p class="project__kicker">Logistics and integer programming</p>
+                  <h3 class="project__title" id="p-clinic"><a href="work/outpatient-clinic-routing/index.html">Outpatient Clinic Last-Mile Routing</a></h3>
+                  <p class="project__text">Understanding the distance cost of delivery constraints.</p>
+                  <p class="project__meta"><strong>Routing-model development and comparison</strong> Academic optimization project</p>
+                </div>
+                <div class="cover">
+                  <img src="assets/img/cover/outpatient-clinic-routing-800.webp" srcset="assets/img/cover/outpatient-clinic-routing-480.webp 480w, assets/img/cover/outpatient-clinic-routing-800.webp 800w" sizes="(min-width: 1120px) 384px, (min-width: 680px) 50vw, 100vw" width="800" height="600" alt="" loading="lazy" decoding="async">
+                  <p class="cover__text"><span class="cover__value">45.32 km</span><span class="cover__caption">Three-van plan, against a 34.75 km TSP benchmark</span></p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="project" aria-labelledby="p-dmaic">
+                <div class="project__body">
+                  <p class="project__kicker">Quality improvement research</p>
+                  <h3 class="project__title" id="p-dmaic"><a href="work/automotive-dmaic-review/index.html">DMAIC Case Study — Automotive Manufacturing Safety and Lean Flow</a></h3>
+                  <p class="project__text">Evaluating the evidence behind process improvement.</p>
+                  <p class="project__meta"><strong>Author and Comparative Research Analyst</strong> Analysis of published cases</p>
+                </div>
+                <div class="cover">
+                  <img src="assets/img/cover/automotive-dmaic-review-800.webp" srcset="assets/img/cover/automotive-dmaic-review-480.webp 480w, assets/img/cover/automotive-dmaic-review-800.webp 800w" sizes="(min-width: 1120px) 384px, (min-width: 680px) 50vw, 100vw" width="800" height="600" alt="" loading="lazy" decoding="async">
+                  <p class="cover__text"><span class="cover__value">2 cases</span><span class="cover__caption">Published automotive DMAIC studies, compared</span></p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="project" aria-labelledby="p-solar">
+                <div class="project__body">
+                  <p class="project__kicker">Mechanical systems concept</p>
+                  <h3 class="project__title" id="p-solar"><a href="work/passive-solar-array/index.html">Passively Actuated Deployable Solar Array Using Shape-Memory Alloys</a></h3>
+                  <p class="project__text">Exploring compact deployment through material behavior and folding geometry.</p>
+                  <p class="project__meta"><strong>Systems Designer</strong> Concept design, not built hardware</p>
+                </div>
+                <div class="cover">
+                  <img src="assets/img/cover/passive-solar-array-800.webp" srcset="assets/img/cover/passive-solar-array-480.webp 480w, assets/img/cover/passive-solar-array-800.webp 800w" sizes="(min-width: 1120px) 384px, (min-width: 680px) 50vw, 100vw" width="800" height="600" alt="" loading="lazy" decoding="async">
+                  <p class="cover__text"><span class="cover__value">Concept</span><span class="cover__caption">Nitinol shape-memory alloy with origami-inspired folding</span></p>
+                </div>
+              </article>
+            </li>
+          </ul>
         </div>
       </section>
 
-      <section class="flow flow--night" aria-label="Closing quotation">
-        <figure class="wrap quote">
-          <blockquote>
-            <p>“For a successful technology, reality must take precedence over public relations, for nature cannot be fooled.”</p>
-          </blockquote>
-          <figcaption>Richard P. Feynman, <a href="https://www.nasa.gov/history/rogersrep/v2appf.htm" rel="noopener noreferrer">Challenger accident report, Appendix F<span class="visually-hidden"> (opens external site)</span></a>, 1986</figcaption>
-        </figure>
+      <section class="panel panel--soft" id="about" aria-labelledby="about-title">
+        <div class="wrap section">
+          <div class="about-intro">
+            <div class="section-head">
+              <p class="eyebrow"><span class="eyebrow__num">02</span>About</p>
+              <h2 class="title-lg" id="about-title">A mechanical foundation and a systems perspective.</h2>
+            </div>
+            <div class="prose prose--lg">
+              <p>My path into industrial engineering began with mechanical systems: understanding how components interact, how manufacturing decisions affect quality, and how analysis can support better design. Through production and quality assurance internships, I worked with process coordination, inspection, and manufacturing improvement.</p>
+              <p>At Clemson, I am broadening that foundation through human factors, optimization, systems modeling, and quality improvement. My projects connect these interests across different scales: an individual using an information portal, a community accessing public parks, a delivery fleet serving clinics, and a rotor assembly responding to modeled loads.</p>
+              <p>I am most interested in work that connects technical rigor with the people who use, operate, or depend on a system. I want to understand the problem clearly, choose methods that fit it, and explain both the result and its limitations.</p>
+            </div>
+          </div>
+
+          <div class="block">
+            <h3 class="subhead">How I work</h3>
+            <ul class="pillars" role="list">
+              <li class="pillar">
+                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="20" cy="14" r="6"/><path d="M8 34c1.8-6.4 6.5-10 12-10s10.2 3.6 12 10"/></svg>
+                <h4>Human-centered systems</h4>
+                <p>Understand user needs, evaluate accessibility, and test whether people can complete important tasks.</p>
+              </li>
+              <li class="pillar">
+                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="9" cy="30" r="4"/><circle cx="20" cy="10" r="4"/><circle cx="31" cy="28" r="4"/><path d="M11 26.5 18 13.5M22 13.5 29 24.5M13 30l14-1.6"/></svg>
+                <h4>Optimization and operations</h4>
+                <p>Translate constraints into models that support decisions about access, routing, production, and resource allocation.</p>
+              </li>
+              <li class="pillar">
+                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="20" cy="20" r="6"/><path d="M20 4v6M20 30v6M4 20h6M30 20h6M8.7 8.7l4.2 4.2M27.1 27.1l4.2 4.2M8.7 31.3l4.2-4.2M27.1 12.9l4.2-4.2"/></svg>
+                <h4>Mechanical analysis and quality</h4>
+                <p>Use simulation, inspection, and process analysis to investigate performance and improve engineering workflows.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h3 class="subhead">How I approach a problem</h3>
+            <ol class="process" role="list">
+              <li class="step">
+                <h4>Define the decision</h4>
+                <p>Clarify who the system serves and what needs to improve.</p>
+                <p class="step__eg">HFES UXTG: the project report documents 12 stakeholder interviews and 21 target specifications.</p>
+              </li>
+              <li class="step">
+                <h4>Examine the evidence</h4>
+                <p>Understand the available data, observations, and constraints.</p>
+                <p class="step__eg">Asheville parks: 77 demand locations, 52 existing parks, and 138 candidate sites.</p>
+              </li>
+              <li class="step">
+                <h4>Model or prototype</h4>
+                <p>Choose an approach that makes the important tradeoffs visible.</p>
+                <p class="step__eg">Clinic routing: a TSP distance benchmark compared with a capacity-constrained model.</p>
+              </li>
+              <li class="step">
+                <h4>Evaluate and communicate</h4>
+                <p>Test the result, document limitations, and identify the next useful step.</p>
+                <p class="step__eg">Every project ends with a scope note stating what the result does not show.</p>
+              </li>
+            </ol>
+          </div>
+
+          <div class="interests">
+            <h3>Professional interests</h3>
+            <ul class="inline-list" role="list">
+              <li>Human factors and UX research</li>
+              <li>Operations research and optimization</li>
+              <li>Manufacturing quality</li>
+              <li>Continuous improvement</li>
+              <li>Systems integration</li>
+              <li>Engineering analysis</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel exp" id="experience" aria-labelledby="experience-title">
+        <div class="wrap section">
+          <div class="section-head">
+            <p class="eyebrow"><span class="eyebrow__num">03</span>Experience and education</p>
+            <h2 class="title-lg" id="experience-title">Production and quality internships, then graduate study.</h2>
+            <p class="lead">Through production and quality assurance internships, I worked with process coordination, inspection, and manufacturing improvement.</p>
+          </div>
+
+          <h3 class="subhead">Internships</h3>
+          <ul class="roles" role="list">
+            <li>
+              <article class="role card-lite" aria-labelledby="role-bc">
+                <div>
+                  <p class="role__when">April 2024–June 2024 · Anand, India</p>
+                  <h4 id="role-bc">BC Instruments India Pvt. Ltd.</h4>
+                  <p class="role__title">Quality Assurance Intern</p>
+                </div>
+                <dl class="impact" aria-label="Reported results">
+                  <div><dt>Unplanned downtime</dt><dd>−25%</dd></div>
+                  <div><dt>Manufacturing precision</dt><dd>+15%</dd></div>
+                  <div><dt>Inspection cycle time</dt><dd>−20%</dd></div>
+                  <div><dt>Accuracy standard maintained</dt><dd>99.5%</dd></div>
+                </dl>
+                <ul class="role__points">
+                  <li>Standardized measurement-control procedures and preventive-maintenance schedules for CNC machining operations, reducing unplanned downtime by 25% and supporting equipment longevity.</li>
+                  <li>Applied Statistical Process Control to improve manufacturing precision by 15% across aerospace, medical, and commercial applications.</li>
+                  <li>Optimized quality-inspection workflows through process analysis, reducing inspection cycle time by 20% while maintaining 99.5% accuracy standards.</li>
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="role card-lite" aria-labelledby="role-tripcon">
+                <div>
+                  <p class="role__when">April 2023–June 2023 · Anand, India</p>
+                  <h4 id="role-tripcon">Tripcon Engineering Pvt. Ltd.</h4>
+                  <p class="role__title">Production Engineer Intern</p>
+                </div>
+                <dl class="impact" aria-label="Reported results">
+                  <div><dt>Assembly time</dt><dd>−18%</dd></div>
+                  <div><dt>Projects delivered on schedule</dt><dd>12+</dd></div>
+                  <div><dt>First-pass quality rate</dt><dd>95%</dd></div>
+                  <div><dt>Lead time</dt><dd>−22%</dd></div>
+                </dl>
+                <ul class="role__points">
+                  <li>Designed and implemented manufacturing processes for material-handling systems, including conveyors and elevators, reducing assembly time by 18% through workflow optimization.</li>
+                  <li>Coordinated heat treatment, welding, CNC machining, and outsourced forging across 12+ projects delivered on schedule with a 95% first-pass quality rate.</li>
+                  <li>Streamlined production coordination from design through delivery, reducing lead time by 22% and improving on-time delivery performance.</li>
+                </ul>
+              </article>
+            </li>
+          </ul>
+
+          <div class="block" id="education">
+            <h3 class="subhead">Education</h3>
+            <ul class="edu" role="list">
+              <li>
+                <article class="edu-card card-lite" aria-labelledby="edu-clemson">
+                  <p class="role__when">August 2025–May 2027 expected · Clemson, United States</p>
+                  <h4 id="edu-clemson">Clemson University</h4>
+                  <p class="role__title">Master of Science in Industrial Engineering</p>
+                  <p class="edu-card__label">Relevant coursework</p>
+                  <ul class="chips-dark" role="list">
+                    <li>Human Factors Engineering</li>
+                    <li>Modeling Systems Under Risk</li>
+                    <li>Engineering Optimization and Its Applications</li>
+                    <li>Design in Human-Computer Systems</li>
+                    <li>Six Sigma Green Belt</li>
+                    <li>Transportation and Logistics</li>
+                    <li>Game Theory</li>
+                    <li>Stochastic Processes</li>
+                    <li>Systems Modeling</li>
+                  </ul>
+                </article>
+              </li>
+              <li>
+                <article class="edu-card card-lite" aria-labelledby="edu-charusat">
+                  <p class="role__when">2021–2025 · India</p>
+                  <h4 id="edu-charusat">Charusat University</h4>
+                  <p class="role__title">Bachelor’s in Mechanical Engineering</p>
+                  <details>
+                    <summary>Relevant coursework (23 courses)</summary>
+                    <ul class="chips-dark" role="list">
+                      <li>C</li>
+                      <li>Python</li>
+                      <li>Manufacturing Processes</li>
+                      <li>Thermodynamics</li>
+                      <li>Health Care Management</li>
+                      <li>Materials Engineering</li>
+                      <li>Fluid Mechanics</li>
+                      <li>Machine Dynamics</li>
+                      <li>Heat and Mass Transfer</li>
+                      <li>Thermal Engineering</li>
+                      <li>Metrology and Quality Control</li>
+                      <li>Dynamics of Compressible Flow</li>
+                      <li>HVAC</li>
+                      <li>Production Technology</li>
+                      <li>Computer-Aided Design</li>
+                      <li>Fluid Machines</li>
+                      <li>Automobile Engineering</li>
+                      <li>Operations Research</li>
+                      <li>Power Plant Engineering</li>
+                      <li>Computer-Aided Manufacturing</li>
+                      <li>Design of Transmission Systems</li>
+                      <li>Computational Fluid Dynamics</li>
+                      <li>Project Management</li>
+                    </ul>
+                  </details>
+                </article>
+              </li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h3 class="subhead">Community involvement</h3>
+            <ul class="community" role="list">
+              <li><strong>HFES student chapter</strong> <span>Clemson University</span></li>
+              <li><strong>UXTG</strong> <span>Clemson University</span></li>
+              <li><strong>OJASWAT Motorsport Team</strong> <span>Charusat University</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills" aria-labelledby="skills-title">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="eyebrow"><span class="eyebrow__num">04</span>Skills</p>
+            <h2 class="title-lg" id="skills-title">Skills and methods.</h2>
+          </div>
+          <dl class="spec-sheet">
+            <div>
+              <dt>Human factors and digital experiences</dt>
+              <dd><ul class="inline-list" role="list"><li>Ergonomics</li><li>Usability testing</li><li>WCAG 2.1 AA auditing</li><li>Lighthouse</li><li>HTML</li><li>Hugo</li><li>Decap CMS</li><li>Netlify</li></ul></dd>
+            </div>
+            <div>
+              <dt>Optimization and analytics</dt>
+              <dd><ul class="inline-list" role="list"><li>Python</li><li>Gurobi</li><li>R</li><li>Simio</li><li>Power BI</li><li>Optimization</li><li>Systems modeling and scenario analysis through relevant coursework and projects</li></ul></dd>
+            </div>
+            <div>
+              <dt>Mechanical design and simulation</dt>
+              <dd><ul class="inline-list" role="list"><li>SolidWorks</li><li>ANSYS Fluent for CFD</li><li>ANSYS Structural for FEA</li><li>MATLAB</li><li>Mechanical design</li><li>Compressible-flow modeling</li><li>Turbulence modeling</li><li>Fluid–structure interaction analysis</li><li>Wind-tunnel testing and instrumentation</li><li>Systems integration</li></ul></dd>
+            </div>
+            <div>
+              <dt>Measurement and quality</dt>
+              <dd><ul class="inline-list" role="list"><li>Statistical Process Control</li><li>Measurement System Analysis</li><li>Data-acquisition systems</li><li>Precision measurement systems</li><li>CNC calibration</li><li>Dimensional inspection</li><li>Process analysis</li><li>Six Sigma and DMAIC coursework and case analysis</li></ul></dd>
+            </div>
+            <div>
+              <dt>Programming and working tools</dt>
+              <dd><ul class="inline-list" role="list"><li>C/C++ at a foundational level</li><li>Microsoft Office Suite</li><li>Project management</li></ul></dd>
+            </div>
+          </dl>
+          <p class="footnote"><strong>Learning context.</strong> My capabilities combine project work, internships, and academic study. Individual project pages identify the methods used in that work; a listed skill does not imply professional deployment experience in every tool.</p>
+        </div>
+      </section>
+
+      <section class="panel scene scene--contact scene--fit-wide nav-dark-end" id="contact" aria-labelledby="contact-title">
+        <div class="scene__sky">
+          <div class="wrap">
+            <div class="contact measure">
+              <div class="contact__main">
+                <p class="eyebrow"><span class="eyebrow__num">05</span>Contact</p>
+                <h2 id="contact-title">Let’s discuss a systems problem worth solving.</h2>
+                <p class="contact__lead">If your work connects people, operations, or engineering analysis, I’d welcome a conversation about the problem and how I could contribute.</p>
+              </div>
+              <div class="contact__side">
+                <ul class="contact__actions" role="list">
+                  <li><a class="btn btn--light" href="mailto:arjunb.patel@outlook.com?subject=Hello%20from%20your%20portfolio">Email Arjun</a></li>
+                  <li><a class="btn btn--glass" href="https://www.linkedin.com/in/linkwitharjun" rel="noopener noreferrer">Connect on LinkedIn<svg class="ext" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M4 2h6v6M10 2 3 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visually-hidden"> (external site)</span></a></li>
+                </ul>
+                <p class="contact__address">arjunb.patel@outlook.com</p>
+                <p class="contact__hint">Recruiters: please include the role and timeline.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <picture class="scene__art">
+          <source media="(max-width: 699px)" type="image/webp" srcset="assets/img/scene/oak-tall-640.webp 640w, assets/img/scene/oak-tall-941.webp 941w" sizes="100vw" width="941" height="1672">
+          <img src="assets/img/scene/oak-1536.webp" srcset="assets/img/scene/oak-768.webp 768w, assets/img/scene/oak-1152.webp 1152w, assets/img/scene/oak-1536.webp 1536w" sizes="100vw" width="1536" height="1024" alt="" loading="lazy" decoding="async">
+        </picture>
       </section>
     </main>
 
     <footer class="site-footer">
-      <section class="contact band" id="contact" aria-labelledby="contact-title">
-        <div class="wrap">
-          <h2 id="contact-title">Let’s discuss a systems problem worth solving.</h2>
-          <p class="lead">If your work connects people, operations, or engineering analysis, I’d welcome a conversation about the problem and how I could contribute. Recruiters: please include the role and timeline.</p>
-          <p class="contact__links-address"><a href="mailto:arjunb.patel@outlook.com?subject=Hello%20from%20your%20portfolio">arjunb.patel@outlook.com</a></p>
-          <ul class="contact__links">
-            <li><a class="button button--primary" href="mailto:arjunb.patel@outlook.com?subject=Hello%20from%20your%20portfolio">Email Arjun</a></li>
-            <li><a class="button" href="https://www.linkedin.com/in/linkwitharjun" rel="noopener noreferrer">Connect on LinkedIn<span class="visually-hidden"> (opens external site)</span></a></li>
-            <li><button type="button" class="button" data-copy="arjunb.patel@outlook.com" hidden>Copy email address</button></li>
-          </ul>
-          <p class="contact__status" role="status" data-copy-status></p>
-        </div>
-      </section>
       <div class="wrap site-footer__inner">
-        <p>© 2026 Arjun Patel. No cookies, no analytics, no tracking.</p>
+        <p>© 2026 Arjun Patel · Industrial Engineering Portfolio</p>
         <nav aria-label="Footer">
-          <ul>
-            <li><a href="experience/">Experience</a></li>
-            <li><a href="privacy/">Privacy</a></li>
-            <li><a href="CREDITS.md">Image credits</a></li>
+          <ul role="list">
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="privacy/index.html">Privacy</a></li>
           </ul>
         </nav>
+        <p>No cookies, no analytics, no tracking.</p>
       </div>
     </footer>
   </body>

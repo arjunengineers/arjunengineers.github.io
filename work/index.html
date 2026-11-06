@@ -3,161 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types 'none'">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <title>Work — Engineering Case Studies | Arjun Patel</title>
-    <meta name="description" content="Six engineering case studies in human factors, optimization, mechanical simulation, and quality improvement, each with its methods, results, and limits.">
-    <link rel="canonical" href="https://arjunengineers.github.io/work/">
-    <meta name="theme-color" content="#1E4C9A">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Arjun Patel">
-    <meta property="og:title" content="Work — Engineering Case Studies | Arjun Patel">
-    <meta property="og:description" content="Six engineering case studies in human factors, optimization, mechanical simulation, and quality improvement, each with its methods, results, and limits.">
-    <meta property="og:url" content="https://arjunengineers.github.io/work/">
-    <meta property="og:image" content="https://arjunengineers.github.io/assets/img/og-arjun-patel.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Arjun Patel: engineering systems around people, performance, and evidence.">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../assets/site.css">
-    <link rel="preload" href="../assets/fonts/cormorant-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="../assets/fonts/instrument-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-    <script src="../assets/site.js" defer></script>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; script-src 'none'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+    <meta http-equiv="refresh" content="0; url=../index.html#projects">
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="https://arjunengineers.github.io/#projects">
+    <title>Projects have moved | Arjun Patel</title>
+    <link rel="stylesheet" href="../assets/css/site.css">
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-
-    <header class="site-header">
-      <div class="wrap site-header__inner">
-        <a class="wordmark" href="../">Arjun Patel</a>
-        <nav class="site-nav" aria-label="Primary">
-          <ul>
-            <li><a href="../work/" aria-current="page">Work</a></li>
-            <li><a href="../#story">Story</a></li>
-            <li><a href="../about/">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <main id="main" tabindex="-1">
-      <div class="wrap">
-        <header class="page-head">
-          <h1>Work</h1>
-          <p class="lead">From an accessible information portal to park-location models and rotor simulations, these projects show how I frame problems, evaluate tradeoffs, and connect technical analysis to practical decisions.</p>
-        </header>
-        <div class="page-body">
-          <div class="filter" data-filter hidden>
-            <p class="eyebrow" id="filter-label">Filter by discipline</p>
-            <div class="filter__chips" role="group" aria-labelledby="filter-label">
-              <button type="button" class="chip" aria-pressed="false" data-tag="human-factors">Human factors</button>
-              <button type="button" class="chip" aria-pressed="false" data-tag="optimization">Optimization</button>
-              <button type="button" class="chip" aria-pressed="false" data-tag="mechanical-design">Mechanical design</button>
-              <button type="button" class="chip" aria-pressed="false" data-tag="quality-improvement">Quality improvement</button>
-              <button type="button" class="chip chip--clear" data-clear hidden>Clear filter</button>
-            </div>
-            <p class="filter__status note" role="status" data-status></p>
-          </div>
-          <ul class="projects">
-            <li class="project project--row" data-project-card data-tags="human-factors">
-              <div>
-                <h2><a href="../work/hfes-uxtg-portal/">HFES UXTG Information Portal</a></h2>
-                <p class="project__type">Prototype testing, four participants</p>
-                <div class="project__fig"><img src="../assets/img/hfes-join-after.webp" width="785" height="631" alt="" loading="lazy" decoding="async"></div>
-              </div>
-              <div>
-                <p class="project__copy">Accessibility and quality assurance for an event-first information portal, informed by stakeholder needs and a four-participant usability study.</p>
-                <p class="project__evidence"><strong>14.18 s</strong> Mean event-registration task time in prototype testing</p>
-                <p class="project__tools">Methods and tools: HTML prototype, WCAG 2.1 AA auditing, Lighthouse, usability testing</p>
-              </div>
-            </li>
-            <li class="project project--row" data-project-card data-tags="optimization">
-              <div>
-                <h2><a href="../work/asheville-park-access/">Asheville Urban Park Access Optimization</a></h2>
-                <p class="project__type">Academic optimization study</p>
-              </div>
-              <div>
-                <p class="project__copy">Five facility-location models exploring how efficiency and equity objectives change proposed park investments for a population of 88,860.</p>
-                <p class="project__evidence"><strong>52.73%</strong> Modeled half-mile coverage in the ten-new-park coverage scenario</p>
-                <p class="project__tools">Methods and tools: Python, Gurobi, integer programming, facility location, scenario analysis</p>
-              </div>
-            </li>
-            <li class="project project--row" data-project-card data-tags="mechanical-design">
-              <div>
-                <h2><a href="../work/bell407-rotor-analysis/">Bell-407 Helicopter Rotor and Blade System</a></h2>
-                <p class="project__type">Academic simulation study</p>
-                <div class="project__fig"><img src="../assets/img/bell407-rotor-assembly.webp" width="556" height="412" alt="" loading="lazy" decoding="async"></div>
-              </div>
-              <div>
-                <p class="project__copy">A comparative CFD study of two blade profiles, supported by CAD assembly work and static structural analysis of rotor components.</p>
-                <p class="project__evidence"><strong>NACA-0012 vs SC-1095</strong> Compared in an academic simulation study</p>
-                <p class="project__tools">Methods and tools: SolidWorks, ANSYS Fluent, ANSYS Structural</p>
-              </div>
-            </li>
-            <li class="project project--row" data-project-card data-tags="optimization">
-              <div>
-                <h2><a href="../work/outpatient-clinic-routing/">Outpatient Clinic Last-Mile Routing</a></h2>
-                <p class="project__type">Academic optimization project</p>
-              </div>
-              <div>
-                <p class="project__copy">A comparison of traveling-salesperson and capacity-constrained routing models for deliveries to eight outpatient clinics.</p>
-                <p class="project__evidence"><strong>45.32 km</strong> Three-van plan, as reported</p>
-                <p class="project__tools">Methods and tools: Gurobi, DFJ traveling-salesperson formulation, MTZ capacitated vehicle-routing formulation</p>
-              </div>
-            </li>
-            <li class="project project--row" data-project-card data-tags="quality-improvement">
-              <div>
-                <h2><a href="../work/automotive-dmaic-review/">DMAIC Case Study — Automotive Manufacturing Safety and Lean Flow</a></h2>
-                <p class="project__type">Analysis of published cases</p>
-              </div>
-              <div>
-                <p class="project__copy">A comparative analysis of two published automotive manufacturing cases, focused on the strength of their measurement, root-cause analysis, and control plans.</p>
-                <p class="project__evidence"><strong>Research analysis</strong> Proposed improvements were not deployed by me</p>
-                <p class="project__tools">Methods and tools: DMAIC, comparative analysis of published cases</p>
-              </div>
-            </li>
-            <li class="project project--row" data-project-card data-tags="mechanical-design">
-              <div>
-                <h2><a href="../work/passive-solar-array/">Passively Actuated Deployable Solar Array Using Shape-Memory Alloys</a></h2>
-                <p class="project__type">Concept design, not built hardware</p>
-              </div>
-              <div>
-                <p class="project__copy">A solar-array deployment concept combining Nitinol shape-memory alloy with origami-inspired folding to explore compact storage and passive actuation.</p>
-                <p class="project__evidence"><strong>Concept design</strong></p>
-                <p class="project__tools">Methods and tools: Nitinol shape-memory alloy, origami-inspired folding</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <main class="redirect">
+      <p>Projects now live on the <a href="../index.html#projects">home page</a>.</p>
     </main>
-
-    <footer class="site-footer">
-      <section class="contact band" id="contact" aria-labelledby="contact-title">
-        <div class="wrap">
-          <h2 id="contact-title">Let’s discuss a systems problem worth solving.</h2>
-          <p class="lead">If your work connects people, operations, or engineering analysis, I’d welcome a conversation about the problem and how I could contribute. Recruiters: please include the role and timeline.</p>
-          <p class="contact__links-address"><a href="mailto:arjunb.patel@outlook.com?subject=Hello%20from%20your%20portfolio">arjunb.patel@outlook.com</a></p>
-          <ul class="contact__links">
-            <li><a class="button button--primary" href="mailto:arjunb.patel@outlook.com?subject=Hello%20from%20your%20portfolio">Email Arjun</a></li>
-            <li><a class="button" href="https://www.linkedin.com/in/linkwitharjun" rel="noopener noreferrer">Connect on LinkedIn<span class="visually-hidden"> (opens external site)</span></a></li>
-            <li><button type="button" class="button" data-copy="arjunb.patel@outlook.com" hidden>Copy email address</button></li>
-          </ul>
-          <p class="contact__status" role="status" data-copy-status></p>
-        </div>
-      </section>
-      <div class="wrap site-footer__inner">
-        <p>© 2026 Arjun Patel. No cookies, no analytics, no tracking.</p>
-        <nav aria-label="Footer">
-          <ul>
-            <li><a href="../experience/">Experience</a></li>
-            <li><a href="../privacy/">Privacy</a></li>
-            <li><a href="../CREDITS.md">Image credits</a></li>
-          </ul>
-        </nav>
-      </div>
-    </footer>
   </body>
 </html>
